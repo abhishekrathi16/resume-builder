@@ -12,6 +12,7 @@ pnpm dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## To Run Prettier
+
 ```
 pnpm format
 ```
