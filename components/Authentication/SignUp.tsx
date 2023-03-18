@@ -1,11 +1,12 @@
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
-import useSignInStore, { useSignUpStore } from "../../store/SignIn_SignOut";
+import  { useSignUpStore } from "../../store/SignIn_SignOut";
 
 export default function SignUp(): JSX.Element {
     const state = useSignUpStore()
-    //   const [open, setOpen] = useState();
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
     const cancelButtonRef = useRef(null);
 

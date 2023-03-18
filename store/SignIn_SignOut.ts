@@ -27,7 +27,7 @@ const signUpstore = (set: any): SignIn_SignUpState => (
         open: false,
         setOpen: (open: boolean) => {
             set((state: any) => ({
-                open: !state
+                open: !state.open
             }))
             // console.log("open", open);
             return open

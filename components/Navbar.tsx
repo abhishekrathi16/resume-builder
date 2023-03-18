@@ -19,6 +19,12 @@ export default function Example() {
   const state1 = useSignUpStore()
   const router = useRouter();
 
+  const handleSignOut = ()=>{
+    // remove data from localstorage
+    console.log("logging out")
+    router.push('/')
+  }
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -69,7 +75,7 @@ export default function Example() {
                       Sign In
                     </p>
                     <p
-                      onClick={() => state.setOpen(state.open)}
+                      onClick={() => state1.setOpen(state1.open)}
                       key="Sign Up"
                       style={{cursor:"pointer"}}
                       className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
@@ -104,15 +110,16 @@ export default function Example() {
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
-                          <a
-                            href="#"
+                          <p
+                          style={{ cursor:"pointer" }}
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 py-2 text-sm text-gray-700"
                             )}
+                          onClick={handleSignOut}
                           >
-                            Sign out
-                          </a>
+                            Sign Out
+                          </p>
                         )}
                       </Menu.Item>
                     </Menu.Items>

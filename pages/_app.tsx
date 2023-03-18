@@ -10,7 +10,7 @@ const MyApp = ({ Component, pageProps }: any): JSX.Element => {
   return (
     <Layout>
       <SignIn /> 
-      {/* <SignUp /> */}
+      <SignUp />
       <Component {...pageProps} />
     </Layout>
   );
