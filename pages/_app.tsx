@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 const MyApp = ({ Component, pageProps }: any): JSX.Element => {
   return (
     <Layout>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </Layout>
   );
 };
