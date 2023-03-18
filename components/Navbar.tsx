@@ -15,18 +15,21 @@ function classNames(...classes: any[]) {
 }
 
 export default function Example() {
-  const state = useSignInStore()
-  const state1 = useSignUpStore()
+  const state = useSignInStore();
+  const state1 = useSignUpStore();
   const router = useRouter();
 
-  const handleSignOut = ()=>{
+  const handleSignOut = () => {
     // remove data from localstorage
-    console.log("logging out")
-    router.push('/')
-  }
+    console.log("logging out");
+    router.push("/");
+  };
 
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure
+      as="nav"
+      className="bg-gradient-to-r from-[#ec008c] to-[#fc6767]"
+    >
       {({ open }) => (
         <>
           <div className="px-2 sm:px-6 lg:px-8">
@@ -53,32 +56,19 @@ export default function Example() {
                 <div className="flex flex-shrink-0 items-center"></div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    <Link
-                      key="Home"
-                      href="/"
-                      className={classNames(
-                        "true"
-                          ? "bg-gray-900 text-white"
-                          : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                        "rounded-md px-3 py-2 text-sm font-medium"
-                      )}
-                      aria-current={"true" ? "page" : undefined}
-                    >
-                      Home
-                    </Link>
                     <p
                       style={{ cursor: "pointer" }}
-                    onClick={()=>state.setOpen(state.open) }
+                      onClick={() => state.setOpen(state.open)}
                       key="Sign In"
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                      className="text-white hover:text-gray-200 rounded-md px-3 py-2 text-sm font-bold"
                     >
                       Sign In
                     </p>
                     <p
                       onClick={() => state1.setOpen(state1.open)}
                       key="Sign Up"
-                      style={{cursor:"pointer"}}
-                      className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                      style={{ cursor: "pointer" }}
+                      className="text-white hover:text-gray-200 rounded-md px-3 py-2 text-sm font-bold"
                     >
                       Sign Up
                     </p>
@@ -111,12 +101,12 @@ export default function Example() {
                       <Menu.Item>
                         {({ active }) => (
                           <p
-                          style={{ cursor:"pointer" }}
+                            style={{ cursor: "pointer" }}
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 py-2 text-sm text-gray-700"
                             )}
-                          onClick={handleSignOut}
+                            onClick={handleSignOut}
                           >
                             Sign Out
                           </p>
