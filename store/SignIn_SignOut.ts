@@ -1,51 +1,37 @@
-import { create } from 'zustand'
+import { create } from "zustand";
 
-import {devtools} from 'zustand/middleware'
+import { devtools } from "zustand/middleware";
 
-interface SignIn_SignUpState{
-    open:boolean,
-    setOpen:(open:boolean)=>boolean
+interface SignIn_SignUpState {
+  open: boolean;
+  setOpen: (open: boolean) => boolean;
 }
 
-const signInstore = (set: any): SignIn_SignUpState =>( 
-    {
-        open:false,
-        setOpen:(open: boolean)=>{
-            set((state:any)=>({
-                open : !state.open
-            }))
-            // console.log("open",open);
-            return open
-        }
-    }
-)
+const signInstore = (set: any): SignIn_SignUpState => ({
+  open: false,
+  setOpen: (open: boolean) => {
+    set((state: any) => ({
+      open: !state.open,
+    }));
+    // console.log("open",open);
+    return open;
+  },
+});
 
+const signUpstore = (set: any): SignIn_SignUpState => ({
+  open: false,
+  setOpen: (open: boolean) => {
+    set((state: any) => ({
+      open: !state.open,
+    }));
+    // console.log("open", open);
+    return open;
+  },
+});
 
+const useSignInStore = create(signInstore);
 
-const signUpstore = (set: any): SignIn_SignUpState => (
-    {
-        open: false,
-        setOpen: (open: boolean) => {
-            set((state: any) => ({
-                open: !state.open
-            }))
-            // console.log("open", open);
-            return open
-        }
-    }
-)
+const useSignUpStore = create(signUpstore);
 
-
-const useSignInStore = create(
-    signInstore
-)
-
-
-const useSignUpStore = create(
-    signUpstore
-)
-
-
-
-export default useSignInStore
-export {useSignUpStore}
+export default useSignInStore;
+export { useSignUpStore };

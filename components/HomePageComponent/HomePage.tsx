@@ -6,9 +6,11 @@ import GuideToMakeBetterResume from "./GuideToMakeBetterResume";
 const HomePage = (): JSX.Element => {
   return (
     <>
-      <GetStarted />
-      <DisplayTemplates />
-      <GuideToMakeBetterResume />
+      <div className="h-[100vh]">
+        <GetStarted />
+        <DisplayTemplates />
+        <GuideToMakeBetterResume />
+      </div>
     </>
   );
 };

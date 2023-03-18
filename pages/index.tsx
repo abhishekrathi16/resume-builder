@@ -14,10 +14,8 @@ export default function RootLayout({
   return (
     <div>
       <HomePage />
-      {
+      {}
 
-      }
-      
       {children}
     </div>
   );
