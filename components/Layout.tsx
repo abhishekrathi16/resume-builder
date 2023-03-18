@@ -4,7 +4,6 @@ import NavBar from "./Navbar";
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   return (
     <>
-    <div>Layout</div>
     <NavBar/>
     <div>{children}</div>
     </>
