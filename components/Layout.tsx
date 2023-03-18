@@ -5,9 +5,9 @@ import Footer from "./Footer";
 const Layout: React.FC<ScriptProps> = ({ children }) => {
   return (
     <>
-    <NavBar/>
-    <div>{children}</div>
-    <Footer />
+      <NavBar />
+      <div>{children}</div>
+      <Footer />
     </>
   );
 };
