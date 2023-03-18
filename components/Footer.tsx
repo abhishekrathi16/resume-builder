@@ -4,8 +4,8 @@ import GithubLogo from "../assets/github-mark-white.png";
 
 const Footer = (): JSX.Element => {
   return (
-    <div className="h-[10vh] bg-black text-white text-center flex flex-col items-center justify-center">
-      <h2 style={{ fontWeight: "normal" }}>
+    <div className=" bg-black text-white text-center flex flex-col items-center justify-center ">
+      <h2 style={{ fontWeight: "normal" }}  className="pt-3">
         This site has been created by
         <span style={{ color: "red", fontWeight: "bold" }}>
           {/* Style will be inherited from the parent element */}
@@ -19,11 +19,12 @@ const Footer = (): JSX.Element => {
             words={[" Rahul", " Abhishek"]}
           />
         </span>{" "}
-        😎
+        😎 
       </h2>
-      <div>Copyright &#169; 2023</div>
-      <div className="flex flex-row items-center">
-        {" "}
+      <div className="pt-3">Copyright &#169; 2023</div>
+      <div className="flex flex-row ">
+      <div className="flex flex-row items-center p-3">
+        {" "} 
         <img
           src={GithubLogo.src}
           alt=""
@@ -50,6 +51,7 @@ const Footer = (): JSX.Element => {
           Rahul Kumar
         </a>
       </div>
+      </div> 
     </div>
   );
 };

@@ -3,7 +3,7 @@ import HomePageImage from "../../assets/homepg_img.jpg";
 
 const GetStarted = (): JSX.Element => {
   return (
-    <div className="h-[60vh] text-center mt-20 mb-10">
+    <div className=" text-center flex justify-center items-center   ">
       <div className="header flex flex-row justify-center items-center mt-10">
         <div className="quote w-[40vw] p-20">
           <div
