@@ -1,11 +1,12 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const navigation = [
-  { name: 'Home', href: '#', current: true },
-  { name: 'Sign In', href: '#', current: false },
-  { name: 'Sign Up', href: '#', current: false },
+  { name: 'Home', href: '/', current: true, },
+  { name: 'Sign In', href: '/', current: false },
+  { name: 'Sign Up', href: '/', current: false },
 ]
 
 function classNames(...classes : any[]) {
@@ -13,6 +14,8 @@ function classNames(...classes : any[]) {
 }
 
 export default function Example() {
+  const router = useRouter()
+  
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -43,19 +46,32 @@ export default function Example() {
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'rounded-md px-3 py-2 text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
+                    <Link
+                      key="Home"
+                      href="/"
+                      className={classNames(
+                        "true" ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                        'rounded-md px-3 py-2 text-sm font-medium'
+                      )}
+                      aria-current={"true" ? 'page' : undefined}
+                    >
+                      Home
+                    </Link>
+                    <p
+                      
+                      key="Sign In"
+                      className='text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium'
+                    >
+                      Sign In
+                    </p>
+                    <p
+                      key="Sign Up"
+                      className='text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium'
+                      
+                    >
+                      Sign Up
+                    </p>
+                    
                   </div>
                 </div>
               </div>
