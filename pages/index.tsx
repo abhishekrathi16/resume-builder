@@ -1,4 +1,4 @@
-import "./globals.css";
+import HomePage from "../components/HomePageComponent/HomePage";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,9 +10,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+  return <div >
+    <HomePage />
+    {children}
+    </div>;
 }
