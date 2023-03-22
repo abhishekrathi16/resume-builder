@@ -2,9 +2,11 @@ import React from "react";
 import CarouselSlider from "./carousel/CarouselSlider";
 
 const DisplayTemplates = (): JSX.Element => {
+  // #bdddfc
   return (
-    // bg-[#ece7ec]
-    <div className="bg-gradient-to-b from-[#ffffff] to-[#fad0d0] text-center flex flex-col items-center justify-center mt-[8rem] p-20 h-[auto]">
+    // bg-[##bdddfc]
+    // #fad0d0
+    <div className="bg-gradient-to-b from-[#ffffff] to-[#bdddfc] text-center flex flex-col items-center justify-center mt-[8rem] p-20 h-[auto]">
       <div
         className="larger-quote"
         style={{
@@ -19,7 +21,7 @@ const DisplayTemplates = (): JSX.Element => {
         Choose a template of your choice and customize it easily!
       </div>
       <CarouselSlider/>
-      <div className="button w-[10vw] h-[3vw] bg-gradient-to-r from-[#ec008c] to-[#fc6767] hover:cursor-pointer rounded-full flex flex-col justify-center items-center mt-10">
+      <div className="button w-[10vw] h-[3vw] bg-gradient-to-r from-[#2491f7] to-[#67c5fc] hover:cursor-pointer rounded-full flex flex-col justify-center items-center mt-10">
         <a
           href="#"
           style={{

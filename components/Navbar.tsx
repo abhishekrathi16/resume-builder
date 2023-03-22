@@ -28,7 +28,7 @@ export default function Example() {
   return (
     <Disclosure
       as="nav"
-      className="bg-gradient-to-r from-[#ec008c] to-[#fc6767]"
+      className="bg-gradient-to-r from-[#2491f7] to-[#67c5fc]"
     >
       {({ open }) => (
         <>

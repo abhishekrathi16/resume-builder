@@ -20,7 +20,8 @@ const GetStarted = (): JSX.Element => {
             Set yourself apart with a modern resume. Expert tips, customizable
             templates & quick PDF download included.
           </div>
-          <div className="button w-[16vw] h-[4vw] bg-gradient-to-r from-[#ec008c] to-[#fc6767] hover:cursor-pointer rounded-full flex flex-col justify-center items-center mt-10">
+          {/* bg-gradient-to-r from-[#ec008c] to-[#fc6767] */}
+          <div className="button w-[16vw] h-[4vw] bg-gradient-to-r from-[#2491f7] to-[#67c5fc] hover:cursor-pointer rounded-full flex flex-col justify-center items-center mt-10">
             <a
               href="#"
               style={{
