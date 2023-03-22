@@ -1,38 +1,60 @@
 import { Fragment, useRef, useState } from "react";
 import { MdCancel } from 'react-icons/md';
 import { Dialog, Transition } from "@headlessui/react";
-import {useSignUpStore} from "../../store/SignIn_SignOut";
+import { useAuthStore, useSignUpStore } from "../../store/SignIn_SignOut";
+import useAuth from "../../FirebaseConfig/firebase_helper";
+import Loading from "../Loading_Button";
+import { toast } from 'react-toastify';
 
 export default function SignUp(): JSX.Element {
-  const state = useSignUpStore();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+    const state = useSignUpStore();
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const {createUser} = useAuth()
     const cancelButtonRef = useRef(null);
-    const handleSignIn = async () => {
-        console.log(email);
-        console.log(password);
+    const {loading, User} = useAuthStore(
+        (state)=>({
+            loading:state.loading,
+            User:state.User
+        })
+    )
+    //  for notification of toastify 
+    const notify = (content:string) => {
+        toast(content);
     }
 
-  return (
-    <Transition.Root show={state.open} as={Fragment}>
-      <Dialog
-        as="div"
-        className="relative z-10"
-        initialFocus={cancelButtonRef}
-        onClose={() => state.setOpen(state.open)}
-      >
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-        </Transition.Child>
+    const handleSignUp = async () => {
+        createUser(name , email, password).then(()=>{
+            setEmail("")
+            setPassword("")  
+            setName("")
+            let uid:string = User.userId
+            
+            // console.log("successfully registered");
+            notify("successfully registered")
+        })
+    }
+
+    return (
+        <Transition.Root show={state.open} as={Fragment}>
+            <Dialog
+                as="div"
+                className="relative z-10"
+                initialFocus={cancelButtonRef}
+                onClose={() => state.setOpen(state.open)}
+            >
+                <Transition.Child
+                    as={Fragment}
+                    enter="ease-out duration-300"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                >
+                    <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+                </Transition.Child>
 
                 <div className="fixed inset-0 z-10 overflow-y-auto">
                     <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
@@ -69,11 +91,32 @@ export default function SignUp(): JSX.Element {
 
                                                     </div>
                                                     <div className="w-80" >
-                                                        <h1 className="text-2xl font-semibold ">Sign In</h1>
+                                                        <h1 className="text-2xl font-semibold ">Sign Up</h1>
                                                     </div>
+                                                <div>
+                                                    {/* <div className="z-20 absolute">
+                                                        {
+                                                            loading?(
+                                                                    <>
+                                                                        <Loading />
+                                                                    </>
+                                                            ):(
+                                                                <></>
+                                                            )
+                                                        }
+                                                    </div> */}
                                                     <div className="divide-y divide-gray-200">
                                                         <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-                                                            <div className="relative ">
+                                                            <div className="relative  ">
+                                                                <input autoComplete="off" id="name" name="name" type="text" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Enter Name"
+                                                                    value={name}
+                                                                    onChange={(e) => setName(e.target.value)}
+                                                                />
+                                                                <label className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm
+                                                                    "
+                                                                >Enter Name</label>
+                                                            </div>
+                                                            <div className="relative  ">
                                                                 <input autoComplete="off" id="email" name="email" type="text" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Email address"
                                                                     value={email}
                                                                     onChange={(e) => setEmail(e.target.value)}
@@ -82,30 +125,42 @@ export default function SignUp(): JSX.Element {
                                                                     "
                                                                 >Email Address</label>
                                                             </div>
-                                                            <div className="relative top-3">
+                                                            <div className="relative ">
                                                                 <input autoComplete="off" id="password" name="password" type="password" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Password"
                                                                     value={password}
                                                                     onChange={(e) => setPassword(e.target.value)}
                                                                 />
                                                                 <label className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
                                                             </div>
+                                                            
                                                             <div className="relative top-6">
-                                                                <button className="bg-gradient-to-r from-[#ec008c] to-[#fc6767] text-white rounded-md px-2 py-1 "
-                                                                    onClick={handleSignIn}
-                                                                >Submit</button>
+                                                                <button className="bg-gradient-to-r from-[#ec008c] to-[#fc6767] text-white rounded-md px-2 py-1  "
+                                                                    onClick={handleSignUp}
+                                                                    
+                                                                >
+                                                                   {
+                                                                    loading?(
+                                                                        <>
+                                                                            <Loading />
+                                                                        </>
+                                                                    ):(
+                                                                        <>
+                                                                            Submit
+                                                                        </>
+                                                                    )
+                                                                   }
+                                                                </button>
                                                             </div>
 
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        {/* </div> */}
 
                                     </div>
-                                    <div>
-                                        {/* for svg */}
-                                    </div>
+
                                 </div>
 
                             </Dialog.Panel>
@@ -113,7 +168,7 @@ export default function SignUp(): JSX.Element {
                     </div>
                 </div>
 
-      </Dialog>
-    </Transition.Root>
-  );
+            </Dialog>
+        </Transition.Root>
+    );
 }

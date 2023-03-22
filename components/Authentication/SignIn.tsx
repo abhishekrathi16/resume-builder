@@ -1,18 +1,34 @@
 import { Fragment, useRef, useState } from "react";
 import { MdCancel } from 'react-icons/md';
 import { Dialog, Transition } from "@headlessui/react";
-import useSignInStore from "../../store/SignIn_SignOut";
+import useSignInStore, { useAuthStore } from "../../store/SignIn_SignOut";
+import useAuth from "../../FirebaseConfig/firebase_helper";
+import Loading from "../Loading_Button";
+import { toast } from 'react-toastify';
 
 
 export default function SignUp(): JSX.Element {
-    const state = useSignInStore();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    const {loading} = useAuthStore()
+    const state = useSignInStore();
+    const {signIn} = useAuth()
     const cancelButtonRef = useRef(null);
+
+    const notify = (content: string) => {
+        toast(content);
+    }
     const handleSignIn = async () => {
         console.log(email);
         console.log(password);
+
+        signIn("User" ,email, password ).then(()=>{
+            setEmail("")
+            setPassword("")
+            // console.log("succesfully logged in");
+            notify("Welcome My Friend, I wish i were a bird")
+            
+        })
     }
 
     return (
@@ -90,10 +106,23 @@ export default function SignUp(): JSX.Element {
                                                                 />
                                                                 <label className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
                                                             </div>
+                                                            
                                                             <div className="relative top-6">
                                                                 <button className="bg-gradient-to-r from-[#ec008c] to-[#fc6767] text-white rounded-md px-2 py-1 "
                                                                     onClick={handleSignIn}
-                                                                >Submit</button>
+                                                                >
+                                                                    {
+                                                                        loading ? (
+                                                                            <>
+                                                                                <Loading />
+                                                                            </>
+                                                                        ) : (
+                                                                            <>
+                                                                                Submit
+                                                                            </>
+                                                                        )
+                                                                    }
+                                                                </button>
                                                             </div>
 
                                                         </div>
