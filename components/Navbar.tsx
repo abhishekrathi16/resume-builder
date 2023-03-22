@@ -1,8 +1,11 @@
 import { Fragment, useEffect, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import useSignInStore, { useSignUpStore } from "../store/SignIn_SignOut";
+import useSignInStore, { useAuthStore, useSignUpStore } from "../store/SignIn_SignOut";
+import { UserData } from "../store/SignIn_SignOut";
+import Logo from '../assets/resume-icon.png'
+import { toast } from 'react-toastify';
+
 
 const navigation = [
   { name: "Home", href: "/", current: true },
@@ -18,10 +21,23 @@ export default function Example() {
   const state = useSignInStore();
   const state1 = useSignUpStore();
   const router = useRouter();
+  const {User , setUser} = useAuthStore(
+    (state)=>({
+      User:state.User,
+      setUser:state.setUser
+    })
+  )
+
+  const notify = (content: string) => {
+    toast(content);
+  }
 
   const handleSignOut = () => {
-    // remove data from localstorage
-    console.log("logging out");
+    // remove data from localstorage -> add this part after adding context API
+    setUser(User, false)
+    console.log("user", User)
+    notify("zaannkuuu my friend")
+    localStorage.removeItem("userInfo")
     router.push("/");
   };
 
@@ -39,12 +55,12 @@ export default function Example() {
                 <div className="p-3 ">
                   <img
                     className="block h-8 w-auto lg:hidden"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    src={ Logo.src }
                     alt="Your Company"
                   />
                   <img
                     className="hidden h-8 w-auto lg:block"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                    src={Logo.src}
                     alt="Your Company"
                   />
                 </div>
@@ -55,39 +71,62 @@ export default function Example() {
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
                 <div className="flex flex-shrink-0 items-center"></div>
                 <div className="hidden sm:ml-6 sm:block">
+                  
                   <div className="flex space-x-4">
-                    <p
-                      style={{ cursor: "pointer" }}
-                      onClick={() => state.setOpen(state.open)}
-                      key="Sign In"
-                      className="text-white hover:text-gray-200 rounded-md px-3 py-2 text-sm font-bold"
-                    >
-                      Sign In
-                    </p>
-                    <p
-                      onClick={() => state1.setOpen(state1.open)}
-                      key="Sign Up"
-                      style={{ cursor: "pointer" }}
-                      className="text-white hover:text-gray-200 rounded-md px-3 py-2 text-sm font-bold"
-                    >
-                      Sign Up
-                    </p>
+                    {
+                      User.userId.length==0?(
+                        <>
+                          <p
+                            style={{ cursor: "pointer" }}
+                            onClick={() => state.setOpen(state.open)}
+                            key="Sign In"
+                            className="text-white hover:text-gray-200 rounded-md px-3 py-2 text-sm font-bold"
+                          >
+                            Sign In
+                          </p>
+                          <p
+                            onClick={() => state1.setOpen(state1.open)}
+                            key="Sign Up"
+                            style={{ cursor: "pointer" }}
+                            className="text-white hover:text-gray-200 rounded-md px-3 py-2 text-sm font-bold"
+                          >
+                            Sign Up
+                          </p>
+                        </>
+                      ):(
+                        <>
+
+                        </>
+                      )
+                    }
+                    
                   </div>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
-                  <div>
-                    <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                      <span className="sr-only">Open user menu</span>
-                      <img
-                        className="h-8 w-8 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                        alt=""
-                      />
-                    </Menu.Button>
-                  </div>
+                  {
+                    User.userId.length > 0 ?(
+                      <>
+                        <div>
+                          <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                            <span className="sr-only">Open user menu</span>
+                            <img
+                              className="h-8 w-8 rounded-full"
+                              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                              alt=""
+                            />
+                          </Menu.Button>
+                        </div>
+                      </>
+                    ):(
+                      <>
+
+                      </>
+                    )
+                  }
+                  
                   <Transition
                     as={Fragment}
                     enter="transition ease-out duration-100"
@@ -98,13 +137,17 @@ export default function Example() {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <div>
+                        <p className=" block px-4 py-2  text-cyan-800 font-thin">{ User.name }</p>
+                        <p className=" block px-4 py-2 text-sm text-cyan-800 "> { User.email} </p>
+                      </div>
                       <Menu.Item>
                         {({ active }) => (
                           <p
                             style={{ cursor: "pointer" }}
                             className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
+                              active ? "bg-gray-200" : "",
+                              "block px-4 py-2 font-medium bg-gray-100	 text-gray-700 "
                             )}
                             onClick={handleSignOut}
                           >
