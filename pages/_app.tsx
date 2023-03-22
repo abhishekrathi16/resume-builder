@@ -3,6 +3,9 @@ import Layout from "../components/Layout";
 import SignIn from "../components/Authentication/SignIn";
 import SignUp from "../components/Authentication/SignUp";
 import Toast from "../components/Toast";
+import useSignInStore from "../store/SignIn_SignOut";
+// import type { AppProps } from "next/app";
+import "../styles/globals.css"
 
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from "react";

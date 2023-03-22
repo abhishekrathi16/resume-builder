@@ -71,7 +71,7 @@ export default function SignUp(): JSX.Element {
                                         <div className="relative py-3 sm:max-w-xl sm:mx-auto  ">
 
                                             <div
-                                                className="absolute inset-0 bg-gradient-to-r from-[#ec008c] to-[#fc6767] shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl ">
+                                                className="absolute inset-0 bg-gradient-to-r  from-[#2491f7] to-[#67c5fc] shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl ">
                                             </div>
 
                                             <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
@@ -108,7 +108,7 @@ export default function SignUp(): JSX.Element {
                                                             </div>
                                                             
                                                             <div className="relative top-6">
-                                                                <button className="bg-gradient-to-r from-[#ec008c] to-[#fc6767] text-white rounded-md px-2 py-1 "
+                                                                <button className="bg-gradient-to-r  from-[#2491f7] to-[#67c5fc] text-white rounded-md px-2 py-1 "
                                                                     onClick={handleSignIn}
                                                                 >
                                                                     {
