@@ -5,7 +5,7 @@ import useSignInStore, { useAuthStore } from "../../store/SignIn_SignOut";
 import useAuth from "../../FirebaseConfig/firebase_helper";
 import Loading from "../Loading_Button";
 import { toast } from 'react-toastify';
-
+import { useRouter } from "next/router";
 
 export default function SignUp(): JSX.Element {
     const [email, setEmail] = useState("");
@@ -14,7 +14,7 @@ export default function SignUp(): JSX.Element {
     const state = useSignInStore();
     const {signIn} = useAuth()
     const cancelButtonRef = useRef(null);
-
+    const router = useRouter()
     const notify = (content: string) => {
         toast(content);
     }
@@ -26,6 +26,7 @@ export default function SignUp(): JSX.Element {
             setEmail("")
             setPassword("")
             // console.log("succesfully logged in");
+            router.push('/templates')
             notify("Welcome My Friend, I wish i were a bird")
             
         })
