@@ -4,6 +4,27 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
+
 * {
   font-family: "Poppins", sans-serif;
+}
+
+button.rec-dot{
+  background-color: rgb(255, 255, 255);
+  /* box-shadow: 0 0 1px 3px rgba(235, 16, 16, 0.5); */
+}
+
+button.rec-dot:hover, button.rec-dot:active, button.rec-dot:focus  {
+  box-shadow: 0 0 1px 3px rgba(247, 172, 172, 0.5);
+}
+
+.rec.rec-arrow{
+  background-color: rgb(255, 255, 255);
+  border: none;
+  box-shadow: none;
+  color: #ec008c;
+}
+
+.rec.rec-arrow:hover,.rec.rec-arrow:active,.rec.rec-arrow:focus{
+  background-color: rgb(236, 232, 232);
 }

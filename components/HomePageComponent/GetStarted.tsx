@@ -3,8 +3,8 @@ import HomePageImage from "../../assets/homepg_img.jpg";
 
 const GetStarted = (): JSX.Element => {
   return (
-    <div className=" text-center flex justify-center items-center   ">
-      <div className="header flex flex-row justify-center items-center mt-10">
+    <div className=" text-center flex justify-center items-center h-[auto] ">
+      <div className="header flex flex-row justify-center items-center mt-[5rem]">
         <div className="quote w-[40vw] p-20">
           <div
             className="larger-quote"
@@ -20,7 +20,7 @@ const GetStarted = (): JSX.Element => {
             Set yourself apart with a modern resume. Expert tips, customizable
             templates & quick PDF download included.
           </div>
-          <div className="button w-[16vw] h-[4vw] bg-gradient-to-r from-[#ec008c] to-[#fc6767] rounded-full flex flex-col justify-center items-center mt-10">
+          <div className="button w-[16vw] h-[4vw] bg-gradient-to-r from-[#ec008c] to-[#fc6767] hover:cursor-pointer rounded-full flex flex-col justify-center items-center mt-10">
             <a
               href="#"
               style={{
