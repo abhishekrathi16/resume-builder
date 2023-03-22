@@ -4,7 +4,7 @@ import GithubLogo from "../assets/github-mark-white.png";
 
 const Footer = (): JSX.Element => {
   return (
-    <div className=" bg-black text-white text-center flex flex-col items-center justify-center ">
+    <div className=" bg-[#003f7d] text-white text-center flex flex-col items-center justify-center relative ">
       <h2 style={{ fontWeight: "normal" }}  className="pt-3">
         This site has been created by
         <span style={{ color: "red", fontWeight: "bold" }}>
