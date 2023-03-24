@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "./guide/Grid";
-import Icon from "../../assets/icons/cloud-download-svgrepo-com (1).svg"
+import Icon from "../../assets/icons/cloud-download-svgrepo-com (1).svg";
 import Image from "next/image";
 
 const GuideToMakeBetterResume = (): JSX.Element => {
@@ -18,13 +18,11 @@ const GuideToMakeBetterResume = (): JSX.Element => {
       >
         Tool to make a better resume
       </div>
-        <div className="smaller-quote text-left text-lg text-white mt-2">
+      <div className="smaller-quote text-left text-lg text-white mt-2">
         Easier to use and more flexible with better functionalities
       </div>
-      <Grid/>
+      <Grid />
       {/* <Image src={Icon} alt="icon" /> */}
-      
-
     </div>
   );
 };

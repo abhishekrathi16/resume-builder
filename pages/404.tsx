@@ -1,5 +1,5 @@
-import React from 'react'
-import Image_404 from '../assets/3747371.jpg'
+import React from "react";
+import Image_404 from "../assets/3747371.jpg";
 
 const Custom404 = () => {
   return (
@@ -37,15 +37,11 @@ const Custom404 = () => {
           </div>
         </div>
         <div className="image">
-          <img
-            src={Image_404.src}
-            alt="pic"
-            className="w-[40vw] h-[50vh]"
-          />
+          <img src={Image_404.src} alt="pic" className="w-[40vw] h-[50vh]" />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Custom404
+export default Custom404;
