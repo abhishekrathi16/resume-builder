@@ -29,9 +29,6 @@ export default function SignUp(): JSX.Element {
             setEmail("")
             setPassword("")  
             setName("")
-            let uid:string = User.userId
-            
-            // console.log("successfully registered");
             notify("successfully registered")
         })
     }

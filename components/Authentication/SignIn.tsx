@@ -25,13 +25,12 @@ export default function SignUp(): JSX.Element {
         signIn("User" ,email, password ).then(()=>{
             setEmail("")
             setPassword("")
-            // console.log("succesfully logged in");
             router.push('/templates')
             notify("Welcome My Friend, I wish i were a bird")
             
         })
     }
-
+    
     return (
         <Transition.Root show={state.open} as={Fragment}>
             <Dialog

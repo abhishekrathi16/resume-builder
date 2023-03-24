@@ -17,7 +17,7 @@ const MyApp = ({ Component, pageProps }: any): JSX.Element => {
       setUser:state.setUser
     })
   )
-  //  hydrate global storage after refresh
+  //  hydrate global storage after refresh  
   useEffect(()=>{
     let value = localStorage.getItem("userInfo")
     if(typeof value==='string'){
@@ -25,9 +25,7 @@ const MyApp = ({ Component, pageProps }: any): JSX.Element => {
       setUser(userInfo, true)
       console.log(userInfo)
     }
-    
-    
-  },[])
+  },[setUser])
 
   return (
     

@@ -6,6 +6,9 @@ import {
 } from "firebase/auth";
 import { useRouter } from 'next/router';
 import useSignInStore, { useAuthStore, UserData, useSignUpStore } from '../store/SignIn_SignOut';
+import { db } from '../FirebaseConfig/FirebaseConfig';
+import { doc, setDoc } from 'firebase/firestore';
+import demoDetails from "../assets/details.json"
 
 const useAuth = ()=>{
     const router = useRouter()
@@ -43,7 +46,6 @@ const useAuth = ()=>{
                     userId: res.user.uid
                 }  , true)
                 console.log("User",User);
-                
                 setLoading()
                 setOpen(open)
             }
@@ -54,12 +56,17 @@ const useAuth = ()=>{
 
         })
 
+        console.log('after');
+        const ref = doc(db, "resumedata", User.userId)  // getting refrence of collection  
+        demoDetails.name=User.name
+        await setDoc(ref, demoDetails).then(()=>{
+            console.log('added document ');
+        })
     }
 
     const signIn = async(name:string,email:string, password:string)=>{
         setLoading()
         await signInWithEmailAndPassword(auth, email, password).then((res)=>{
-            // console.log( res.user )
             setUser({
                 name: name,
                 email: res.user.email,
