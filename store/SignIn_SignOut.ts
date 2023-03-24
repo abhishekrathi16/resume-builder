@@ -26,37 +26,41 @@ const signUpstore = (set: any): SignIn_SignUpState => ({
   },
 });
 
-
 export interface UserData {
   name: string;
   email: string | null;
   userId: string;
-} 
+}
 
 interface AuthState {
   loading: boolean;
   User: UserData;
-  setUser: (user: UserData, isLoging:boolean) => void;
+  setUser: (user: UserData, isLoging: boolean) => void;
   setLoading: () => void;
 }
 
-const useAuthStore = create <AuthState> (set=>({
-    loading:false,
-    User:  {name:"", email:"", userId:""} as UserData,
-    setUser : (user:UserData, isLoging:boolean)=>set(state=>({
+const useAuthStore = create<AuthState>((set) => ({
+  loading: false,
+  User: { name: "", email: "", userId: "" } as UserData,
+  setUser: (user: UserData, isLoging: boolean) =>
+    set((state) => ({
       ...state,
-      User:{ name:isLoging?state.User.name = user.name : state.User.name="",
-                      email:isLoging?state.User.email = user.email : state.User.email="",
-                      userId:isLoging?state.User.userId=user.userId:state.User.userId=""
-             }
+      User: {
+        name: isLoging ? (state.User.name = user.name) : (state.User.name = ""),
+        email: isLoging
+          ? (state.User.email = user.email)
+          : (state.User.email = ""),
+        userId: isLoging
+          ? (state.User.userId = user.userId)
+          : (state.User.userId = ""),
+      },
     })),
-    setLoading:()=>set(state=>({
+  setLoading: () =>
+    set((state) => ({
       ...state,
-      loading:!state.loading
-    }))
-  
-}))
-
+      loading: !state.loading,
+    })),
+}));
 
 const useSignInStore = create(signInstore);
 

@@ -26,12 +26,22 @@ const Footer = (): JSX.Element => {
         <div className="flex flex-row items-center p-3">
           <img src={GithubLogo.src} alt="" className="h-[20px] w-[20px] mr-2" />
 
-          <a href="https://github.com/abhishekrathi16" style={{ textDecoration: "none" }}>Abhishek Rathi</a>
+          <a
+            href="https://github.com/abhishekrathi16"
+            style={{ textDecoration: "none" }}
+          >
+            Abhishek Rathi
+          </a>
         </div>
         <div className="flex flex-row items-center">
-
           <img src={GithubLogo.src} alt="" className="h-[20px] w-[20px] mr-2" />
-          <a href="https://github.com/Rahul917-Kumar" style={{ textDecoration: "none" }}> Rahul Kumar </a>
+          <a
+            href="https://github.com/Rahul917-Kumar"
+            style={{ textDecoration: "none" }}
+          >
+            {" "}
+            Rahul Kumar{" "}
+          </a>
         </div>
       </div>
     </div>
