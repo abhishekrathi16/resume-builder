@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@date-io/dayjs': ^2.16.0
   '@dnd-kit/core': ^6.0.8
   '@dnd-kit/modifiers': ^6.0.1
   '@dnd-kit/sortable': ^7.0.2
@@ -41,6 +42,7 @@ specifiers:
   zustand: ^4.3.6
 
 dependencies:
+  '@date-io/dayjs': 2.16.0_dayjs@1.11.7
   '@dnd-kit/core': 6.0.8_biqbaboplfbrettd7655fr4n2y
   '@dnd-kit/modifiers': 6.0.1_52scne4zmdeyjh2otzkgz2xfvu
   '@dnd-kit/sortable': 7.0.2_52scne4zmdeyjh2otzkgz2xfvu
@@ -210,6 +212,22 @@ packages:
       '@babel/helper-string-parser': 7.19.4
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
+    dev: false
+
+  /@date-io/core/2.16.0:
+    resolution: {integrity: sha512-DYmSzkr+jToahwWrsiRA2/pzMEtz9Bq1euJwoOuYwuwIYXnZFtHajY2E6a1VNVDc9jP8YUXK1BvnZH9mmT19Zg==}
+    dev: false
+
+  /@date-io/dayjs/2.16.0_dayjs@1.11.7:
+    resolution: {integrity: sha512-y5qKyX2j/HG3zMvIxTobYZRGnd1FUW2olZLS0vTj7bEkBQkjd2RO7/FEwDY03Z1geVGlXKnzIATEVBVaGzV4Iw==}
+    peerDependencies:
+      dayjs: ^1.8.17
+    peerDependenciesMeta:
+      dayjs:
+        optional: true
+    dependencies:
+      '@date-io/core': 2.16.0
+      dayjs: 1.11.7
     dev: false
 
   /@dnd-kit/accessibility/3.0.1_react@18.2.0:
