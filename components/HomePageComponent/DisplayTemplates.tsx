@@ -20,7 +20,7 @@ const DisplayTemplates = (): JSX.Element => {
       <div className="smaller-quote text-left text-lg text-gray-500 mt-2">
         Choose a template of your choice and customize it easily!
       </div>
-      <CarouselSlider/>
+      <CarouselSlider />
       <div className="button w-[10vw] h-[3vw] bg-gradient-to-r from-[#2491f7] to-[#67c5fc] hover:cursor-pointer rounded-full flex flex-col justify-center items-center mt-10">
         <a
           href="#"

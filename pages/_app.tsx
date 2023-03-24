@@ -5,9 +5,9 @@ import SignUp from "../components/Authentication/SignUp";
 import Toast from "../components/Toast";
 import useSignInStore from "../store/SignIn_SignOut";
 // import type { AppProps } from "next/app";
-import "../styles/globals.css"
+import "../styles/globals.css";
 
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
 import { useAuthStore } from "../store/SignIn_SignOut";
 import { UserData } from "../store/SignIn_SignOut";
@@ -28,15 +28,12 @@ const MyApp = ({ Component, pageProps }: any): JSX.Element => {
   },[setUser])
 
   return (
-    
     <Layout>
       <Toast /> {/*  For showing notification in toast  */}
       <SignIn />
-      <SignUp />  
+      <SignUp />
       <Component {...pageProps} />
     </Layout>
   );
 };
 export default MyApp;
-
-

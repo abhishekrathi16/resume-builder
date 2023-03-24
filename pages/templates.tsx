@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Templates = () => {
-  return (
-    <div>Templates</div>
-  )
-}
+  return <div>Templates</div>;
+};
 
-export default Templates
+export default Templates;

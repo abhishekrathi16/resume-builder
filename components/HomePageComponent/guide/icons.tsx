@@ -18,17 +18,29 @@ interface Id {
 const switchIcons = (id: number): JSX.Element => {
   switch (id) {
     case 1:
-      return <Image src={Icon1} alt="icon1" className="h-[3rem] w-[3rem] mb-3"/>;
+      return (
+        <Image src={Icon1} alt="icon1" className="h-[3rem] w-[3rem] mb-3" />
+      );
     case 2:
-      return <Image src={Icon2} alt="icon2" className="h-[3rem] w-[3rem] mb-3"/>;
+      return (
+        <Image src={Icon2} alt="icon2" className="h-[3rem] w-[3rem] mb-3" />
+      );
     case 3:
-      return <Image src={Icon3} alt="icon3" className="h-[3rem] w-[3rem] mb-3"/>;
+      return (
+        <Image src={Icon3} alt="icon3" className="h-[3rem] w-[3rem] mb-3" />
+      );
     case 4:
-      return <Image src={Icon4} alt="icon4" className="h-[3rem] w-[3rem] mb-3"/>;
+      return (
+        <Image src={Icon4} alt="icon4" className="h-[3rem] w-[3rem] mb-3" />
+      );
     case 5:
-      return <Image src={Icon5} alt="icon5" className="h-[3rem] w-[3rem] mb-3"/>;
+      return (
+        <Image src={Icon5} alt="icon5" className="h-[3rem] w-[3rem] mb-3" />
+      );
     case 6:
-      return <Image src={Icon6} alt="icon6" className="h-[3rem] w-[3rem] mb-3"/>;
+      return (
+        <Image src={Icon6} alt="icon6" className="h-[3rem] w-[3rem] mb-3" />
+      );
     default:
       return <></>;
   }
