@@ -1,4 +1,5 @@
 {
+  "name":"name",
   "basics": {
     "name": "Jane Doe",
     "label": "Frontend Developer",

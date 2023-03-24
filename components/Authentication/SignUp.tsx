@@ -13,27 +13,25 @@ export default function SignUp(): JSX.Element {
   const [password, setPassword] = useState("");
   const { createUser } = useAuth();
   const cancelButtonRef = useRef(null);
+
   const { loading, User } = useAuthStore((state) => ({
     loading: state.loading,
     User: state.User,
   }));
+
   //  for notification of toastify
   const notify = (content: string) => {
     toast(content);
   };
 
   const handleSignUp = async () => {
-    createUser(name, email, password).then(() => {
-      setEmail("");
-      setPassword("");
-      setName("");
-      let uid: string = User.userId;
-
-      // console.log("successfully registered");
-      notify("successfully registered");
-    });
-  };
-
+      createUser(name , email, password).then(()=>{
+          setEmail("")
+          setPassword("")  
+          setName("")
+          notify("successfully registered")
+      })
+  }
   return (
     <Transition.Root show={state.open} as={Fragment}>
       <Dialog
@@ -92,17 +90,6 @@ export default function SignUp(): JSX.Element {
                             <h1 className="text-2xl font-semibold ">Sign Up</h1>
                           </div>
                           <div>
-                            {/* <div className="z-20 absolute">
-                                                        {
-                                                            loading?(
-                                                                    <>
-                                                                        <Loading />
-                                                                    </>
-                                                            ):(
-                                                                <></>
-                                                            )
-                                                        }
-                                                    </div> */}
                             <div className="divide-y divide-gray-200">
                               <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
                                 <div className="relative  ">
