@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const BasicLayout = () => {
-  return (
-    <div>BasicLayout</div>
-  )
-}
+  return <div>BasicLayout</div>;
+};
 
-export default BasicLayout
+export default BasicLayout;

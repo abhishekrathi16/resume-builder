@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const ActivitiesLayout = () => {
-  return (
-    <div>ActivitiesLayout</div>
-  )
-}
+  return <div>ActivitiesLayout</div>;
+};
 
-export default ActivitiesLayout
+export default ActivitiesLayout;

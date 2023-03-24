@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const EducationLayout = () => {
-  return (
-    <div>EducationLayout</div>
-  )
-}
+  return <div>EducationLayout</div>;
+};
 
-export default EducationLayout
+export default EducationLayout;

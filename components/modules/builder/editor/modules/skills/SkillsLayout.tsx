@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const SkillsLayout = () => {
-  return (
-    <div>SkillsLayout</div>
-  )
-}
+  return <div>SkillsLayout</div>;
+};
 
-export default SkillsLayout
+export default SkillsLayout;

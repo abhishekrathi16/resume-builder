@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const ModernTemplate = () => {
-  return (
-    <div>ModernTemplate</div>
-  )
-}
+  return <div>ModernTemplate</div>;
+};
 
-export default ModernTemplate
+export default ModernTemplate;

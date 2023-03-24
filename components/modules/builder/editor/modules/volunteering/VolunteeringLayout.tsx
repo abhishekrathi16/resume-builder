@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const VolunteeringLayout = () => {
-  return (
-    <div>Volunteering</div>
-  )
-}
+  return <div>Volunteering</div>;
+};
 
-export default VolunteeringLayout
+export default VolunteeringLayout;

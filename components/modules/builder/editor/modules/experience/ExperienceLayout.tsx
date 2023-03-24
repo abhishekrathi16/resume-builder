@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const ExperienceLayout = () => {
-  return (
-    <div>ExperienceLayout</div>
-  )
-}
+  return <div>ExperienceLayout</div>;
+};
 
-export default ExperienceLayout
+export default ExperienceLayout;
