@@ -32,4 +32,3 @@ export const useThemes = create<IThemeStore>((set: any) => ({
     set(() => ({ selectedTheme: theme }));
   },
 }));
-

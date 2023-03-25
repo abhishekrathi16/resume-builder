@@ -1,7 +1,11 @@
 import React from "react";
 
 const Templates = () => {
-  return <div>Templates</div>;
+  return (
+    <div>
+      
+    </div>
+  );
 };
 
 export default Templates;

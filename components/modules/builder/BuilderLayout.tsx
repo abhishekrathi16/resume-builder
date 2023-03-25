@@ -3,8 +3,7 @@ import EditorLayout from "./editor/EditorLayout";
 
 const BuilderLayout = () => {
   return (
-    <div className="flex flex-row justify-center items-center">
-      <div>Hello World</div>
+    <div className="grid grid-rows-1 grid-cols-2 gap-4">
       <EditorLayout />
       <ResumeLayout />
     </div>
