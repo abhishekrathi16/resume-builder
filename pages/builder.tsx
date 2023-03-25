@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import BuilderLayout from "../components/modules/builder/BuilderLayout";
 
 const builder = () => {
   return (
-    <div>builder</div>
-  )
-}
+    <div>
+      <BuilderLayout />
+    </div>
+  );
+};
 
-export default builder
+export default builder;

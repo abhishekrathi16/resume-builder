@@ -25,13 +25,13 @@ export default function SignUp(): JSX.Element {
   };
 
   const handleSignUp = async () => {
-      createUser(name , email, password).then(()=>{
-          setEmail("")
-          setPassword("")  
-          setName("")
-          notify("successfully registered")
-      })
-  }
+    createUser(name, email, password).then(() => {
+      setEmail("");
+      setPassword("");
+      setName("");
+      notify("successfully registered");
+    });
+  };
   return (
     <Transition.Root show={state.open} as={Fragment}>
       <Dialog

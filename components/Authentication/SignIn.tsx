@@ -22,33 +22,32 @@ export default function SignUp(): JSX.Element {
     console.log(email);
     console.log(password);
 
-        signIn("User" ,email, password ).then(()=>{
-            setEmail("")
-            setPassword("")
-            router.push('/templates')
-            notify("Welcome My Friend, I wish i were a bird")
-            
-        })
-    }
-    
-    return (
+    signIn("User", email, password).then(() => {
+      setEmail("");
+      setPassword("");
+      router.push("/templates");
+      notify("Welcome My Friend, I wish i were a bird");
+    });
+  };
+
+  return (
     <Transition.Root show={state.open} as={Fragment}>
-        <Dialog
-            as="div"
-            className="relative z-10"
-            initialFocus={cancelButtonRef}
-            onClose={() => state.setOpen(state.open)}
-        >
+      <Dialog
+        as="div"
+        className="relative z-10"
+        initialFocus={cancelButtonRef}
+        onClose={() => state.setOpen(state.open)}
+      >
         <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
         >
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
         </Transition.Child>
         <div className="fixed inset-0 z-10 overflow-y-auto">
           <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
