@@ -55,6 +55,7 @@ const useAuth = () => {
     console.log('after');
     const ref = doc(db, "resumedata", User.userId)  // getting refrence of collection  
     demoDetails.name = User.name
+    
     await setDoc(ref, demoDetails).then(() => {
       console.log('added document ');
     })
