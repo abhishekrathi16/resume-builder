@@ -12,20 +12,18 @@ import { useEffect } from "react";
 import { useAuthStore } from "../store/SignIn_SignOut";
 import { UserData } from "../store/SignIn_SignOut";
 const MyApp = ({ Component, pageProps }: any): JSX.Element => {
-  const {setUser} = useAuthStore(
-    (state)=>({
-      setUser:state.setUser
-    })
-  )
-  //  hydrate global storage after refresh  
-  useEffect(()=>{
-    let value = localStorage.getItem("userInfo")
-    if(typeof value==='string'){
-      let userInfo:UserData = JSON.parse(value)
-      setUser(userInfo, true)
-      console.log(userInfo)
+  const { setUser } = useAuthStore((state) => ({
+    setUser: state.setUser,
+  }));
+  //  hydrate global storage after refresh
+  useEffect(() => {
+    let value = localStorage.getItem("userInfo");
+    if (typeof value === "string") {
+      let userInfo: UserData = JSON.parse(value);
+      setUser(userInfo, true);
+      console.log(userInfo);
     }
-  },[setUser])
+  }, [setUser]);
 
   return (
     <Layout>

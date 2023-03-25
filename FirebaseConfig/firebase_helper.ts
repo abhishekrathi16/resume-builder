@@ -4,11 +4,15 @@ import {
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { useRouter } from 'next/router';
-import useSignInStore, { useAuthStore, UserData, useSignUpStore } from '../store/SignIn_SignOut';
-import { db } from '../FirebaseConfig/FirebaseConfig';
-import { doc, setDoc } from 'firebase/firestore';
-import demoDetails from "../helpers/constants/resume-data.json"
+import { useRouter } from "next/router";
+import useSignInStore, {
+  useAuthStore,
+  UserData,
+  useSignUpStore,
+} from "../store/SignIn_SignOut";
+import { db } from "../FirebaseConfig/FirebaseConfig";
+import { doc, setDoc } from "firebase/firestore";
+import demoDetails from "../helpers/constants/resume-data.json";
 
 const useAuth = () => {
   const router = useRouter();
@@ -29,37 +33,40 @@ const useAuth = () => {
   }));
 
   const createUser = async (name: string, email: string, password: string) => {
-    setLoading()
-    await createUserWithEmailAndPassword(auth, email, password).then((res) => {
-      if (res.user.email === null) {
-        throw "error:email cannot be null"
-      } else {
-        setUser({
-          name: name,
-          email: res.user.email,
-          userId: res.user.uid
-        }, true)
-        console.log("User", User);
-        localStorage.setItem("userInfo", JSON.stringify(User))
-        setLoading()
-        setOpen(open)
-      }
+    setLoading();
+    await createUserWithEmailAndPassword(auth, email, password)
+      .then((res) => {
+        if (res.user.email === null) {
+          throw "error:email cannot be null";
+        } else {
+          setUser(
+            {
+              name: name,
+              email: res.user.email,
+              userId: res.user.uid,
+            },
+            true
+          );
+          console.log("User", User);
+          localStorage.setItem("userInfo", JSON.stringify(User));
+          setLoading();
+          setOpen(open);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading();
 
-    }).catch((err) => {
-      console.log(err);
-      setLoading()
-
-      setLoading();
-      setOpen(open);
-    })
-    console.log('after');
-    const ref = doc(db, "resumedata", User.userId)  // getting refrence of collection  
-    demoDetails.name = User.name
+        setLoading();
+        setOpen(open);
+      });
+    console.log("after");
+    const ref = doc(db, "resumedata", User.userId); // getting refrence of collection
+    demoDetails.name = User.name;
     await setDoc(ref, demoDetails).then(() => {
-      console.log('added document ');
-    })
-
-  }
+      console.log("added document ");
+    });
+  };
 
   const signIn = async (name: string, email: string, password: string) => {
     setLoading();
@@ -85,17 +92,17 @@ const useAuth = () => {
       });
   };
 
-const logout = async () => {
-  signOut(auth)
-    .then(() => {
-      router.push("/");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
+  const logout = async () => {
+    signOut(auth)
+      .then(() => {
+        router.push("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return { createUser, logout, signIn };
-}
+};
 
-  export default useAuth;
+export default useAuth;
