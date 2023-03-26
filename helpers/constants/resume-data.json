@@ -6,53 +6,34 @@
     "image": "https://randomuser.me/api/portraits/men/18.jpg",
     "email": "janedoe@email.com",
     "phone": "+91 9876543210",
-    "url": "www.e-resume.vercel.app",
-    "summary": "I am a web developer having expertise in frontend development and exposure to back- end development. I design and develop web applications using the latest technologies to deliver the product with quality code.",
-    "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "Bengaluru",
-      "countryCode": "",
-      "region": ""
-    },
-    "relExp": "4 years",
-    "totalExp": "6 Years",
-    "objective": "Eager to expand my skill set through external trainings to help boost all major front desk KPIs. Hoping to leverage organizational skills to help ABC Corp introduce time-saving schemes for all executives.",
     "profiles": [
       {
-        "network": "linkedin",
-        "username": "sadanandpai",
-        "url": "https://www.linkedin.com/in/sadanandpai/"
+        "profile_name": "linkedin",
+        "profile_url": "https://www.linkedin.com/in/sadanandpai/"
       },
       {
-        "network": "twitter",
-        "username": "sadanandpai",
-        "url": "https://www.twitter.com/sadanandpai/"
+        "profile_name": "twitter",
+        "profile_url": "https://www.twitter.com/sadanandpai/"
       },
       {
-        "network": "github",
-        "username": "sadanandpai",
-        "url": "https://github.com/sadanandpai/"
+        "profile_name": "github",
+        "profile_url": "https://github.com/sadanandpai/"
       },
       {
-        "network": "hackerrank",
-        "username": "paicube",
-        "url": "https://www.hackerrank.com/paicube/"
+        "profile_name": "hackerrank",
+        "profile_url": "https://www.hackerrank.com/paicube/"
       },
       {
-        "network": "hackerearth",
-        "username": "sadanandpai",
-        "url": "https://www.hackerearth.com/sadanandpai/"
+        "profile_name": "hackerearth",
+        "profile_url": "https://www.hackerearth.com/sadanandpai/"
       },
       {
-        "network": "codechef",
-        "username": "sadanandpai",
-        "url": "https://www.codechef.com/sadanandpai/"
+        "profile_name": "codechef",
+        "profile_url": "https://www.codechef.com/sadanandpai/"
       },
       {
-        "network": "leetcode",
-        "username": "paicube",
-        "url": "https://leetcode.com/paicube/"
+        "profile_name": "leetcode",
+        "profile_url": "https://leetcode.com/paicube/"
       }
     ]
   },
