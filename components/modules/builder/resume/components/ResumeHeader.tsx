@@ -4,11 +4,11 @@ import { ResumeTitle } from "../atoms/ResumeTitle";
 const ResumeHeader = () => {
   const templateName = useTemplates((state) => state.activeTemplate.name);
 
-  return(
+  return (
     <div className="flex items-center justify-center">
-        <ResumeTitle title={templateName}/>
+      <ResumeTitle title={templateName} />
     </div>
-  )
+  );
 };
 
 export default ResumeHeader;

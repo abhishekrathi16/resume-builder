@@ -31,3 +31,7 @@ button.rec-dot:focus {
 .rec.rec-arrow:focus {
   background-color: rgb(236, 232, 232);
 }
+
+::-webkit-scrollbar{
+  display: none;
+}

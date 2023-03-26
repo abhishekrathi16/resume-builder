@@ -6,7 +6,8 @@ import useSignInStore, {
   useSignUpStore,
 } from "../store/SignIn_SignOut";
 import { UserData } from "../store/SignIn_SignOut";
-import Logo from "../assets/resume-icon.png";
+// import Logo from "../assets/resume-icon.png";
+import Logo from '../assets/logos/Logo-3.jpeg'
 import { toast } from "react-toastify";
 
 const navigation = [
@@ -65,7 +66,7 @@ export default function Example() {
                   />
                 </div>
                 <div className="p-3">
-                  <p className="text-white font-bold">Resume Builder</p>
+                  <p className="text-white font-bold">Resumize</p>
                 </div>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">

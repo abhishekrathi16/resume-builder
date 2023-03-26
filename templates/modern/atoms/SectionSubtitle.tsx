@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 const SubTitle = styled.p`
-color: black;
+  color: black;
 `;
 //   color: ${(props) => props.theme.titleColor};  -> error: property titleColor doesnt exist on theme
 
