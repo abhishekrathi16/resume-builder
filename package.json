@@ -29,6 +29,7 @@
     "framer-motion": "^10.8.5",
     "html-parser": "^0.11.0",
     "html-react-parser": "^3.0.14",
+    "immer": "^9.0.21",
     "jodit": "^3.24.7",
     "mini-css-extract-plugin": "^2.7.5",
     "next": "13.2.4",

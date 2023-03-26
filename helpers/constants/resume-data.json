@@ -78,7 +78,7 @@
 
   "work": [
     {
-      "id": "1",
+      "id": "0",
       "name": "Company 1",
       "position": "Senior Software Developer",
       "url": "",
@@ -92,7 +92,7 @@
       "years": ""
     },
     {
-      "id": "2",
+      "id": "1",
       "name": "Company 2",
       "position": "Software Developer",
       "url": "",
@@ -123,28 +123,13 @@
 
   "education": [
     {
-      "id": "1",
+      "id": 0,
       "institution": "MIT, University",
-      "url": "https://www.mit.edu/",
-      "studyType": "MS",
-      "area": "Cloud technology",
+      "degree": "MS",
+      "course": "Cloud technology",
       "startDate": "2014",
-      "isStudyingHere": false,
       "endDate": "2016",
-      "score": "68%",
-      "courses": []
-    },
-    {
-      "id": "2",
-      "institution": "NMAMIT, Nitte",
-      "url": "https://www.mit.edu/",
-      "studyType": "B.Tech (VTU)",
-      "area": "Computer Science",
-      "startDate": "2010",
-      "isStudyingHere": false,
-      "endDate": "2014",
-      "score": "8.3 CGPA",
-      "courses": []
+      "score": "68%"
     }
   ],
 

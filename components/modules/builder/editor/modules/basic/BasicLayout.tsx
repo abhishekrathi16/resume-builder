@@ -11,7 +11,7 @@ const BasicLayout = () => {
     let arrayValue = newValue['profiles']
     if(key=="name" || key=='email' || key=='phone' || key=='image' || key=='label' )
       newValue[key] =value
-    if(key=='github'|| key=='linkedin' || key =="leetcode" ){
+    if(key=='github'|| key=='linkedin' || key =="leetcode" || key=="codeforces" || key=="codechef"){
       arrayValue = [...arrayValue.map(item => {
         if (item.profile_name == key) {
           return {
