@@ -55,19 +55,14 @@ export default function Example() {
               <div className="flex  `justify-center` items-center ml-0  ">
                 <div className="p-3 ">
                   <img
-                    className="block h-8 w-auto lg:hidden"
-                    src={Logo.src}
-                    alt="Your Company"
-                  />
-                  <img
-                    className="hidden h-10 w-auto lg:block"
+                    className="hidden h-10 w-auto rounded-xl lg:block"
                     src={Logo.src}
                     alt="Your Company"
                   />
                 </div>
-                <div className="p-3">
+                {/* <div className="p-3">
                   <p className="text-white font-bold">Resumize</p>
-                </div>
+                </div> */}
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
                 <div className="flex flex-shrink-0 items-center"></div>
