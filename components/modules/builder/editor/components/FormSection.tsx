@@ -48,7 +48,7 @@ interface Id {
 
 const FormSection = (props: Id) => {
   return (
-    <div className='bg-white mt-[40px] p-10 rounded-xl shadow-xl'>
+    <div className='bg-white mt-[40px] max-h-[700px] p-10 pb-[50px] overflow-x-scroll rounded-xl shadow-xl'>
         {switchLayouts(props.id)}
     </div>
   )
