@@ -38,7 +38,7 @@ button.rec-dot:focus {
 
 .grid_layout{
   display: grid;
-  grid-template-columns: 0.5fr 2fr 4fr 0.5fr ;
+  grid-template-columns: 0fr 1fr 5fr 0fr ;
   gap: 1rem;
 }
 
