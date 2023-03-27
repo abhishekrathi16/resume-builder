@@ -75,7 +75,7 @@ export const TemplateSlider = () => {
                   onChangeTemplate={onChangeTemplate}
                 />
               );
-            })}"../../../../../../../assets/templates/modern.png"
+            })}
           </ul>
         </div>
       </section>

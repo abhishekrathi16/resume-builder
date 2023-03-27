@@ -17,7 +17,7 @@ const DownloadButton = () => {
       className="flex flex-row items-center justify-between bg-gradient-to-r from-[#2491f7] to-[#67c5fc] cursor-pointer p-2 rounded-3xl px-8"
       onClick={globalThis?.print}
     >
-      <div className="text-white pr-5 font-extrabold">Download</div>
+      <div className="text-white pr-[20px] font-extrabold">Download</div>
       <div>
         <Image src={Download} alt="db" className="h-[30px] w-[30px]" />
       </div>

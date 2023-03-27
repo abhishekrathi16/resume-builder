@@ -10,7 +10,7 @@ const TOTAL_TEMPLATES_AVAILABLE = Object.keys(AVAILABLE_TEMPLATES).length;
 
 const Header = () => {
   return (
-    <div className="bg-white p-5 px-8 rounded-xl shadow-xl flex flex-row justify-between items-center">
+    <div className="bg-white p-[20px] px-[32px] rounded-xl shadow-xl flex flex-row justify-between items-center">
       <div className="title font-extrabold text-2xl">Resume 1</div>
       <NavBarMenu>
         <NavMenuItem
