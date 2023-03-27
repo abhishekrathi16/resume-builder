@@ -60,7 +60,7 @@ export default function Example() {
                     alt="Your Company"
                   />
                   <img
-                    className="hidden h-8 w-auto lg:block"
+                    className="hidden h-10 w-auto lg:block"
                     src={Logo.src}
                     alt="Your Company"
                   />
