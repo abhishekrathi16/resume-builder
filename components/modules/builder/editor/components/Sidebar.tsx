@@ -5,7 +5,7 @@ import items from "./sidebar/items";
 
 const Sidebar = (props: any) => {
   return (
-    <div className="m-[80px] bg-white w-[120px] p-[20px] mt-[42px] mx-[50px] rounded-xl shadow-xl overflow-x-auto">
+    <div className="m-[80px] bg-white w-[120px] p-[20px] mt-[42px] mx-[25px] rounded-xl shadow-xl overflow-x-auto">
       <div className="buttons">
         {items.map((item) => {
           return (
