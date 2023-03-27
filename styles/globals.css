@@ -35,3 +35,16 @@ button.rec-dot:focus {
 ::-webkit-scrollbar{
   display: none;
 }
+
+.grid_layout{
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 4fr 0.5fr ;
+  gap: 1rem;
+}
+
+.grid_layout_item1{
+  grid-column: 2/3;
+}
+.grid_layout_item2{
+  grid-column: 3/4;
+}
