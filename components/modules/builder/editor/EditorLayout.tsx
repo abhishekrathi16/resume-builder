@@ -14,7 +14,7 @@ const EditorLayout = () => {
       <div className="">
         <Sidebar onChange={handleChange} id={clickedId}/>
       </div>
-      <div className="mt-[2rem]">
+      <div className="mt-[32px]">
         <Header />
         <FormSection id={clickedId}/>
       </div>
