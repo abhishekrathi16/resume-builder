@@ -17,7 +17,7 @@ const items = [
   },
   {
     id: 5,
-    title: "Volunteering",
+    title: "Projects",
   },
   {
     id: 6,

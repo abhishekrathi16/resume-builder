@@ -9,7 +9,7 @@ interface Props {
 }
 const Button = (props: Props) => {
   return (
-    <span className='flex flex-col justify-center items-center p-7 py-5 mt-5 hover:cursor-pointer rounded-xl'>
+    <span className='flex flex-col justify-center items-center p-[28px] py-[20px] mt-[20px] hover:cursor-pointer rounded-xl'>
       <span>
         <Buttons id={props.id}/>
       </span>
