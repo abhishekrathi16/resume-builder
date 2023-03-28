@@ -25,8 +25,7 @@ export default function SignUp(): JSX.Element {
     signIn("User", email, password).then(() => {
       setEmail("");
       setPassword("");
-      router.push("/templates");
-      notify("Welcome My Friend, I wish i were a bird");
+      
     });
   };
 

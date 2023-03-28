@@ -3,7 +3,7 @@ import EducationLayout from "../../components/modules/builder/editor/modules/edu
 import SkillsLayout from "../../components/modules/builder/editor/modules/skills/SkillsLayout";
 import ExperienceLayout from "../../components/modules/builder/editor/modules/experience/ExperienceLayout";
 import ActivitiesLayout from "../../components/modules/builder/editor/modules/activities/ActivitiesLayout";
-import VolunteeringLayout from "../../components/modules/builder/editor/modules/volunteering/VolunteeringLayout";
+import VolunteeringLayout from "../../components/modules/builder/editor/modules/projects/ProjectsLayout";
 import AwardsLayout from "../../components/modules/builder/editor/modules/awards/AwardsLayout";
 
 export const headers: {

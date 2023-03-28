@@ -2,7 +2,7 @@ import { Fragment, ReactNode, useMemo } from "react";
 import { IExperienceItem } from "../../../store/experience.interface";
 import { IEducationItem } from "../../../store/education.interface";
 import { IAwardItem } from "../../../store/awards.interface";
-import { IVolunteeringItem } from "../../../store/volunteering.interface";
+import { IVolunteeringItem } from "../../../store/projects.interface";
 import { ISkillItem } from "../../../store/skill.interface";
 
 export const SectionValidator = ({
