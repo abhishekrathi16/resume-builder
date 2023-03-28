@@ -1,11 +1,11 @@
 export interface ProjectsItem {
-  id:number;
-  project_name:string;
-  url:string;
-  startDate:string;
-  endDate:string;
-  summary:string;
-  in_progress:boolean;
+  id: number;
+  project_name: string;
+  url: string;
+  startDate: string;
+  endDate: string;
+  summary: string;
+  in_progress: boolean;
 }
 
 export interface ProjectsItemState {
@@ -13,8 +13,5 @@ export interface ProjectsItemState {
   setProjects: (newProjects: ProjectsItem[]) => void;
   onmoveup: (index: number) => void;
   onmovedown: (index: number) => void;
-  updateProjects: (
-    index: number,
-    updatedInfo: ProjectsItem
-  ) => void;
+  updateProjects: (index: number, updatedInfo: ProjectsItem) => void;
 }

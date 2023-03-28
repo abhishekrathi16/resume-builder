@@ -25,7 +25,6 @@ export default function SignUp(): JSX.Element {
     signIn("User", email, password).then(() => {
       setEmail("");
       setPassword("");
-      
     });
   };
 

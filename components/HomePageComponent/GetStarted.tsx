@@ -23,7 +23,7 @@ const GetStarted = (): JSX.Element => {
           {/* bg-gradient-to-r from-[#ec008c] to-[#fc6767] */}
           <div className="button w-[16vw] h-[4vw] bg-gradient-to-r from-[#2491f7] to-[#67c5fc] hover:cursor-pointer rounded-full flex flex-col justify-center items-center mt-10">
             <a
-              href="#"
+              href="/builder"
               style={{
                 textDecoration: "none",
                 color: "white",

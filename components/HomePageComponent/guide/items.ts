@@ -1,5 +1,3 @@
-import { FaUnlockAlt } from "react-icons/fa";
-
 const items = [
   {
     id: 1,

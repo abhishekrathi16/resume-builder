@@ -39,44 +39,44 @@
   },
 
   "skills": {
-    "languages":[
+    "languages": [
       {
-        "id":0,
-        "name":"C++"
+        "id": 0,
+        "name": "C++"
       },
       {
         "id": 1,
-        "name":"Python"
+        "name": "Python"
       }
     ],
-    "frameworks":[
+    "frameworks": [
       {
         "id": 0,
-        "name":"ReactJS"
+        "name": "ReactJS"
       },
       {
         "id": 1,
-        "name":"Django"
+        "name": "Django"
       }
     ],
-    "databases":[
+    "databases": [
       {
         "id": 0,
-        "name":"Firebase"
+        "name": "Firebase"
       },
       {
         "id": 1,
         "name": "MongoDB"
       }
     ],
-    "tools":[
+    "tools": [
       {
         "id": 0,
-        "name":"Git"
+        "name": "Git"
       },
       {
         "id": 1,
-        "name":"Heroku"
+        "name": "Heroku"
       }
     ]
   },
@@ -108,16 +108,15 @@
 
   "projects": [
     {
-      "id":0,
-      "project_name":"Kanban",
-      "url":"",
-      "startDate":"1-1-2023",
-      "endDate":"7-1-2023",
-      "summary":"",
-      "in_progress":false
+      "id": 0,
+      "project_name": "Kanban",
+      "url": "",
+      "startDate": "1-1-2023",
+      "endDate": "7-1-2023",
+      "summary": "",
+      "in_progress": false
     }
   ],
-
 
   "awards": [
     {
