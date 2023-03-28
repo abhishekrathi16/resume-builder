@@ -21,21 +21,21 @@ const items = [
     title: "Resume 3",
     image: Resume3,
   },
-  // {
-  //     id: 4,
-  //     title: 'Resume 4',
-  //     image: Resume4
-  // },
-  // {
-  //     id: 5,
-  //     title: 'Resume 5',
-  //     image: Resume5
-  // },
-  // {
-  //     id: 6,
-  //     title: 'Resume 6',
-  //     image: Resume6
-  // },
+  {
+      id: 4,
+      title: 'Resume 4',
+      image: Resume4
+  },
+  {
+      id: 5,
+      title: 'Resume 5',
+      image: Resume5
+  },
+  {
+      id: 6,
+      title: 'Resume 6',
+      image: Resume6
+  },
 ];
 
 export default items;

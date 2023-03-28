@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+/* // Default theme */
+/* @import '@splidejs/react-splide/css'; */
+
+/* import '@splidejs/react-splide/css/skyblue'; */
+/* import '@splidejs/react-splide/css/sea-green'; */
+
+/* import '@splidejs/react-splide/css/core'; */
 
 * {
   font-family: "Poppins", sans-serif;
