@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+/* // Default theme */
+/* @import '@splidejs/react-splide/css'; */
+
+/* import '@splidejs/react-splide/css/skyblue'; */
+/* import '@splidejs/react-splide/css/sea-green'; */
+
+/* import '@splidejs/react-splide/css/core'; */
 
 * {
   font-family: "Poppins", sans-serif;
@@ -30,4 +37,35 @@ button.rec-dot:focus {
 .rec.rec-arrow:active,
 .rec.rec-arrow:focus {
   background-color: rgb(236, 232, 232);
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#2491f7,#67c5fc);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#2491f7,#67c5fc); 
+}
+.grid_layout{
+  display: grid;
+  grid-template-columns: 0fr 1fr 5fr 0fr ;
+  gap: 1rem;
+}
+
+.grid_layout_item1{
+  grid-column: 2/3;
+}
+.grid_layout_item2{
+  grid-column: 3/4;
 }

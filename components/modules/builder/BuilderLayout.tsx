@@ -3,7 +3,7 @@ import EditorLayout from "./editor/EditorLayout";
 
 const BuilderLayout = () => {
   return (
-    <div className="grid grid-rows-1 grid-cols-2 gap-4">
+    <div className="grid grid-rows-1 grid-cols-2 gap-[16px]">
       <EditorLayout />
       <ResumeLayout />
     </div>
