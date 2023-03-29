@@ -10,12 +10,12 @@ export const SectionValidator = ({
   children,
 }: {
   value:
-  | string
-  | IExperienceItem[]
-  | IEducationItem[]
-  | IAwardItem[]
-  | ProjectsItem[]
-  | ISkillItem[];
+    | string
+    | IExperienceItem[]
+    | IEducationItem[]
+    | IAwardItem[]
+    | ProjectsItem[]
+    | ISkillItem[];
   children: ReactNode;
 }) => {
   const isValid = useMemo(() => {

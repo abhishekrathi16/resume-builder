@@ -6,7 +6,7 @@ import Education from "../../../../../../assets/buttons/education-books-book-stu
 import Skills from "../../../../../../assets/buttons/skills-svgrepo-com.svg";
 import Experience from "../../../../../../assets/buttons/bag-business-finance-svgrepo-com (1).svg";
 import Awards from "../../../../../../assets/buttons/awards-svgrepo-com.svg";
-import Projects from '../../../../../../assets/buttons/task-management-svgrepo-com.svg'
+import Projects from "../../../../../../assets/buttons/task-management-svgrepo-com.svg";
 import Image from "next/image";
 
 import React from "react";
@@ -28,7 +28,7 @@ const switchIcons = (id: number): JSX.Element => {
     case 5:
       return <Image src={Projects} alt="icon6" />;
     case 6:
-      return <Image src={Awards} alt="icon7"/>;
+      return <Image src={Awards} alt="icon7" />;
     default:
       return <></>;
   }
