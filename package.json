@@ -27,6 +27,7 @@
     "dayjs": "^1.11.7",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
+    "export-from-json": "^1.7.2",
     "firebase": "^9.18.0",
     "framer-motion": "^10.8.5",
     "html-parser": "^0.11.0",
