@@ -5,12 +5,6 @@ import { TemplateSelect } from "./header/templates/TemplateSelect";
 import { NavMenuItem } from "./header/templates/MenuItem";
 import { NavBarMenu } from "./header/templates/NavbarMenu";
 import { AVAILABLE_TEMPLATES } from "../../../../../helpers/constants";
-// import BasicDetailStore from '../../../../../store/basic_store'
-// import { AwardDetailStore } from '../../../../../store/awards_store'
-// import { EducationDetailStore } from '../../../../../store/education_store'
-// import { ExperienceDetailStore } from '../../../../../store/experience_store'
-// import { ProjectsDetailStore } from '../../../../../store/projects_store'
-// import { SkillDetailStore } from '../../../../../store/skill_store'
 
 const TOTAL_TEMPLATES_AVAILABLE = Object.keys(AVAILABLE_TEMPLATES).length;
 

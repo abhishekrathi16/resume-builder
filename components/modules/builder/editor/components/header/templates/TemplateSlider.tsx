@@ -60,6 +60,12 @@ export const TemplateSlider = () => {
             cursor: "not-allowed",
           },
         }}
+        // import BasicDetailStore from '../../../../../store/basic_store'
+        // import { AwardDetailStore } from '../../../../../store/awards_store'
+        // import { EducationDetailStore } from '../../../../../store/education_store'
+        // import { ExperienceDetailStore } from '../../../../../store/experience_store'
+        // import { ProjectsDetailStore } from '../../../../../store/projects_store'
+        // import { SkillDetailStore } from '../../../../../store/skill_store'
       />
       <section
         className="splide mt-[26px] mb-[32px] px-[40px]"
