@@ -1,17 +1,14 @@
 export interface IAwardItem {
+  id: number;
   title: string;
-  awarder: string;
-  date: string | null;
+  organisation: string;
+  date: string;
   summary: string;
-  id: string;
 }
 
-export interface IAwardsStore {
+export interface IAwardsState {
   awards: IAwardItem[];
-  add: (newEducation: IAwardItem) => void;
-  get: (index: number) => void;
-  remove: (index: number) => void;
-  reset: (values: IAwardItem[]) => void;
+  setAwards: (newAwards: IAwardItem[]) => void;
   onmoveup: (index: number) => void;
   onmovedown: (index: number) => void;
   updateAward: (index: number, updatedInfo: IAwardItem) => void;

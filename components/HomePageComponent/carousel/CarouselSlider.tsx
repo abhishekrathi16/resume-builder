@@ -40,12 +40,12 @@ const CarouselSlider = (): JSX.Element => {
           <div className="flex gap-10 justify-center">
             {items.map((item) => {
               return (
-                  <TemplateCard
-                    key={item.id}
-                    id={item.id}
-                    img={item.image}
-                    title={item.title}
-                  ></TemplateCard>
+                <TemplateCard
+                  key={item.id}
+                  id={item.id}
+                  img={item.image}
+                  title={item.title}
+                ></TemplateCard>
               );
             })}
           </div>

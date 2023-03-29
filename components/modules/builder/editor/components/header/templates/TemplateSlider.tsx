@@ -1,15 +1,15 @@
 // eslint-disable-next-line import/no-unresolved
-import '@splidejs/splide/css';
+import "@splidejs/splide/css";
 
-import Splide, { Splide as SplideCore } from '@splidejs/splide';
-import { useEffect, useRef } from 'react';
+import Splide, { Splide as SplideCore } from "@splidejs/splide";
+import { useEffect, useRef } from "react";
 
-import { AVAILABLE_TEMPLATES } from '../../../../../../../helpers/constants/index';
-import { Global } from '@emotion/react';
-import Image from 'next/image';
-import { useTemplates } from '../../../../../../../store/useTemplate';
-import Tick from '../../../../../../../assets/icons/tick-circle-svgrepo-com.svg'
- 
+import { AVAILABLE_TEMPLATES } from "../../../../../../../helpers/constants/index";
+import { Global } from "@emotion/react";
+import Image from "next/image";
+import { useTemplates } from "../../../../../../../store/useTemplate";
+import Tick from "../../../../../../../assets/icons/tick-circle-svgrepo-com.svg";
+
 export const TemplateSlider = () => {
   const templateIndex = useTemplates((state) => state.activeTemplate.id);
 
@@ -22,8 +22,8 @@ export const TemplateSlider = () => {
       splideInstanceRef.current = new SplideCore(targetElement, {
         perPage: 2,
         pagination: false,
-        gap: '0px',
-        width: '100%',
+        gap: "0px",
+        width: "100%",
         autoHeight: true,
         perMove: 1,
       });
@@ -44,24 +44,27 @@ export const TemplateSlider = () => {
     <div>
       <Global
         styles={{
-          '.splide__arrow svg': {
-            fill: '#000000',
+          ".splide__arrow svg": {
+            fill: "#000000",
           },
-          '.splide__arrow--prev': {
-            backgroundColor: 'transparent',
+          ".splide__arrow--prev": {
+            backgroundColor: "transparent",
           },
-          '.splide__arrow--next': {
-            backgroundColor: 'transparent',
+          ".splide__arrow--next": {
+            backgroundColor: "transparent",
           },
-          '.splide__arrow--prev:disabled': {
-            cursor: 'not-allowed',
+          ".splide__arrow--prev:disabled": {
+            cursor: "not-allowed",
           },
-          '.splide__arrow--next:disabled': {
-            cursor: 'not-allowed',
+          ".splide__arrow--next:disabled": {
+            cursor: "not-allowed",
           },
         }}
       />
-      <section className="splide mt-[26px] mb-[32px] px-[40px]" ref={targetElementRef}>
+      <section
+        className="splide mt-[26px] mb-[32px] px-[40px]"
+        ref={targetElementRef}
+      >
         <div className="splide__track">
           <ul className="splide__list">
             {Object.keys(AVAILABLE_TEMPLATES).map((templateKey) => {
@@ -100,13 +103,13 @@ export const TemplateSlide = ({
     <li className="splide__slide flex justify-center">
       <div
         className={`h-[255px] w-[180px] rounded border hover:cursor-pointer overflow-hidden relative ${
-          isActive ? 'border-resume-800' : 'border-resume-200'
+          isActive ? "border-resume-800" : "border-resume-200"
         }`}
         onClick={() => {
           onChangeTemplate(id);
         }}
       >
-        <Image src={thumbnail} alt={name} layout="fill"  />
+        <Image src={thumbnail} alt={name} layout="fill" />
         {isActive && (
           <div className="absolute top-1 right-1 bg-white rounded-full">
             <Image src={Tick} alt="logo" width="24" height="24" />

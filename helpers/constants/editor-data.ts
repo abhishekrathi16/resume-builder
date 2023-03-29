@@ -2,8 +2,7 @@ import BasicLayout from "../../components/modules/builder/editor/modules/basic/B
 import EducationLayout from "../../components/modules/builder/editor/modules/education/EducationLayout";
 import SkillsLayout from "../../components/modules/builder/editor/modules/skills/SkillsLayout";
 import ExperienceLayout from "../../components/modules/builder/editor/modules/experience/ExperienceLayout";
-import ActivitiesLayout from "../../components/modules/builder/editor/modules/activities/ActivitiesLayout";
-import VolunteeringLayout from "../../components/modules/builder/editor/modules/volunteering/VolunteeringLayout";
+import ProjectsLayout from "../../components/modules/builder/editor/modules/projects/ProjectsLayout";
 import AwardsLayout from "../../components/modules/builder/editor/modules/awards/AwardsLayout";
 
 export const headers: {
@@ -16,7 +15,6 @@ export const headers: {
   },
   education: { title: "Education", component: EducationLayout },
   experience: { title: "Experience", component: ExperienceLayout },
-  activities: { title: "Activities", component: ActivitiesLayout },
-  volunteering: { title: "Volunteering", component: VolunteeringLayout },
+  projects: { title: "Projects", component: ProjectsLayout },
   awards: { title: "Awards", component: AwardsLayout },
 };

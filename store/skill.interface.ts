@@ -1,17 +1,15 @@
 export interface ISkillItem {
+  id: number;
   name: string;
-  level: number;
 }
 
 export interface ISkillState {
-  title: string;
-  hasLevel: boolean;
-  values: ISkillItem[];
-  isEnabled: boolean;
-
-  add: ({ name, level }: { name: string; level: number }) => void;
-  remove: (index: number) => void;
-  get: () => void;
-  reset: (name: ISkillItem[]) => void;
-  setIsEnabled: (enabled: boolean) => void;
+  languages: ISkillItem[];
+  frameworks: ISkillItem[];
+  databases: ISkillItem[];
+  tools: ISkillItem[];
+  setLanguages: (newLanguage: ISkillItem[]) => void;
+  setFrameworks: (newFramework: ISkillItem[]) => void;
+  setDatabases: (newDatabase: ISkillItem[]) => void;
+  setTools: (newTool: ISkillItem[]) => void;
 }

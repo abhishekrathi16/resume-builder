@@ -13,8 +13,12 @@ import useSignInStore, {
 import { db } from "../FirebaseConfig/FirebaseConfig";
 import { doc, setDoc } from "firebase/firestore";
 import demoDetails from "../helpers/constants/resume-data.json";
+import { toast } from "react-toastify";
 
 const useAuth = () => {
+  const notify = (content: string) => {
+    toast(content);
+  };
   const router = useRouter();
   const { User, setUser, loading, setLoading } = useAuthStore((state) => ({
     User: state.User,
@@ -57,6 +61,8 @@ const useAuth = () => {
         console.log(err);
         setLoading();
         setOpen(open);
+        notify("Wrong Credential");
+        return;
       });
     console.log("after");
     const ref = doc(db, "resumedata", User.userId); // getting refrence of collection
@@ -84,10 +90,14 @@ const useAuth = () => {
         localStorage.setItem("userInfo", JSON.stringify(User)); // adding user info to localstorage
         setLoading();
         setOpenSignIn(openSignIn);
+        notify("Welcome My Friend, I wish i were a bird");
+        router.push("/builder");
       })
       .catch((err) => {
         console.log(err);
         setLoading();
+        setOpenSignIn(openSignIn);
+        notify("Wrong Credential ");
       });
   };
 

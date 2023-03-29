@@ -8,15 +8,15 @@ const EditorLayout = () => {
   const [clickedId, setClickedId] = useState(1);
   const handleChange = (event: any, id: number) => {
     setClickedId(id);
-  }
+  };
   return (
     <div className=" bg-[#f3f4f6] grid_layout">
       <div className="grid_layout_item1">
-        <Sidebar onChange={handleChange} id={clickedId}/>
+        <Sidebar onChange={handleChange} id={clickedId} />
       </div>
       <div className="mt-[32px] grid_layout_item2">
         <Header />
-        <FormSection id={clickedId}/>
+        <FormSection id={clickedId} />
       </div>
     </div>
   );

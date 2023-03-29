@@ -5,9 +5,7 @@ import Basics from "../../../../../../assets/buttons/profile-circle-svgrepo-com.
 import Education from "../../../../../../assets/buttons/education-books-book-study-learning-library-svgrepo-com.svg";
 import Skills from "../../../../../../assets/buttons/skills-svgrepo-com.svg";
 import Experience from "../../../../../../assets/buttons/bag-business-finance-svgrepo-com (1).svg";
-import Volunteering from "../../../../../../assets/buttons/service-svgrepo-com.svg";
 import Awards from "../../../../../../assets/buttons/awards-svgrepo-com.svg";
-import Activity from "../../../../../../assets/buttons/activity-svgrepo-com.svg"
 import Image from "next/image";
 
 import React from "react";
@@ -19,33 +17,15 @@ interface Id {
 const switchIcons = (id: number): JSX.Element => {
   switch (id) {
     case 1:
-      return (
-        <Image src={Basics} alt="icon1"/>
-      );
+      return <Image src={Basics} alt="icon1" />;
     case 2:
-      return (
-        <Image src={Education} alt="icon2"/>
-      );
+      return <Image src={Education} alt="icon2" />;
     case 3:
-      return (
-        <Image src={Skills} alt="icon3"/>
-      );
+      return <Image src={Skills} alt="icon3" />;
     case 4:
-      return (
-        <Image src={Experience} alt="icon4"/>
-      );
+      return <Image src={Experience} alt="icon4" />;
     case 5:
-      return (
-        <Image src={Volunteering} alt="icon5"/>
-      );
-    case 6:
-      return (
-        <Image src={Awards} alt="icon6"/>
-      );
-    case 7:
-        return(
-            <Image src={Activity} alt="icon7" />
-        )
+      return <Image src={Awards} alt="icon6" />;
     default:
       return <></>;
   }

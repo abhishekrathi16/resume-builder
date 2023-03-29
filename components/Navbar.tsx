@@ -7,7 +7,7 @@ import useSignInStore, {
 } from "../store/SignIn_SignOut";
 import { UserData } from "../store/SignIn_SignOut";
 // import Logo from "../assets/resume-icon.png";
-import Logo from '../assets/logos/Logo-3.jpeg'
+import Logo from "../assets/logos/Logo-3.jpeg";
 import { toast } from "react-toastify";
 
 const navigation = [

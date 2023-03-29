@@ -2,7 +2,7 @@ import { Fragment, ReactNode, useMemo } from "react";
 import { IExperienceItem } from "../../../store/experience.interface";
 import { IEducationItem } from "../../../store/education.interface";
 import { IAwardItem } from "../../../store/awards.interface";
-import { IVolunteeringItem } from "../../../store/volunteering.interface";
+import { ProjectsItem } from "../../../store/projects.interface";
 import { ISkillItem } from "../../../store/skill.interface";
 
 export const SectionValidator = ({
@@ -10,12 +10,12 @@ export const SectionValidator = ({
   children,
 }: {
   value:
-    | string
-    | IExperienceItem[]
-    | IEducationItem[]
-    | IAwardItem[]
-    | IVolunteeringItem[]
-    | ISkillItem[];
+  | string
+  | IExperienceItem[]
+  | IEducationItem[]
+  | IAwardItem[]
+  | ProjectsItem[]
+  | ISkillItem[];
   children: ReactNode;
 }) => {
   const isValid = useMemo(() => {

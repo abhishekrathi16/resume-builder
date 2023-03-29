@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 import items from "./items";
 
 interface Props {
@@ -8,7 +8,6 @@ interface Props {
   img: StaticImageData;
 }
 const TemplateCard = ({ id, title, img }: Props): JSX.Element => {
-
   return (
     <SplideSlide key={id}>
       <img
