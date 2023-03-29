@@ -20,6 +20,7 @@ specifiers:
   eslint: 8.36.0
   eslint-config-next: 13.2.4
   eslint-config-prettier: ^8.7.0
+  export-from-json: ^1.7.2
   firebase: ^9.18.0
   framer-motion: ^10.8.5
   html-parser: ^0.11.0
@@ -62,6 +63,7 @@ dependencies:
   dayjs: 1.11.7
   eslint: 8.36.0
   eslint-config-next: 13.2.4_vgl77cfdswitgr47lm5swmv43m
+  export-from-json: 1.7.2
   firebase: 9.18.0
   framer-motion: 10.9.2_biqbaboplfbrettd7655fr4n2y
   html-parser: 0.11.0
@@ -2623,6 +2625,10 @@ packages:
   /events/3.3.0:
     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
     engines: {node: '>=0.8.x'}
+    dev: false
+
+  /export-from-json/1.7.2:
+    resolution: {integrity: sha512-AvjenglU3qqiXWnNz69KvTbZ6m1XhBiauSvyR+0KayPHCiWWhR0dQmaHJCHLWcFHPXeZ3/2PlgPKtGLLMApYmg==}
     dev: false
 
   /fast-deep-equal/3.1.3:

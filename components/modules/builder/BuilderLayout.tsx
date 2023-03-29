@@ -5,7 +5,9 @@ const BuilderLayout = () => {
   return (
     <div className="grid grid-rows-1 grid-cols-2 gap-[16px]">
       <EditorLayout />
-      <ResumeLayout />
+      <div className="overflow-auto no-scrollbar">
+        <ResumeLayout />
+      </div>
     </div>
   );
 };
