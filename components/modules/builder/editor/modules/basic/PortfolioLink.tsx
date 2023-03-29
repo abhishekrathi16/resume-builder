@@ -14,7 +14,7 @@ const PortfolioLink = (props: Props) => {
         {props.values.profiles.map((profile) => {
           return (
             <>
-              <div className="mt-[12px] mb-[12px]">
+                <div className="mt-[20px] mb-[20px]">
                 <TextField
                   id="outlined-basic"
                   fullWidth
