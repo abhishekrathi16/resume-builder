@@ -21,11 +21,11 @@ const ResumeLayout = () => {
   }, []);
 
   return (
-    <div className="mx-5 print:mx-0 mb-2 print:mb-0">
+    <div className="mx-5 print:mx-0 mb-2 print:mb-0 bg-[#f3f4f6]">
       <div
-        className="origin-top transition-all duration-300 ease-linear	print:!scale-100"
+        className="origin-top transition-all duration-300 ease-linear	print:!scale-100 bg-[#f3f4f6]"
       >
-        <div className="w-[210mm] h-[296mm] bg-white my-0 mx-auto">
+        <div className="w-[210mm] h-[250mm] bg-white my-0 mx-auto">
           <StateContext.Provider value={resumeData}>
               {Template && <Template />}
           </StateContext.Provider>
