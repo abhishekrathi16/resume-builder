@@ -12,7 +12,7 @@ const PersonalDetail = (props: Props) => {
     <div>
       <div>
         {/*  for name input */}
-        <div className="mt-[12px] mb-[12px]">
+        <div className="mt-[20px] mb-[20px]">
           <TextField
             id="outlined-basic"
             fullWidth
@@ -24,7 +24,7 @@ const PersonalDetail = (props: Props) => {
         </div>
 
         {/* for email input */}
-        <div className="mt-[12px] mb-[12px]">
+        <div className="mt-[20px] mb-[20px]">
           <TextField
             id="outlined-basic"
             fullWidth
@@ -36,7 +36,7 @@ const PersonalDetail = (props: Props) => {
         </div>
 
         {/* for phone number input   */}
-        <div className="mt-[12px] mb-[12px]">
+        <div className="mt-[20px] mb-[20px]">
           <TextField
             id="outlined-basic"
             fullWidth
