@@ -1,7 +1,11 @@
 import React from "react";
 import HomePageImage from "../../assets/homepg_img.jpg";
-
+import { Router, useRouter } from "next/router";
 const GetStarted = (): JSX.Element => {
+  const router = useRouter();
+  const routeTobuilder = () => {
+    router.push("/builder");
+  };
   return (
     <div className=" text-center flex justify-center items-center h-[auto] ">
       <div className="header flex flex-row justify-center items-center mt-[5rem]">
@@ -21,9 +25,11 @@ const GetStarted = (): JSX.Element => {
             templates & quick PDF download included.
           </div>
           {/* bg-gradient-to-r from-[#ec008c] to-[#fc6767] */}
-          <div className="button w-[16vw] h-[4vw] bg-gradient-to-r from-[#2491f7] to-[#67c5fc] hover:cursor-pointer rounded-full flex flex-col justify-center items-center mt-10">
-            <a
-              href="/builder"
+          <div
+            className="button w-[16vw] h-[4vw] bg-gradient-to-r from-[#2491f7] to-[#67c5fc] hover:cursor-pointer rounded-full flex flex-col justify-center items-center mt-10"
+            onClick={routeTobuilder}
+          >
+            <p
               style={{
                 textDecoration: "none",
                 color: "white",
@@ -34,7 +40,7 @@ const GetStarted = (): JSX.Element => {
               }}
             >
               Get Started
-            </a>
+            </p>
           </div>
         </div>
         <div className="image">

@@ -3,7 +3,7 @@ import resumeData from "../../../../../../helpers/constants/resume-data.json";
 import { ISkillItem } from "../../../../../../store/skill.interface";
 import { SkillDetailStore } from "../../../../../../store/skill_store";
 
-const SkillsLayout = ():JSX.Element => {
+const SkillsLayout = (): JSX.Element => {
   const [lang, setLang] = useState("");
   const [frame, setFrame] = useState("");
   const [datab, setDatab] = useState("");
