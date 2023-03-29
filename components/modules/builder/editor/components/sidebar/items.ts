@@ -23,10 +23,6 @@ const items = [
     id: 6,
     title: "Awards",
   },
-  {
-    id: 7,
-    title: "Activity",
-  },
 ];
 
 export default items;
