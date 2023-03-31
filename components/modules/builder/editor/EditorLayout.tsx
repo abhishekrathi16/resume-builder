@@ -10,7 +10,7 @@ const EditorLayout = () => {
     setClickedId(id);
   };
   return (
-    <div className=" bg-[#f3f4f6] grid_layout">
+    <div className=" bg-[#f3f4f6] grid_layout print:hidden">
       <div className="grid_layout_item1">
         <Sidebar onChange={handleChange} id={clickedId} />
       </div>
