@@ -1,99 +1,93 @@
 import dayjs from "dayjs";
-export interface ILocation {
-  address: string;
-  postalCode: string;
-  city: string;
-  countryCode: string;
-  region: string;
-}
 
-export interface IProfile {
-  network: string;
-  username: string;
-  url: string;
-}
+export type IProfiles = {
+  profile_name: string;
+  profile_url: string;
+};
 
-export interface IBasics {
+export interface IBasicDetailsItem {
   name: string;
   label: string;
   image: string;
   email: string;
   phone: string;
-  url: string;
-  summary: string;
-  objective: string;
-  location: ILocation;
-  relExp: string;
-  totalExp: string;
-  profiles: IProfile[];
+  profiles: IProfiles[];
 }
 
-export interface IItem {
+// export interface IItem {
+//   name: string;
+//   level: number;
+// }
+
+// export interface ISkillsIntrf {
+//   languages: IItem[];
+//   frameworks: IItem[];
+//   technologies: IItem[];
+//   libraries: IItem[];
+//   databases: IItem[];
+//   tools: IItem[];
+//   practices: IItem[];
+// }
+
+export interface ISkillItem {
+  id: number;
   name: string;
-  level: number;
 }
 
-export interface ISkillsIntrf {
-  languages: IItem[];
-  frameworks: IItem[];
-  technologies: IItem[];
-  libraries: IItem[];
-  databases: IItem[];
-  tools: IItem[];
-  practices: IItem[];
+export interface ISkillState {
+  languages: ISkillItem[];
+  frameworks: ISkillItem[];
+  databases: ISkillItem[];
+  tools: ISkillItem[];
+  setLanguages: (newLanguage: ISkillItem[]) => void;
+  setFrameworks: (newFramework: ISkillItem[]) => void;
+  setDatabases: (newDatabase: ISkillItem[]) => void;
+  setTools: (newTool: ISkillItem[]) => void;
 }
 
-export interface IWorkIntrf {
-  id: string;
-  name: string;
+
+export interface IExperienceItem {
+  id: number;
+  company_name: string;
   position: string;
   url: string;
-  startDate: dayjs.Dayjs;
-  endDate: dayjs.Dayjs;
+  startDate: string;
+  endDate: string;
   summary: string;
-  years: string;
-  highlights: string[];
   isWorkingHere: boolean;
-  website: string;
 }
 
 export interface IEducation {
-  id: string;
   institution: string;
-  url: string;
-  studyType: string;
-  area: string;
-  startDate: dayjs.Dayjs;
-  isStudyingHere: boolean;
-  endDate: dayjs.Dayjs;
-  score: string;
-  courses: string[];
-  website: string;
-}
-
-export interface IVolunteer {
-  id: string;
-  organization: string;
-  position: string;
-  url: string;
+  degree: string;
+  course: string;
   startDate: string | null;
   endDate: string | null;
+  score: string;
+  id: number;
+}
+
+export interface ProjectsItem {
+  id: number;
+  project_name: string;
+  url: string;
+  startDate: string;
+  endDate: string;
   summary: string;
-  highlights: string[];
-  isVolunteeringNow: boolean;
+  in_progress: boolean;
 }
 
 export interface IAwards {
-  id: string;
+  id: number;
   title: string;
-  awarder: string;
-  date: dayjs.Dayjs;
+  organisation: string;
+  date: string;
   summary: string;
 }
 
 export interface IResume {
-  basics: IBasics;
-  skills: ISkillsIntrf;
-  work: IWorkIntrf[];
+  basics: IBasicDetailsItem;
+  skills: ISkillState;
+  experience: IExperienceItem[];
   education: IEducation[];
 }
