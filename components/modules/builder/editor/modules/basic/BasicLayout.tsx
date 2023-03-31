@@ -76,7 +76,10 @@ const BasicLayout = () => {
       key == "linkedin" ||
       key == "leetcode" ||
       key == "codeforces" ||
-      key == "codechef"
+      key == "codechef"||
+      key == "twitter"||
+      key == "hackerrank"||
+      key == "hackerearth"
     ) {
       arrayValue = [
         ...arrayValue.map((item) => {
