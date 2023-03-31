@@ -6,8 +6,12 @@ import { SectionHeading } from "../atoms/SectionHeading";
 import { SectionList } from "../atoms/SectionList";
 import { SectionSubtitle } from "../atoms/SectionSubtitle";
 import { SectionTitle } from "../atoms/SectionTitle";
+import { ExperienceDetailStore } from '../../../store/experience_store';
 
-const Experience = ({ experience }: { experience: IExperienceItem[] }) => {
+const Experience = () => {
+  const { experience } = ExperienceDetailStore((state)=>({
+    experience: state.experiences
+  }))
   return (
     <div className="mb-3">
       <SectionHeading title="Experience" />

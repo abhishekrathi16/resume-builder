@@ -5,8 +5,13 @@ import { SectionSubtitle } from "../atoms/SectionSubtitle";
 import { ProfileContact } from "../atoms/ProfileContact";
 import { ProfileImage } from "../../../helpers/common/components/ProfileImage";
 import ProfileLink from "../atoms/ProfileLink";
+import BasicDetailStore from '../../../store/basic_store'
 
-const Basics = ({ basics }: { basics: IBasicDetailsItem }) => {
+const Basics = () => {
+  const { basics, changeValue } = BasicDetailStore((state) => ({
+    basics: state.values,
+    changeValue: state.changeValue,
+  }));
   return (
     <div className="flex justify-between items-center p-2">
       <div>
@@ -19,7 +24,7 @@ const Basics = ({ basics }: { basics: IBasicDetailsItem }) => {
         <div className="flex flex-row justify-between">
           {basics.profiles.map((item: IProfiles, id: number) => {
             return (
-              <div>
+              <div key={id}>
                 <ProfileLink props={item} />
               </div>
             );

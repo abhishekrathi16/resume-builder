@@ -1,6 +1,7 @@
 import React from "react";
 import { ISkillItem } from "../../../store/index.interface";
 import { SectionHeading } from "../atoms/SectionHeading";
+import { SkillDetailStore } from '../../../store/skill_store'
 
 const Skills = ({ title, list }: { title: string; list: ISkillItem[] }) => {
   return (

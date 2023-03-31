@@ -1,4 +1,4 @@
-import React, { Context, createContext, useEffect, useRef } from "react";
+import React, { Context, createContext, useEffect } from "react";
 import { useTemplates } from "../../../../store/useTemplate";
 import { useResumeStore } from "../../../../store/useResumeStore";
 import { AVAILABLE_TEMPLATES } from "../../../../helpers/constants";
@@ -6,11 +6,12 @@ import { AVAILABLE_TEMPLATES } from "../../../../helpers/constants";
 export let StateContext: Context<any> = createContext(null);
 
 const ResumeLayout = React.forwardRef<HTMLInputElement>((props, ref) => {
-  // const componentRef = useRef();
   const resumeData = useResumeStore();
-  const templateId = useTemplates((state) => state.activeTemplate.id);
-  const Template = AVAILABLE_TEMPLATES[templateId].component;
   StateContext = createContext(resumeData);
+  const templateId = useTemplates((state) => state.activeTemplate.id);
+  const Template = AVAILABLE_TEMPLATES[templateId].component;  
+  // console.log(resumeData);
+  
 
   useEffect(() => {
     const selectedTemplateId =

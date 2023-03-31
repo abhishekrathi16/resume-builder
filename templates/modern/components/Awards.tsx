@@ -5,13 +5,12 @@ import { SectionList } from "../atoms/SectionList";
 import { SectionSubtitle } from "../atoms/SectionSubtitle";
 import { SectionTitle } from "../atoms/SectionTitle";
 import { dateParser } from "../../../helpers/utils";
+import { AwardDetailStore } from "../../../store/awards_store";
 
-const AwardsSection = ({
-  awardsRecieved,
-}: {
-  awardsRecieved: IAwards[];
-  // awardsRecieved: any
-}) => {
+const AwardsSection = () => {
+  const { awardsRecieved } = AwardDetailStore((state) => ({
+    awardsRecieved: state.awards,
+  }));
   return (
     <div className="mb-2">
       <SectionHeading title="Awards" />
@@ -35,4 +34,4 @@ const AwardsSection = ({
   );
 };
 
-export default AwardsSection
+export default AwardsSection;

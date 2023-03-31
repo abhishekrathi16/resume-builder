@@ -10,24 +10,25 @@ import { SectionValidator } from "../../helpers/common/components/ValidSectionRe
 
 const ModernTemplate = () => {
   const resumeData = useContext(StateContext);
-
+  // console.log(resumeData);
+  
   return (
     <>
       <div className="p-2">
-        <Basics basics={resumeData.basics} />
+        <Basics />
         <div className="flex">
           <div className="basis-[60%] p-3">
             <SectionValidator value={resumeData.work}>
-              <Experience experience={resumeData.work} />
+              <Experience />
             </SectionValidator>
 
             <SectionValidator value={resumeData.awards}>
-              <Awards awardsRecieved={resumeData.awards} />
+              <Awards />
             </SectionValidator>
           </div>
           <div className="basis-[40%] p-3">
             <SectionValidator value={resumeData.education}>
-              <Education education={resumeData.education} />
+              <Education />
             </SectionValidator>
 
             <SectionValidator value={resumeData.skills.languages}>
@@ -47,7 +48,7 @@ const ModernTemplate = () => {
           </SectionValidator>
 
             <SectionValidator value={resumeData.projects}>
-              <Projects projects={resumeData.projects} />
+              <Projects />
             </SectionValidator>
           </div>
         </div>
