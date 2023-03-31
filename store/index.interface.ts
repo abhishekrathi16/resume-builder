@@ -45,7 +45,6 @@ export interface ISkillState {
   setTools: (newTool: ISkillItem[]) => void;
 }
 
-
 export interface IExperienceItem {
   id: number;
   company_name: string;

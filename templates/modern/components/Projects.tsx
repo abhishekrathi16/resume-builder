@@ -6,12 +6,12 @@ import { SectionTitle } from "../atoms/SectionTitle";
 import { SectionList } from "../atoms/SectionList";
 import { dateParser } from "../../../helpers/utils";
 import { HTMLRenderer } from "../../../helpers/common/components/HTMLRenderer";
-import { ProjectsDetailStore } from '../../../store/projects_store'
+import { ProjectsDetailStore } from "../../../store/projects_store";
 
 const Projects = () => {
-  const { projects } = ProjectsDetailStore((state)=>({
-    projects: state.projects
-  }))
+  const { projects } = ProjectsDetailStore((state) => ({
+    projects: state.projects,
+  }));
   return (
     <div className="mb-3">
       <SectionHeading title="Projects" />

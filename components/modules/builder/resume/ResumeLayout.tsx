@@ -9,9 +9,8 @@ const ResumeLayout = React.forwardRef<HTMLInputElement>((props, ref) => {
   const resumeData = useResumeStore();
   StateContext = createContext(resumeData);
   const templateId = useTemplates((state) => state.activeTemplate.id);
-  const Template = AVAILABLE_TEMPLATES[templateId].component;  
+  const Template = AVAILABLE_TEMPLATES[templateId].component;
   // console.log(resumeData);
-  
 
   useEffect(() => {
     const selectedTemplateId =
