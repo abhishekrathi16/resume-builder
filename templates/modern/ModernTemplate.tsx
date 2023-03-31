@@ -7,47 +7,82 @@ import Projects from "./components/Projects";
 import Education from "./components/Education";
 import { StateContext } from "../../components/modules/builder/resume/ResumeLayout";
 import { SectionValidator } from "../../helpers/common/components/ValidSectionRenderer";
+import { SkillDetailStore } from "../../store/skill_store";
+import { ExperienceDetailStore } from "../../store/experience_store";
+import BasicDetailStore from "../../store/basic_store";
+import { ProjectsDetailStore } from "../../store/projects_store";
+import { EducationDetailStore } from "../../store/education_store";
+import { AwardDetailStore } from "../../store/awards_store";
 
 const ModernTemplate = () => {
   const resumeData = useContext(StateContext);
   // console.log(resumeData);
-  
+
+  const { languages, databases, tools, frameworks } = SkillDetailStore(
+    (state) => ({
+      languages: state.languages,
+      frameworks: state.frameworks,
+      databases: state.databases,
+      tools: state.tools,
+    })
+  );
+
+  const { experiences } = ExperienceDetailStore((state) => ({
+    experiences: state.experiences,
+  }));
+
+  const { basics } = BasicDetailStore((state) => ({
+    basics: state.values,
+  }));
+
+  const { projects } = ProjectsDetailStore((state) => ({
+    projects: state.projects,
+  }));
+
+  const { academics } = EducationDetailStore((state) => ({
+    academics: state.academics,
+  }));
+
+  const { awards } = AwardDetailStore((state) => ({
+    awards: state.awards,
+  }));
+
   return (
     <>
       <div className="p-2">
         <Basics />
         <div className="flex">
           <div className="basis-[60%] p-3">
-            <SectionValidator value={resumeData.work}>
+            <SectionValidator value={experiences}>
               <Experience />
             </SectionValidator>
 
-            <SectionValidator value={resumeData.awards}>
+            <SectionValidator value={awards}>
               <Awards />
             </SectionValidator>
           </div>
           <div className="basis-[40%] p-3">
-            <SectionValidator value={resumeData.education}>
+            <SectionValidator value={academics}>
               <Education />
             </SectionValidator>
 
-            <SectionValidator value={resumeData.skills.languages}>
-            <Skills title="Languages" list={resumeData.skills.languages} />
-          </SectionValidator>
+            <SectionValidator value={languages}>
+              <Skills title="Languages" list={languages} />
+            </SectionValidator>
 
-          <SectionValidator value={resumeData.skills.databases}>
-            <Skills title="Databases" list={resumeData.skills.databases} />
-          </SectionValidator>
+            <SectionValidator value={databases}>
+              <Skills title="Databases" list={databases} />
+            </SectionValidator>
 
-          <SectionValidator value={resumeData.skills.frameworks}>
-            <Skills title="Frameworks" list={resumeData.skills.frameworks} />
-          </SectionValidator>
+            <SectionValidator value={frameworks}>
+              <Skills title="Frameworks" list={frameworks} />
+            </SectionValidator>
 
-          <SectionValidator value={resumeData.skills.tools}>
-            <Skills title="Tools" list={resumeData.skills.tools} />
-          </SectionValidator>
+            <SectionValidator value={tools}>
+              <Skills title="Tools" list={tools} />
+            </SectionValidator>
 
-            <SectionValidator value={resumeData.projects}>
+            <SectionValidator value={projects}>
               <Projects />
             </SectionValidator>
           </div>

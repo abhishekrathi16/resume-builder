@@ -5,7 +5,7 @@ import { SectionSubtitle } from "../atoms/SectionSubtitle";
 import { ProfileContact } from "../atoms/ProfileContact";
 import { ProfileImage } from "../../../helpers/common/components/ProfileImage";
 import ProfileLink from "../atoms/ProfileLink";
-import BasicDetailStore from '../../../store/basic_store'
+import BasicDetailStore from "../../../store/basic_store";
 
 const Basics = () => {
   const { basics, changeValue } = BasicDetailStore((state) => ({

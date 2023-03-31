@@ -4,12 +4,12 @@ import { SectionHeading } from "../atoms/SectionHeading";
 import { SectionSubtitle } from "../atoms/SectionSubtitle";
 import { SectionTitle } from "../atoms/SectionTitle";
 import { dateParser } from "../../../helpers/utils";
-import { EducationDetailStore } from '../../../store/education_store';
+import { EducationDetailStore } from "../../../store/education_store";
 
 const Education = () => {
   const { education } = EducationDetailStore((state) => ({
     education: state.academics,
-  }))
+  }));
   return (
     <div className="mb-3">
       <SectionHeading title="Education" />
