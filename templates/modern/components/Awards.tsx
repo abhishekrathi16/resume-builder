@@ -6,10 +6,11 @@ import { SectionSubtitle } from "../atoms/SectionSubtitle";
 import { SectionTitle } from "../atoms/SectionTitle";
 import { dateParser } from "../../../helpers/utils";
 
-export const AwardsSection = ({
+const AwardsSection = ({
   awardsRecieved,
 }: {
   awardsRecieved: IAwards[];
+  // awardsRecieved: any
 }) => {
   return (
     <div className="mb-2">
@@ -19,7 +20,7 @@ export const AwardsSection = ({
           <div key={index} className="pb-2">
             <SectionTitle label={award.title} />
             <div className="flex justify-between awards-center">
-              <SectionSubtitle label={award.awarder} />
+              <SectionSubtitle label={award.organisation} />
               <div>
                 <p className="text-xs">{dateParser(award.date)}</p>
               </div>
@@ -33,3 +34,5 @@ export const AwardsSection = ({
     </div>
   );
 };
+
+export default AwardsSection
