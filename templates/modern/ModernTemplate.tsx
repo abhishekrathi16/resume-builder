@@ -5,7 +5,6 @@ import Experience from "./components/Experience";
 import Basics from "./components/Basics";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
-import { StateContext } from "../../components/modules/builder/resume/ResumeLayout";
 import { SectionValidator } from "../../helpers/common/components/ValidSectionRenderer";
 import { SkillDetailStore } from "../../store/skill_store";
 import { ExperienceDetailStore } from "../../store/experience_store";
@@ -13,11 +12,9 @@ import BasicDetailStore from "../../store/basic_store";
 import { ProjectsDetailStore } from "../../store/projects_store";
 import { EducationDetailStore } from "../../store/education_store";
 import { AwardDetailStore } from "../../store/awards_store";
+import { SectionHeading } from "./atoms/SectionHeading";
 
 const ModernTemplate = () => {
-  const resumeData = useContext(StateContext);
-  // console.log(resumeData);
-
   const { languages, databases, tools, frameworks } = SkillDetailStore(
     (state) => ({
       languages: state.languages,
@@ -49,22 +46,19 @@ const ModernTemplate = () => {
 
   return (
     <>
-      <div className="p-2">
+      <div className="p-4 font_alegreya" style={{fontFamily:"Alegreya"}}>
         <Basics />
-        <div className="flex">
-          <div className="basis-[60%] p-3">
+        <div className="flex flex-col">
+          <div className="p-3" style={{ paddingTop: "0px" }}>
+            <SectionValidator value={academics}>
+              <Education />
+            </SectionValidator>
+
             <SectionValidator value={experiences}>
               <Experience />
             </SectionValidator>
 
-            <SectionValidator value={awards}>
-              <Awards />
-            </SectionValidator>
-          </div>
-          <div className="basis-[40%] p-3">
-            <SectionValidator value={academics}>
-              <Education />
-            </SectionValidator>
+            <SectionHeading title="Skills" />
 
             <SectionValidator value={languages}>
               <Skills title="Languages" list={languages} />
@@ -85,6 +79,11 @@ const ModernTemplate = () => {
             <SectionValidator value={projects}>
               <Projects />
             </SectionValidator>
+
+            <SectionValidator value={awards}>
+              <Awards />
+            </SectionValidator>
+
           </div>
         </div>
       </div>
