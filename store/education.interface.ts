@@ -2,8 +2,8 @@ export interface IEducationItem {
   institution: string;
   degree: string;
   course: string;
-  startDate: string|null;
-  endDate: string |null;
+  startDate: string | null;
+  endDate: string | null;
   score: string;
   id: number;
 }

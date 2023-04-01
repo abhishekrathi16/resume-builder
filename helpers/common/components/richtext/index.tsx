@@ -1,6 +1,6 @@
 import { useRef, useEffect, memo, useState } from "react";
 import "jodit/build/jodit.min.css";
-import  { LinkPlugin } from "./plugins/link";
+import { LinkPlugin } from "./plugins/link";
 
 import styles from "./jodit.module.css";
 

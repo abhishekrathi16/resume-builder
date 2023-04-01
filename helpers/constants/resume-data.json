@@ -115,7 +115,7 @@
       "endDate": "7-1-2023",
       "summary": "",
       "in_progress": false,
-      "frameworks":[
+      "frameworks": [
         {
           "id": 0,
           "name": "Heroku"

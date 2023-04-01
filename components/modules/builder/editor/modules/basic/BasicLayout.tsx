@@ -76,9 +76,9 @@ const BasicLayout = () => {
       key == "linkedin" ||
       key == "leetcode" ||
       key == "codeforces" ||
-      key == "codechef"||
-      key == "twitter"||
-      key == "hackerrank"||
+      key == "codechef" ||
+      key == "twitter" ||
+      key == "hackerrank" ||
       key == "hackerearth"
     ) {
       arrayValue = [

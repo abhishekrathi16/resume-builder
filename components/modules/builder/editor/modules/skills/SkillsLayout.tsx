@@ -1,64 +1,71 @@
-import { Box, FormControl, IconButton, Input, InputAdornment, InputLabel, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  FormControl,
+  IconButton,
+  Input,
+  InputAdornment,
+  InputLabel,
+  TextField,
+  Typography,
+} from "@mui/material";
 import Image from "next/image";
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { ISkillItem } from "../../../../../../store/skill.interface";
 import { SkillDetailStore } from "../../../../../../store/skill_store";
 import save from "../../../../../../assets/icons/save-svgrepo-com.svg";
 
-import AddIcon from '@mui/icons-material/Add';
-import CloseIcon from '@mui/icons-material/Close';  
+import AddIcon from "@mui/icons-material/Add";
+import CloseIcon from "@mui/icons-material/Close";
 
-import { styled } from '@mui/material/styles';
-import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
-import MuiAccordion, { AccordionProps } from '@mui/material/Accordion';
+import { styled } from "@mui/material/styles";
+import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
+import MuiAccordion, { AccordionProps } from "@mui/material/Accordion";
 import MuiAccordionSummary, {
   AccordionSummaryProps,
-} from '@mui/material/AccordionSummary';
-import MuiAccordionDetails from '@mui/material/AccordionDetails';
+} from "@mui/material/AccordionSummary";
+import MuiAccordionDetails from "@mui/material/AccordionDetails";
 
-import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
-
+import Chip from "@mui/material/Chip";
+import Stack from "@mui/material/Stack";
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
   border: `1px solid ${theme.palette.divider}`,
-  '&:not(:last-child)': {
+  "&:not(:last-child)": {
     borderBottom: 0,
   },
-  '&:before': {
-    display: 'none',
+  "&:before": {
+    display: "none",
   },
 }));
 
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
   <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem" }} />}
     {...props}
   />
 ))(({ theme }) => ({
   backgroundColor:
-    theme.palette.mode === 'dark'
-      ? 'rgba(255, 255, 255, .05)'
-      : 'rgba(0, 0, 0, .03)',
-  flexDirection: 'row-reverse',
-  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-    transform: 'rotate(90deg)',
+    theme.palette.mode === "dark"
+      ? "rgba(255, 255, 255, .05)"
+      : "rgba(0, 0, 0, .03)",
+  flexDirection: "row-reverse",
+  "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
+    transform: "rotate(90deg)",
   },
-  '& .MuiAccordionSummary-content': {
+  "& .MuiAccordionSummary-content": {
     marginLeft: theme.spacing(1),
   },
 }));
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
-  borderTop: '1px solid rgba(0, 0, 0, .125)',
+  borderTop: "1px solid rgba(0, 0, 0, .125)",
 }));
 
 const SkillsLayout = (): JSX.Element => {
-
-  const [expanded, setExpanded] = React.useState<string | false>('panel1');
+  const [expanded, setExpanded] = React.useState<string | false>("panel1");
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
@@ -70,9 +77,7 @@ const SkillsLayout = (): JSX.Element => {
   const [datab, setDatab] = useState("");
   const [tool, setTool] = useState("");
 
-  const saveSkillsdetail = async()=>{
-
-  }
+  const saveSkillsdetail = async () => {};
 
   const {
     languages,
@@ -95,22 +100,20 @@ const SkillsLayout = (): JSX.Element => {
   }));
 
   const addLanguage = () => {
-    
-      let newObj: ISkillItem = {
-        id: languages.length,
-        name: lang,
-      };
-      languages.push(newObj);
-      setLanguages(languages);
-      console.log(languages);
-      setLang("")
-    
+    let newObj: ISkillItem = {
+      id: languages.length,
+      name: lang,
+    };
+    languages.push(newObj);
+    setLanguages(languages);
+    console.log(languages);
+    setLang("");
   };
 
   // function to add language when press enter
 
-  const OnkeyDownaddLanguage = (e: React.KeyboardEvent<HTMLDivElement>)=>{
-    if(e.key==="Enter"){
+  const OnkeyDownaddLanguage = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter") {
       let newObj: ISkillItem = {
         id: languages.length,
         name: lang,
@@ -118,9 +121,9 @@ const SkillsLayout = (): JSX.Element => {
       languages.push(newObj);
       setLanguages(languages);
       console.log(languages);
-      setLang("")
+      setLang("");
     }
-  }
+  };
 
   const removeLanguage = (id: number) => {
     let newObj: ISkillItem[] = languages;
@@ -129,7 +132,6 @@ const SkillsLayout = (): JSX.Element => {
     console.log(languages);
   };
 
-  
   const addFrameworks = () => {
     let newObj: ISkillItem = {
       id: languages.length,
@@ -137,16 +139,16 @@ const SkillsLayout = (): JSX.Element => {
     };
     frameworks.push(newObj);
     setFrameworks(frameworks);
-    
+
     // empty input field
-    setFrame("") 
+    setFrame("");
 
     console.log(frameworks);
   };
 
   // function to add framework when press enter
-  const OnkeyDownaddFramework = (e: React.KeyboardEvent<HTMLDivElement>)=>{
-    if(e.key==="Enter"){
+  const OnkeyDownaddFramework = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter") {
       let newObj: ISkillItem = {
         id: languages.length,
         name: frame,
@@ -155,12 +157,11 @@ const SkillsLayout = (): JSX.Element => {
       setFrameworks(frameworks);
 
       // empty input field
-      setFrame("")
+      setFrame("");
 
       console.log(frameworks);
     }
-  }
-
+  };
 
   const removeFramework = (id: number) => {
     let newObj: ISkillItem[] = frameworks;
@@ -178,7 +179,7 @@ const SkillsLayout = (): JSX.Element => {
     setDatabases(databases);
 
     // making input empty
-    setDatab("")
+    setDatab("");
 
     console.log(databases);
   };
@@ -193,11 +194,11 @@ const SkillsLayout = (): JSX.Element => {
       setDatabases(databases);
 
       // making input empty
-      setDatab("")
+      setDatab("");
 
       console.log(databases);
     }
-  }
+  };
 
   const removeDatabase = (id: number) => {
     let newObj: ISkillItem[] = databases;
@@ -215,7 +216,7 @@ const SkillsLayout = (): JSX.Element => {
     setTools(tools);
 
     // making input empty
-    setTool("")
+    setTool("");
 
     console.log(tools);
   };
@@ -232,11 +233,11 @@ const SkillsLayout = (): JSX.Element => {
       setTools(tools);
 
       // making input empty
-      setTool("")
+      setTool("");
 
       console.log(tools);
     }
-  }
+  };
 
   const removeTool = (id: number) => {
     let newObj: ISkillItem[] = tools;
@@ -246,7 +247,7 @@ const SkillsLayout = (): JSX.Element => {
   };
 
   return (
-  <div>
+    <div>
       <div className="flex justify-between">
         <div>
           <Typography variant="h5" gutterBottom sx={{ fontWeight: 800 }}>
@@ -268,165 +269,245 @@ const SkillsLayout = (): JSX.Element => {
         </div>
       </div>
       <div className="mt-[12px]">
-        <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <Accordion
+          expanded={expanded === "panel1"}
+          onChange={handleChange("panel1")}
+        >
           <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
             <Typography>Languages</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <div className="mt-[8px] mb-[8px]">
               <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap" }}>
-                {
-                    languages.map((langs, id)=>{
-                      return (
-                        <>
-                        <div className="mt-[4px] mb-[4px] ">
-                            <Box style={{ backgroundColor:"#1E40AF", borderRadius:"16px" ,padding:'4px' }} >
-                              <Chip label={`${langs.name}`} sx={{ color: "white", backgroundColor: "#1E40AF", fontSize: "15px" }}  />
-                              < CloseIcon sx={{ color: "white", cursor: "pointer" }} onClick={ ()=>removeLanguage(id) }  />
-                         </Box>
-                        </div>
-                        </>
-                      )
-                    })
-                }
+                {languages.map((langs, id) => {
+                  return (
+                    <>
+                      <div className="mt-[4px] mb-[4px] ">
+                        <Box
+                          style={{
+                            backgroundColor: "#1E40AF",
+                            borderRadius: "16px",
+                            padding: "4px",
+                          }}
+                        >
+                          <Chip
+                            label={`${langs.name}`}
+                            sx={{
+                              color: "white",
+                              backgroundColor: "#1E40AF",
+                              fontSize: "15px",
+                            }}
+                          />
+                          <CloseIcon
+                            sx={{ color: "white", cursor: "pointer" }}
+                            onClick={() => removeLanguage(id)}
+                          />
+                        </Box>
+                      </div>
+                    </>
+                  );
+                })}
               </Stack>
             </div>
-              <>
-                <Box sx={{ display: 'flex', alignItems: 'flex-end' }} >
-                  <TextField 
-                  fullWidth 
-                  id="input-with-sx" 
-                  label="Language" 
-                  variant="standard" 
+            <>
+              <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+                <TextField
+                  fullWidth
+                  id="input-with-sx"
+                  label="Language"
+                  variant="standard"
                   value={lang}
-                  onChange={ (e)=>setLang(e.target.value) }
-                  onKeyDown = {(e)=>OnkeyDownaddLanguage(e)}
-                  />
-                <AddIcon sx={{ color: "#1E40AF", mr: 1, my: 0.5, cursor: "pointer" }} onClick={addLanguage} />
-                </Box>
-              </>
-            
+                  onChange={(e) => setLang(e.target.value)}
+                  onKeyDown={(e) => OnkeyDownaddLanguage(e)}
+                />
+                <AddIcon
+                  sx={{ color: "#1E40AF", mr: 1, my: 0.5, cursor: "pointer" }}
+                  onClick={addLanguage}
+                />
+              </Box>
+            </>
           </AccordionDetails>
         </Accordion>
-        <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+        <Accordion
+          expanded={expanded === "panel2"}
+          onChange={handleChange("panel2")}
+        >
           <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
             <Typography>Frameworks</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <div className="mt-[8px] mb-[8px]">
-              <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap" }} >
-              {
-                frameworks.map((frames, id) => {
+              <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap" }}>
+                {frameworks.map((frames, id) => {
                   return (
                     <>
-                    <div className="mt-[4px] mb-[4px] ">
-                        <Box style={{ backgroundColor: "#1E40AF", borderRadius: "16px", padding: '4px' }} >
-                          <Chip label={`${frames.name}`} sx={{ color: "white", backgroundColor: "#1E40AF", fontSize: "15px" }} />
-                        < CloseIcon sx={{ color: "white", cursor:"pointer" }} onClick={() => removeFramework(id)} />
-                      </Box>
-                    </div>
+                      <div className="mt-[4px] mb-[4px] ">
+                        <Box
+                          style={{
+                            backgroundColor: "#1E40AF",
+                            borderRadius: "16px",
+                            padding: "4px",
+                          }}
+                        >
+                          <Chip
+                            label={`${frames.name}`}
+                            sx={{
+                              color: "white",
+                              backgroundColor: "#1E40AF",
+                              fontSize: "15px",
+                            }}
+                          />
+                          <CloseIcon
+                            sx={{ color: "white", cursor: "pointer" }}
+                            onClick={() => removeFramework(id)}
+                          />
+                        </Box>
+                      </div>
                     </>
-                  )
-                })
-              }
+                  );
+                })}
               </Stack>
             </div>
             <>
-              <Box sx={{ display: 'flex', alignItems: 'flex-end' }} >
-                <TextField 
-                fullWidth 
-                id="input-with-sx" 
-                label="Framework" 
-                variant="standard" 
-                value={frame}
-                onChange={(e) => setFrame(e.target.value)}
+              <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+                <TextField
+                  fullWidth
+                  id="input-with-sx"
+                  label="Framework"
+                  variant="standard"
+                  value={frame}
+                  onChange={(e) => setFrame(e.target.value)}
                   onKeyDown={(e) => OnkeyDownaddFramework(e)}
                 />
-                <AddIcon sx={{ color: "#1E40AF", mr: 1, my: 0.5, cursor: "pointer" }} onClick={addFrameworks} />
+                <AddIcon
+                  sx={{ color: "#1E40AF", mr: 1, my: 0.5, cursor: "pointer" }}
+                  onClick={addFrameworks}
+                />
               </Box>
             </>
           </AccordionDetails>
         </Accordion>
-        <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+        <Accordion
+          expanded={expanded === "panel3"}
+          onChange={handleChange("panel3")}
+        >
           <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
             <Typography>Database</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <div className="mt-[8px] mb-[8px]">
-              <Stack direction="row" spacing={1} sx={{ flexWrap:"wrap" }} >
-              {
-                databases.map((database, id) => {
+              <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap" }}>
+                {databases.map((database, id) => {
                   return (
                     <>
-                    <div className="mt-[4px] mb-[4px] ">
-                        <Box sx={{ backgroundColor: "#1E40AF", borderRadius: "16px", padding: '4px' }} >
-                          <Chip label={`${database.name}`} sx={{ color: "white", backgroundColor: "#1E40AF", fontSize: "15px" }} />
-                          < CloseIcon sx={{ color: "white", cursor: "pointer"  }} onClick={() => removeDatabase(id)} />
-                      </Box>
-                    </div>
+                      <div className="mt-[4px] mb-[4px] ">
+                        <Box
+                          sx={{
+                            backgroundColor: "#1E40AF",
+                            borderRadius: "16px",
+                            padding: "4px",
+                          }}
+                        >
+                          <Chip
+                            label={`${database.name}`}
+                            sx={{
+                              color: "white",
+                              backgroundColor: "#1E40AF",
+                              fontSize: "15px",
+                            }}
+                          />
+                          <CloseIcon
+                            sx={{ color: "white", cursor: "pointer" }}
+                            onClick={() => removeDatabase(id)}
+                          />
+                        </Box>
+                      </div>
                     </>
-                  )
-                })
-              }
+                  );
+                })}
               </Stack>
             </div>
             <>
-              <Box sx={{ display: 'flex', alignItems: 'flex-end' }} >
-                <TextField 
-                fullWidth 
-                id="input-with-sx" 
-                label="Database" 
-                value={datab}
-                variant="standard" 
+              <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+                <TextField
+                  fullWidth
+                  id="input-with-sx"
+                  label="Database"
+                  value={datab}
+                  variant="standard"
                   onChange={(e) => setDatab(e.target.value)}
                   onKeyDown={(e) => OnkeyDownaddDatabase(e)}
                 />
-                <AddIcon sx={{ color: "#1E40AF", mr: 1, my: 0.5, cursor: "pointer" }} onClick={addDatabase} />
+                <AddIcon
+                  sx={{ color: "#1E40AF", mr: 1, my: 0.5, cursor: "pointer" }}
+                  onClick={addDatabase}
+                />
               </Box>
             </>
           </AccordionDetails>
         </Accordion>
-        <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+        <Accordion
+          expanded={expanded === "panel4"}
+          onChange={handleChange("panel4")}
+        >
           <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
             <Typography>Tools</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <div className="mt-[8px] mb-[8px]">
-              <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap" }}  >
-              {
-                tools.map((tool, id) => {
+              <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap" }}>
+                {tools.map((tool, id) => {
                   return (
                     <>
                       <div className="mt-[4px] mb-[4px] ">
-                        <Box style={{ backgroundColor: "#1E40AF", borderRadius: "16px", padding: '4px' }} >
-                          <Chip label={`${tool.name}`} sx={{ color: "white", backgroundColor: "#1E40AF" , fontSize:"15px"}} />
-                          < CloseIcon sx={{ color: "white", cursor: "pointer" }} onClick={() => removeTool(id)} />
-                      </Box>
-                    </div>
+                        <Box
+                          style={{
+                            backgroundColor: "#1E40AF",
+                            borderRadius: "16px",
+                            padding: "4px",
+                          }}
+                        >
+                          <Chip
+                            label={`${tool.name}`}
+                            sx={{
+                              color: "white",
+                              backgroundColor: "#1E40AF",
+                              fontSize: "15px",
+                            }}
+                          />
+                          <CloseIcon
+                            sx={{ color: "white", cursor: "pointer" }}
+                            onClick={() => removeTool(id)}
+                          />
+                        </Box>
+                      </div>
                     </>
-                  )
-                })
-              }
+                  );
+                })}
               </Stack>
             </div>
             <>
-              <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
-                <TextField 
-                fullWidth 
-                id="input-with-sx" 
-                label="Tools" 
-                variant="standard"
-                value={tool}
+              <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+                <TextField
+                  fullWidth
+                  id="input-with-sx"
+                  label="Tools"
+                  variant="standard"
+                  value={tool}
                   onChange={(e) => setTool(e.target.value)}
                   onKeyDown={(e) => OnkeyDownaddTools(e)}
                 />
-                <AddIcon sx={{ color: "#1E40AF", mr: 1, my: 0.5, cursor: "pointer" }} onClick={addTools} />
+                <AddIcon
+                  sx={{ color: "#1E40AF", mr: 1, my: 0.5, cursor: "pointer" }}
+                  onClick={addTools}
+                />
               </Box>
             </>
           </AccordionDetails>
         </Accordion>
       </div>
-  </div>);
+    </div>
+  );
 };
 
 export default SkillsLayout;
