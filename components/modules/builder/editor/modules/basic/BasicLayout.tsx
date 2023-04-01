@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import BasicDetailStore from "../../../../../../store/basic_store";
 import Typography from "@mui/material/Typography";
 import Tabs from "@mui/material/Tabs";
@@ -9,6 +9,13 @@ import PersonalDetail from "./PersonalDetail";
 import PortfolioLink from "./PortfolioLink";
 
 import save from "../../../../../../assets/icons/save-svgrepo-com.svg";
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../../../../../../FirebaseConfig/FirebaseConfig";
+import { UserData } from "../../../../../../store/SignIn_SignOut";
+
+import Loading from "../../../../../Loading_Button";
+import { toast } from "react-toastify";
+
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -45,20 +52,41 @@ function a11yProps(index: number) {
 
 const BasicLayout = () => {
   const [value, setValue] = React.useState(0);
-
+  const [loading, setLoading] = useState(false)
   const [compo, setCompo] = useState(0);
+
+  const notify = (content: string) => {
+    toast(content);
+  };
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
-  // function to save basicDetail data to firebase
-  const saveBasicDetail = async () => {};
-
   const { values, changeValue } = BasicDetailStore((state) => ({
     values: state.values,
     changeValue: state.changeValue,
   }));
+
+  // function to save Basic Detail data 
+
+  const saveBasicDetail = async()=>{
+    
+    let value = localStorage.getItem("userInfo");
+    if (typeof value === "string") {
+      setLoading(true)
+      let userInfo: UserData = JSON.parse(value);
+      console.log(userInfo.userId);
+      const ref = doc(db, "resumedata", userInfo.userId )
+      await updateDoc(ref, {
+        basics:values
+      })
+      setLoading(false)
+      notify("data saved successfully")
+
+    }
+    
+  }
 
   const onChangeHandler = (value: any, key: string) => {
     const newValue = values;
@@ -108,13 +136,24 @@ const BasicLayout = () => {
         <div>
           <button
             className="bg-gradient-to-r  from-[#2491f7] to-[#67c5fc] text-white rounded-md px-[20px] py-[4px] flex flex-row justify-center items-center "
-            onClick={saveBasicDetail}
+            onClick={saveBasicDetail }
           >
-            <Image
-              src={save}
-              alt="teri ma ki"
-              className="h-[30px] w-[30px] mr-[10px]"
-            />
+            {
+              loading?(
+                <>
+                  <Loading  />
+                </>
+              ):(
+                <>
+                    <Image
+                      src={save}
+                      alt="saveIcon"
+                      className="h-[30px] w-[30px] mr-[10px]"
+                    />
+                </>
+              )
+            }
+            
             <span className="text-lg">Save</span>
           </button>
         </div>
