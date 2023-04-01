@@ -1,13 +1,30 @@
 import React from "react";
 import HomePageImage from "../../assets/homepg_img.jpg";
 import { Router, useRouter } from "next/router";
+import { useAuthStore } from "../../store/SignIn_SignOut";
+import { toast } from "react-toastify";
+
 const GetStarted = (): JSX.Element => {
+  const {User} = useAuthStore((state)=>({
+    User:state.User
+  }))
+
+  //  for notification
+  const notify = (content: string) => {
+    toast(content);
+  };
+
   const router = useRouter();
   const routeTobuilder = () => {
-    router.push("/builder");
+    //  check wether the user is logged in or not 
+    if(User.userId===""){
+      notify("Login Required")
+    }else{
+      router.push("/builder");
+    }
   };
   return (
-    <div className=" text-center flex justify-center items-center h-[auto] ">
+    <div className=" text-center flex justify-center items-center h-[auto]">
       <div className="header flex flex-row justify-center items-center mt-[5rem]">
         <div className="quote w-[40vw] p-20">
           <div

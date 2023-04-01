@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { EducationDetailStore } from "../../../../../../store/education_store";
 import { IEducationItem } from "../../../../../../store/education.interface";
 import Image from "next/image";
@@ -20,6 +20,15 @@ import MuiAccordionSummary, {
 } from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Paticular_Educational from "./Paticular_Educational";
+
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "../../../../../../FirebaseConfig/FirebaseConfig";
+import { UserData } from "../../../../../../store/SignIn_SignOut";
+
+import Loading from "../../../../../Loading_Button";
+import { toast } from "react-toastify";
+
+
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -65,8 +74,11 @@ const EducationLayout = () => {
       setExpanded(newExpanded ? panel : false);
     };
 
-  // for saving educational detail in firebase
-  const saveEducationalDetail = async () => {};
+  const [loading, setLoading] = useState(false)
+
+  const notify = (content: string) => {
+    toast(content);
+  };
 
   const { academics, setEducation, updateEducation, onmoveup, onmovedown } =
     EducationDetailStore((state) => ({
@@ -76,6 +88,23 @@ const EducationLayout = () => {
       onmoveup: state.onmoveup,
       onmovedown: state.onmovedown,
     }));
+
+  // for saving educational detail in firebase
+  const saveEducationalDetail = async () => {
+    let value = localStorage.getItem("userInfo");
+    if (typeof value === "string") {
+      setLoading(true)
+      let userInfo: UserData = JSON.parse(value);
+      console.log(userInfo.userId);
+      const ref = doc(db, "resumedata", userInfo.userId)
+      await updateDoc(ref, {
+        education:academics
+      })
+      setLoading(false)
+      notify("data saved successfully")
+
+    }
+  };
 
   const addEducation = () => {
     let newEducation: IEducationItem = {
@@ -140,11 +169,21 @@ const EducationLayout = () => {
             className="bg-gradient-to-r  from-[#2491f7] to-[#67c5fc] text-white rounded-md px-[20px] py-[4px] flex flex-row justify-center items-center "
             onClick={saveEducationalDetail}
           >
-            <Image
-              src={save}
-              alt="teri ma ki"
-              className="h-[30px] w-[30px] mr-[10px]"
-            />
+            {
+              loading ? (
+                <>
+                  <Loading  />
+                </>
+              ) : (
+                <>
+                  <Image
+                    src={save}
+                    alt="saveIcon"
+                    className="h-[30px] w-[30px] mr-[10px]"
+                  />
+                </>
+              )
+            }
             <span className="text-lg">Save</span>
           </button>
         </div>
