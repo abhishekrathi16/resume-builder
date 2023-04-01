@@ -3,5 +3,5 @@ export const SectionList = ({
 }: {
   children: JSX.Element | string;
 }) => {
-  return <div className="text-xs mt-0.5">{children}</div>;
+  return <div className="mt-0.5" style={{fontSize:"1.4rem", fontFamily:"Alegreya"}}>{children}</div>;
 };

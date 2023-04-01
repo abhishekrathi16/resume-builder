@@ -13,7 +13,7 @@ const Experience = () => {
     experience: state.experiences,
   }));
   return (
-    <div className="mb-3">
+    <div className="mb-1">
       <SectionHeading title="Experience" />
       {experience.map((item: IExperienceItem, index: number) => {
         return (
@@ -22,7 +22,7 @@ const Experience = () => {
             <div className="flex justify-between items-center">
               <SectionSubtitle label={item.company_name} />
               <div>
-                <p className="text-xs">
+                <p className="text-xs" style={{fontStyle:"italic"}}>
                   {dateParser(item.startDate)}-{" "}
                   {item.isWorkingHere ? "present" : dateParser(item.endDate)}
                 </p>
