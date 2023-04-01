@@ -3,13 +3,16 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
-/* // Default theme */
-/* @import '@splidejs/react-splide/css'; */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700;800&display=swap");
 
-/* import '@splidejs/react-splide/css/skyblue'; */
-/* import '@splidejs/react-splide/css/sea-green'; */
-
-/* import '@splidejs/react-splide/css/core'; */
+@font-face {
+  font-family: "Alegreya";
+  src: url("/public/fonts/Alegreya-VariableFont_wght.ttf");
+  font-style: medium;
+  font-weight: normal;
+  font-display: swap;
+}
 
 * {
   font-family: "Poppins", sans-serif;
@@ -74,4 +77,8 @@ button.rec-dot:focus {
   display: grid;
   grid-template-columns: 0.01fr 1fr 0.01fr;
   gap: 2px;
+}
+
+.font_alegreya {
+  font-family: "Alegreya", serif;
 }
