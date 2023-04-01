@@ -69,3 +69,9 @@ button.rec-dot:focus {
 .grid_layout_item2 {
   grid-column: 3/4;
 }
+
+.grid_accordian {
+  display: grid;
+  grid-template-columns: 0.01fr 1fr 0.01fr;
+  gap: 2px;
+}

@@ -9,15 +9,15 @@
     "profiles": [
       {
         "profile_name": "linkedin",
-        "profile_url": "https://www.linkedin.com/in/sadanandpai/"
+        "profile_url": "https://www.linkedin.com/in/janeDoe/"
       },
       {
         "profile_name": "twitter",
-        "profile_url": "https://www.twitter.com/sadanandpai/"
+        "profile_url": "https://www.twitter.com/janeDoe/"
       },
       {
         "profile_name": "github",
-        "profile_url": "https://github.com/sadanandpai/"
+        "profile_url": "https://github.com/janeDoe/"
       },
       {
         "profile_name": "hackerrank",
@@ -25,11 +25,11 @@
       },
       {
         "profile_name": "hackerearth",
-        "profile_url": "https://www.hackerearth.com/sadanandpai/"
+        "profile_url": "https://www.hackerearth.com/janeDoe/"
       },
       {
         "profile_name": "codechef",
-        "profile_url": "https://www.codechef.com/sadanandpai/"
+        "profile_url": "https://www.codechef.com/janeDoe/"
       },
       {
         "profile_name": "leetcode",
@@ -114,7 +114,17 @@
       "startDate": "1-1-2023",
       "endDate": "7-1-2023",
       "summary": "",
-      "in_progress": false
+      "in_progress": false,
+      "frameworks": [
+        {
+          "id": 0,
+          "name": "Heroku"
+        },
+        {
+          "id": 1,
+          "name": "Django"
+        }
+      ]
     }
   ],
 
