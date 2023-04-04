@@ -20,7 +20,10 @@ export const HTMLRendererTwo = ({ htmlString }: { htmlString: string }) => {
     });
   }, [htmlString]);
   return (
-    <div className={`${styles.richtextRuntimeWrapper} text-sm`} style={{fontFamily:"monospace"}}>
+    <div
+      className={`${styles.richtextRuntimeWrapper} text-sm`}
+      style={{ fontFamily: "monospace" }}
+    >
       {parsedElement}
     </div>
   );

@@ -22,7 +22,7 @@ const Experience = () => {
             <div className="flex justify-between items-center">
               <SectionSubtitle label={item.company_name} />
               <div>
-                <p className="text-xs" style={{fontStyle:"italic"}}>
+                <p className="text-xs" style={{ fontStyle: "italic" }}>
                   {dateParser(item.startDate)}-{" "}
                   {item.isWorkingHere ? "present" : dateParser(item.endDate)}
                 </p>

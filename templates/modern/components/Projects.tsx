@@ -24,7 +24,7 @@ const Projects = () => {
               <a href={item.url}>
                 <SectionTitle label={`${item.project_name}`} />
               </a>
-              <p className="text-xs" style={{fontStyle:"italic"}}>
+              <p className="text-xs" style={{ fontStyle: "italic" }}>
                 {dateParser(item.startDate)} -
                 {item.in_progress ? "present" : dateParser(item.endDate)}
               </p>

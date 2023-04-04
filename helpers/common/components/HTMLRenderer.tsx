@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./richtext/jodit.module.css";
 import { useMemo } from "react";
 
-export const HTMLRenderer = ({ htmlString }: { htmlString: string}) => {
+export const HTMLRenderer = ({ htmlString }: { htmlString: string }) => {
   const parsedElement = useMemo(() => {
     return parseHtmlStringToHtml(htmlString, {
       replace: (domNode: any) => {
@@ -20,7 +20,10 @@ export const HTMLRenderer = ({ htmlString }: { htmlString: string}) => {
     });
   }, [htmlString]);
   return (
-    <div className={`${styles.richtextRuntimeWrapper} text-xs`} style={{fontFamily:"Alegreya"}}>
+    <div
+      className={`${styles.richtextRuntimeWrapper} text-xs`}
+      style={{ fontFamily: "Alegreya" }}
+    >
       {parsedElement}
     </div>
   );

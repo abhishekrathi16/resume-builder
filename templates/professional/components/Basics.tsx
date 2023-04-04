@@ -15,11 +15,11 @@ const Basics = () => {
     changeValue: state.changeValue,
   }));
   return (
-    <div className="p-2" style={{paddingBottom:"0px"}}>
+    <div className="p-2" style={{ paddingBottom: "0px" }}>
       <ProfileName name={basics.name} />
       <div
         className="flex flex-row justify-between items-center"
-        style={{ padding: "8px 200px", paddingTop:"0px" }}
+        style={{ padding: "8px 200px", paddingTop: "0px" }}
       >
         <div className="flex flex-row">
           <AiFillPhone style={{ color: "#0062b4", margin: "2px" }} />

@@ -20,16 +20,16 @@ const Experience = () => {
           <div className="py-2" key={index}>
             <SectionTitle label={item.position} />
             <div className="flex justify-between items-center">
-              <SectionSubtitle label={item.company_name} />
+              <SectionSubtitle label={item.company_name} color="#373737" />
               <div>
-                <p className="text-xs" style={{fontStyle:"italic"}}>
+                <p className="text-xs" style={{ fontStyle: "italic" }}>
                   {dateParser(item.startDate)}-{" "}
                   {item.isWorkingHere ? "present" : dateParser(item.endDate)}
                 </p>
               </div>
             </div>
             <SectionList>
-              <HTMLRendererTwo htmlString={item.summary}  />
+              <HTMLRendererTwo htmlString={item.summary} />
             </SectionList>
           </div>
         );

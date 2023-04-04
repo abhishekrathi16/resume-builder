@@ -16,12 +16,14 @@ const AwardsSection = () => {
       <SectionHeading title="Awards" />
       {awardsRecieved.map((award: IAwards, index: number) => {
         return (
-          <div key={index} className="pb-2" style={{paddingTop:"8px"}}>
+          <div key={index} className="pb-2" style={{ paddingTop: "8px" }}>
             <SectionTitle label={award.title} />
             <div className="flex justify-between awards-center">
               <SectionSubtitle label={award.organisation} />
               <div>
-                <p className="text-xs" style={{fontStyle:"italic"}}>{dateParser(award.date)}</p>
+                <p className="text-xs" style={{ fontStyle: "italic" }}>
+                  {dateParser(award.date)}
+                </p>
               </div>
             </div>
             <SectionList>

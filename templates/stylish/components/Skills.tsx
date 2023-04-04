@@ -6,14 +6,17 @@ import { SectionTitle } from "../atoms/SectionTitle";
 
 const Skills = ({ title, list }: { title: string; list: ISkillItem[] }) => {
   return (
-    <div className="my-3" style={{marginTop:"5px"}}>
+    <div className="my-3" style={{ marginTop: "5px" }}>
       <SectionTitle label={title} />
-      <div className="flex items-center flex-wrap gap-2.5 justify-left" style={{margin:"10px 0"}}>
+      <div
+        className="flex items-center flex-wrap gap-2.5 justify-left"
+        style={{ margin: "10px 0" }}
+      >
         {list.map((item: ISkillItem, index) => (
           <div
             key={index}
             className="text-sm font-medium pr-2"
-            style={{ fontFamily:"Space Mono, monospace"}}
+            style={{ fontFamily: "Space Mono, monospace" }}
           >
             {item.name}
           </div>

@@ -46,7 +46,7 @@ const ProfessionalTemplate = () => {
 
   return (
     <>
-      <div className="p-4 font_alegreya" style={{fontFamily:"Alegreya"}}>
+      <div className="p-4 font_alegreya" style={{ fontFamily: "Alegreya" }}>
         <Basics />
         <div className="flex flex-col">
           <div className="p-3" style={{ paddingTop: "0px" }}>
@@ -83,7 +83,6 @@ const ProfessionalTemplate = () => {
             <SectionValidator value={awards}>
               <Awards />
             </SectionValidator>
-
           </div>
         </div>
       </div>

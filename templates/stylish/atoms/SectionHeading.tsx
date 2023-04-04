@@ -1,4 +1,10 @@
-export const SectionHeading = ({ title, color }: { title: string, color: string }) => {
+export const SectionHeading = ({
+  title,
+  color,
+}: {
+  title: string;
+  color: string;
+}) => {
   return (
     <>
       <div
@@ -13,7 +19,7 @@ export const SectionHeading = ({ title, color }: { title: string, color: string 
       </div>
       <div
         className=""
-        style={{ width: "100%", height: "2px", backgroundColor: color  }}
+        style={{ width: "100%", height: "2px", backgroundColor: color }}
       ></div>
     </>
   );

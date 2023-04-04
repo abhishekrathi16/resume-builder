@@ -46,7 +46,10 @@ const ModernTemplate = () => {
 
   return (
     <>
-      <div className="p-3 font_alegreya" style={{fontFamily:"Alegreya", paddingTop:"0px"}}>
+      <div
+        className="p-3 font_alegreya"
+        style={{ fontFamily: "Alegreya", paddingTop: "0px" }}
+      >
         <Basics />
         <div className="flex flex-col">
           <div className="p-3" style={{ paddingTop: "0px" }}>
@@ -83,7 +86,6 @@ const ModernTemplate = () => {
             <SectionValidator value={awards}>
               <Awards />
             </SectionValidator>
-
           </div>
         </div>
       </div>
