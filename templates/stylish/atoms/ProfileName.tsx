@@ -4,9 +4,9 @@ export const ProfileName = ({ name }: { name: string }) => {
       className="font-extrabold max-w-[100%] text-center"
       style={{
         fontSize: "2.5rem",
-        color: "#0062b4",
+        color: "#373737",
         paddingBottom: "0px",
-        fontFamily: "Alegreya",
+        fontFamily: "Space Mono, monospace",
       }}
       title={name}
     >

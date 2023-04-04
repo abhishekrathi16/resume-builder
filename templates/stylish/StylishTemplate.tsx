@@ -14,7 +14,7 @@ import { EducationDetailStore } from "../../store/education_store";
 import { AwardDetailStore } from "../../store/awards_store";
 import { SectionHeading } from "./atoms/SectionHeading";
 
-const ModernTemplate = () => {
+const StylishTemplate = () => {
   const { languages, databases, tools, frameworks } = SkillDetailStore(
     (state) => ({
       languages: state.languages,
@@ -47,9 +47,88 @@ const ModernTemplate = () => {
   return (
     <>
       <div
-        className="p-3 font_alegreya"
-        style={{ fontFamily: "Alegreya", paddingTop: "0px" }}
+        className=""
+        style={{ fontFamily: "Space Mono, monospace", height: "285mm" }}
       >
+        <div
+          className="flex flex-row justify-between items-center"
+          style={{ height: "285mm" }}
+        >
+          <div
+            className=""
+            style={{
+              width: "50%",
+              textAlign: "center",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              // justifyContent:"center",
+              padding: "25px",
+              color: "#373737",
+              fontFamily: "inherit",
+            }}
+          >
+            <Basics />
+
+            <SectionValidator value={academics}>
+              <Education />
+            </SectionValidator>
+
+            <SectionValidator value={experiences}>
+              <Experience />
+            </SectionValidator>
+          </div>
+          <div
+            className=""
+            style={{
+              width: "50%",
+              textAlign: "center",
+              backgroundColor: "#373737",
+              height: "100%",
+              color: "white",
+              display: "flex",
+              flexDirection: "column",
+              // justifyContent: "center",
+              padding: "25px",
+              fontFamily: "inherit",
+            }}
+          >
+            <SectionHeading title="Skills" color="white" />
+
+            <SectionValidator value={languages}>
+              <Skills title="Languages" list={languages} />
+            </SectionValidator>
+
+            <SectionValidator value={databases}>
+              <Skills title="Databases" list={databases} />
+            </SectionValidator>
+
+            <SectionValidator value={frameworks}>
+              <Skills title="Frameworks" list={frameworks} />
+            </SectionValidator>
+
+            <SectionValidator value={tools}>
+              <Skills title="Tools" list={tools} />
+            </SectionValidator>
+
+            <SectionValidator value={projects}>
+              <Projects />
+            </SectionValidator>
+
+            <SectionValidator value={awards}>
+              <Awards />
+            </SectionValidator>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default StylishTemplate;
+
+/*
+<div className="p-4 font_alegreya" style={{fontFamily:"Alegreya"}}>
         <Basics />
         <div className="flex flex-col">
           <div className="p-3" style={{ paddingTop: "0px" }}>
@@ -86,11 +165,8 @@ const ModernTemplate = () => {
             <SectionValidator value={awards}>
               <Awards />
             </SectionValidator>
+
           </div>
         </div>
       </div>
-    </>
-  );
-};
-
-export default ModernTemplate;
+ */

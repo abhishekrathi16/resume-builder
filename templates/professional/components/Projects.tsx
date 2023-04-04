@@ -15,7 +15,7 @@ const Projects = () => {
   console.log(projects);
 
   return (
-    <div className="mb-3 mt-2">
+    <div className="mb-1 mt-2">
       <SectionHeading title="Projects" />
       {projects.map((item: ProjectsItem, index: number) => {
         return (

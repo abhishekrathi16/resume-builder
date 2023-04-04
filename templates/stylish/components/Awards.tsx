@@ -1,4 +1,4 @@
-import { HTMLRenderer } from "../../../helpers/common/components/HTMLRenderer";
+import { HTMLRendererTwo } from "../../../helpers/common/components/HTMLRendererTwo";
 import { IAwards } from "../../../store/index.interface";
 import { SectionHeading } from "../atoms/SectionHeading";
 import { SectionList } from "../atoms/SectionList";
@@ -13,21 +13,21 @@ const AwardsSection = () => {
   }));
   return (
     <div className="mb-2">
-      <SectionHeading title="Awards" />
+      <SectionHeading title="Awards" color="white" />
       {awardsRecieved.map((award: IAwards, index: number) => {
         return (
           <div key={index} className="pb-2" style={{ paddingTop: "8px" }}>
             <SectionTitle label={award.title} />
             <div className="flex justify-between awards-center">
-              <SectionSubtitle label={award.organisation} />
+              <SectionSubtitle label={award.organisation} color="white" />
               <div>
-                <p className="text-xs" style={{ fontStyle: "italic" }}>
+                <p className="text-sm" style={{ fontStyle: "italic" }}>
                   {dateParser(award.date)}
                 </p>
               </div>
             </div>
             <SectionList>
-              <HTMLRenderer htmlString={award.summary} />
+              <HTMLRendererTwo htmlString={award.summary} />
             </SectionList>
           </div>
         );

@@ -1,6 +1,9 @@
 export const SectionTitle = ({ label }: { label: string }) => {
   return (
-    <p className="text-md font-bold" style={{ fontFamily: "Alegreya" }}>
+    <p
+      className="text-lg font-bold text-left"
+      style={{ fontFamily: "monospace" }}
+    >
       {label}
     </p>
   );

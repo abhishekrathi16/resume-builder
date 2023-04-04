@@ -15,24 +15,39 @@ const Basics = () => {
     changeValue: state.changeValue,
   }));
   return (
-    <div className="p-2" style={{ paddingBottom: "0px" }}>
+    <div
+      className="p-2 flex flex-col justify-between items-center"
+      style={{
+        paddingBottom: "0px",
+        marginBottom: "20px",
+        fontFamily: "inherit",
+      }}
+    >
       <ProfileName name={basics.name} />
       <div
-        className="flex flex-row justify-between items-center"
-        style={{ padding: "8px 200px", paddingTop: "0px" }}
+        className="flex flex-col justify-between items-center"
+        style={{
+          padding: "8px 200px",
+          paddingTop: "0px",
+          fontFamily: "inherit",
+        }}
       >
         <div className="flex flex-row">
-          <AiFillPhone style={{ color: "#0062b4", margin: "2px" }} />
+          <AiFillPhone
+            style={{ margin: "2px", marginRight: "8px", fontFamily: "inherit" }}
+          />
           <ProfileContact text={basics.phone} />
         </div>
         <div className="flex flex-row">
-          <MdEmail style={{ color: "#0062b4", margin: "3px" }} />
+          <MdEmail
+            style={{ margin: "3px", marginRight: "8px", fontFamily: "inherit" }}
+          />
           <ProfileContact text={basics.email} />
         </div>
       </div>
       <div
         className="flex flex-row justify-between"
-        style={{ padding: "0px 100px", color: "#0062b4" }}
+        style={{ padding: "0px 10px", width: "250px" }}
       >
         {basics.profiles.map((item: IProfiles, id: number) => {
           return (

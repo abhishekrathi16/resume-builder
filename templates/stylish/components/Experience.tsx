@@ -1,6 +1,6 @@
 import React from "react";
 import { dateParser } from "../../../helpers/utils";
-import { HTMLRenderer } from "../../../helpers/common/components/HTMLRenderer";
+import { HTMLRendererTwo } from "../../../helpers/common/components/HTMLRendererTwo";
 import { IExperienceItem } from "../../../store/index.interface";
 import { SectionHeading } from "../atoms/SectionHeading";
 import { SectionList } from "../atoms/SectionList";
@@ -14,13 +14,13 @@ const Experience = () => {
   }));
   return (
     <div className="mb-1">
-      <SectionHeading title="Experience" />
+      <SectionHeading title="Experience" color="#373737" />
       {experience.map((item: IExperienceItem, index: number) => {
         return (
           <div className="py-2" key={index}>
             <SectionTitle label={item.position} />
             <div className="flex justify-between items-center">
-              <SectionSubtitle label={item.company_name} />
+              <SectionSubtitle label={item.company_name} color="#373737" />
               <div>
                 <p className="text-xs" style={{ fontStyle: "italic" }}>
                   {dateParser(item.startDate)}-{" "}
@@ -29,7 +29,7 @@ const Experience = () => {
               </div>
             </div>
             <SectionList>
-              <HTMLRenderer htmlString={item.summary} />
+              <HTMLRendererTwo htmlString={item.summary} />
             </SectionList>
           </div>
         );
