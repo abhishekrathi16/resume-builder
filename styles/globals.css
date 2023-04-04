@@ -5,11 +5,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 @font-face {
   font-family: "Alegreya";
   src: url("/public/fonts/Alegreya-VariableFont_wght.ttf");
   font-style: medium;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family:"Space Mono";
+  src: url("/public/fonts/SpaceMono-Regular.ttf");
+  font-style: normal;
   font-weight: normal;
   font-display: swap;
 }

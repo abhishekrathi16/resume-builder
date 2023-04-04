@@ -23,11 +23,11 @@ const ResumeLayout = React.forwardRef<HTMLInputElement>((props, ref) => {
 
   return (
     <div
-      className="mx-0 my-5 print:mx-0 mb-4 print:mb-0 bg-[#f3f4f6]"
+      className="mx-0 my-5 print:mx-0 mb-4 print:my-0 print:px-0 bg-[#f3f4f6]"
       ref={ref}
     >
       <div className="origin-top transition-all duration-300 ease-linear print:!scale-100 bg-[#f3f4f6] print:bg-white overflow-x-hidden scroll-smooth max-h-screen sticky print:overflow-y-hidden">
-        <div className="bg-white my-0 mx-auto h-[285mm] w-[204mm]">
+        <div className="bg-white my-0 mx-auto print:mx-0 print:my-0 h-[285mm] w-[204mm]">
           <StateContext.Provider value={resumeData}>
             {Template && <Template />}
           </StateContext.Provider>
