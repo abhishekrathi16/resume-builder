@@ -117,8 +117,8 @@ const Paticular_Project = (props: Pprojects) => {
           fullWidth
           label="Start Date"
           variant="outlined"
+          type="month"
           value={props.projects.startDate}
-          placeholder="dd-mm-yyyy"
           onChange={(e) =>
             props.updateValue(e.target.value, "startDate", props.id_)
           }
@@ -132,8 +132,8 @@ const Paticular_Project = (props: Pprojects) => {
           fullWidth
           label="End Date"
           variant="outlined"
+          type="month"
           value={props.projects.endDate}
-          placeholder="dd-mm-yyyy"
           onChange={(e) =>
             props.updateValue(e.target.value, "endDate", props.id_)
           }

@@ -12,10 +12,6 @@ interface PExperience {
 
 const Paticular_Experience = (props: PExperience) => {
   const [checks, setChecks] = useState(props.experience.isWorkingHere);
-  const changeChekcks = () => {
-    setChecks(!checks);
-    props.updateValue(checks, "isWorkingHere", props.id_);
-  };
   return (
     <div>
       {/* comapny name input */}
@@ -65,9 +61,9 @@ const Paticular_Experience = (props: PExperience) => {
           id="outlined-basic"
           fullWidth
           label="Start Date"
+          type="month"
           variant="outlined"
           value={props.experience.startDate}
-          placeholder="dd-mm-yyyy"
           onChange={(e) =>
             props.updateValue(e.target.value, "startDate", props.id_)
           }
@@ -95,9 +91,10 @@ const Paticular_Experience = (props: PExperience) => {
           id="outlined-basic"
           fullWidth
           label="End Date"
+          type="month"
           variant="outlined"
           value={props.experience.endDate}
-          placeholder="dd-mm-yyyy"
+          disabled={props.experience.isWorkingHere?true:false }
           onChange={(e) =>
             props.updateValue(e.target.value, "endDate", props.id_)
           }

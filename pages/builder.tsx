@@ -54,7 +54,7 @@ const builder = () => {
         const docRef = doc(db, "resumedata", userInfo.userId);
         const docSnap: DocumentSnapshot<DocumentData> = await getDoc(docRef);
 
-        console.log(docSnap.data()) 
+        // console.log(docSnap.data()) 
 
         setAwards(docSnap.data()?.awards)
         setEducation(docSnap.data()?.education)
