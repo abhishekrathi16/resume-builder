@@ -94,7 +94,7 @@ const Paticular_Experience = (props: PExperience) => {
           type="month"
           variant="outlined"
           value={props.experience.endDate}
-          disabled={props.experience.isWorkingHere?true:false }
+          disabled={props.experience.isWorkingHere ? true : false}
           onChange={(e) =>
             props.updateValue(e.target.value, "endDate", props.id_)
           }
