@@ -57,19 +57,16 @@ const builder = () => {
         let userInfo: UserData = JSON.parse(value);
         const docRef = doc(db, "resumedata", userInfo.userId);
         const docSnap: DocumentSnapshot<DocumentData> = await getDoc(docRef);
-
-        console.log(docSnap.data());
-
-        setAwards(docSnap.data()?.awards);
-        setEducation(docSnap.data()?.education);
-        setExperience(docSnap.data()?.work);
-        setProjects(docSnap.data()?.projects);
-        changeValue(docSnap.data()?.basics);
-        setLanguages(docSnap.data()?.skills.languages);
-        setDatabases(docSnap.data()?.skills.databases);
-        setFrameworks(docSnap.data()?.skills.frameworks);
-        setTools(docSnap.data()?.skills.tools);
-        setLoading(false);
+        setAwards(docSnap.data()?.awards)
+        setEducation(docSnap.data()?.education)
+        setExperience(docSnap.data()?.work)
+        setProjects(docSnap.data()?.projects)
+        changeValue(docSnap.data()?.basics)
+        setLanguages(docSnap.data()?.skills.languages)
+        setDatabases(docSnap.data()?.skills.databases)
+        setFrameworks(docSnap.data()?.skills.frameworks)
+        setTools(docSnap.data()?.skills.tools)
+        setLoading(false)
       }
     };
 

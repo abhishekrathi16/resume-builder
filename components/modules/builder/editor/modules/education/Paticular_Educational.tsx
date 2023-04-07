@@ -61,8 +61,8 @@ const Paticular_Educational = (props: PEducation) => {
           fullWidth
           label="Start Date"
           variant="outlined"
+          type="month"
           value={props.academic.startDate}
-          placeholder="dd-mm-yyyy"
           onChange={(e) =>
             props.updateValue(props.id_, e.target.value, "startDate")
           }
@@ -76,8 +76,8 @@ const Paticular_Educational = (props: PEducation) => {
           fullWidth
           label="End Date"
           variant="outlined"
+          type="month"
           value={props.academic.endDate}
-          placeholder="dd-mm-yyyy"
           onChange={(e) =>
             props.updateValue(props.id_, e.target.value, "endDate")
           }

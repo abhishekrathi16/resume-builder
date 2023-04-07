@@ -45,8 +45,8 @@ const Paticular_Award = (props: PAward) => {
           id="outlined-basic"
           fullWidth
           label="Date"
+          type="month"
           variant="outlined"
-          placeholder="dd-mm-yyyy"
           value={props.awards.date}
           onChange={(e) => props.updateValue(e.target.value, "date", props.id_)}
         />
