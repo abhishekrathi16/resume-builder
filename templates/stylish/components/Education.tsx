@@ -27,7 +27,7 @@ const Education = () => {
                 </div>
               </div>
               <p className="text-sm" style={{ fontStyle: "italic" }}>
-                {item.score}
+                CGPA/Percentage: {item.score}
               </p>
             </div>
           </div>
