@@ -47,17 +47,17 @@ const StylishTemplate = () => {
   return (
     <>
       <div
-        className="flex "
+        className="grid_template_stylish"
         style={{
           height: "297mm",
           fontFamily: "Space Mono, monospace",
-          maxWidth: "210mm",
+          // maxWidth: "210mm",
         }}
       >
         <div
-          className=" flex-wrap"
+          className="grid_template_stylish_basics_ex_ed"
           style={{
-            width: "50%",
+            // width: "100%",
             textAlign: "center",
             height: "100%",
             // display: "flex",
@@ -79,9 +79,9 @@ const StylishTemplate = () => {
           </SectionValidator>
         </div>
         <div
-          className=""
+          className=" grid_template_stylish_skills_award "
           style={{
-            width: "50%",
+            // width: "100%",
             textAlign: "center",
             backgroundColor: "#373737",
             height: "100%",
