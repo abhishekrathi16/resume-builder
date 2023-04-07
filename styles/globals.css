@@ -107,7 +107,7 @@ button.rec-dot:focus {
 
 .grid_template_stylish {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 .grid_template_stylish_basics_ex_ed {
