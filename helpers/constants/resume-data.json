@@ -1,6 +1,6 @@
 {
   "name": "name",
-  "email":"email",
+  "email": "email",
   "basics": {
     "name": "Jane Doe",
     "label": "Frontend Developer",

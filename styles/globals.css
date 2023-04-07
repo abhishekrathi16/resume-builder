@@ -92,31 +92,28 @@ button.rec-dot:focus {
   font-family: "Alegreya", serif;
 }
 
-
-.grid_builder_layout{
+.grid_builder_layout {
   display: grid;
   grid-template-columns: 0.01fr 1fr 1fr 0.01fr;
-  
 }
 
-.grid_builder_editor{
+.grid_builder_editor {
   grid-column: 2/3;
 }
 
-.grid_builder_template{
+.grid_builder_template {
   grid-column: 3/4;
 }
 
-.grid_template_stylish{
+.grid_template_stylish {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.grid_template_stylish_basics_ex_ed{
+.grid_template_stylish_basics_ex_ed {
   grid-column: 1/2;
 }
 
-.grid_template_stylish_skills_award{
+.grid_template_stylish_skills_award {
   grid-column: 2/3;
 }
-
