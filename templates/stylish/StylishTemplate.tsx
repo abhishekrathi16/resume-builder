@@ -46,22 +46,19 @@ const StylishTemplate = () => {
 
   return (
     <>
-      <div
-        className=""
-        style={{ fontFamily: "Space Mono, monospace", height: "285mm" }}
-      >
+      
         <div
-          className="flex flex-row justify-between items-center"
-          style={{ height: "285mm" }}
+          className="flex "
+          style={{ height: "297mm", fontFamily: "Space Mono, monospace", maxWidth:"210mm" }}
         >
           <div
-            className=""
+          className=" flex-wrap"
             style={{
               width: "50%",
               textAlign: "center",
               height: "100%",
-              display: "flex",
-              flexDirection: "column",
+              // display: "flex",
+              // flexDirection: "column",
               // justifyContent:"center",
               padding: "25px",
               color: "#373737",
@@ -86,8 +83,8 @@ const StylishTemplate = () => {
               backgroundColor: "#373737",
               height: "100%",
               color: "white",
-              display: "flex",
-              flexDirection: "column",
+                // display: "flex",
+                // flexDirection: "column",
               // justifyContent: "center",
               padding: "25px",
               fontFamily: "inherit",
@@ -120,7 +117,7 @@ const StylishTemplate = () => {
             </SectionValidator>
           </div>
         </div>
-      </div>
+
     </>
   );
 };
