@@ -22,7 +22,7 @@ export default function SignUp(): JSX.Element {
     console.log(email);
     console.log(password);
 
-    signIn("User", email, password).then(() => {
+    signIn( email, password).then(() => {
       setEmail("");
       setPassword("");
     });
@@ -73,6 +73,7 @@ export default function SignUp(): JSX.Element {
                             <p
                               onClick={() => state.setOpen(state.open)}
                               ref={cancelButtonRef}
+                              style={{cursor:"pointer"}}
                             >
                               <MdCancel
                                 className="invert"

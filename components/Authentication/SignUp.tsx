@@ -29,7 +29,8 @@ export default function SignUp(): JSX.Element {
       setEmail("");
       setPassword("");
       setName("");
-      notify("successfully registered");
+      notify("successfully registered")
+    }).catch((err)=>{
     });
   };
   return (
@@ -78,6 +79,7 @@ export default function SignUp(): JSX.Element {
                             <p
                               onClick={() => state.setOpen(state.open)}
                               ref={cancelButtonRef}
+                              style={{ cursor:"pointer"}}
                             >
                               <MdCancel
                                 className="invert"
@@ -92,7 +94,7 @@ export default function SignUp(): JSX.Element {
                           <div>
                             <div className="divide-y divide-gray-200">
                               <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
-                                <div className="relative  ">
+                                <div className="relative bottom-[4px] ">
                                   <input
                                     autoComplete="off"
                                     id="name"
@@ -110,7 +112,7 @@ export default function SignUp(): JSX.Element {
                                     Enter Name
                                   </label>
                                 </div>
-                                <div className="relative  ">
+                                <div className="relative top-[4px]  ">
                                   <input
                                     autoComplete="off"
                                     id="email"
@@ -128,7 +130,7 @@ export default function SignUp(): JSX.Element {
                                     Email Address
                                   </label>
                                 </div>
-                                <div className="relative ">
+                                <div className="relative top-[8px]">
                                   <input
                                     autoComplete="off"
                                     id="password"
@@ -144,9 +146,10 @@ export default function SignUp(): JSX.Element {
                                   <label className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                                     Password
                                   </label>
+                                  <sub className="text-sky-400	">minimum 8 characters</sub>
                                 </div>
 
-                                <div className="relative top-6">
+                                <div className="relative top-4">
                                   <button
                                     className="bg-gradient-to-r  from-[#2491f7] to-[#67c5fc] text-white rounded-md px-2 py-1  "
                                     onClick={handleSignUp}
