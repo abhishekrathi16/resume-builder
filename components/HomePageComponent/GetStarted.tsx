@@ -5,9 +5,9 @@ import { useAuthStore } from "../../store/SignIn_SignOut";
 import { toast } from "react-toastify";
 
 const GetStarted = (): JSX.Element => {
-  const {User} = useAuthStore((state)=>({
-    User:state.User
-  }))
+  const { User } = useAuthStore((state) => ({
+    User: state.User,
+  }));
 
   //  for notification
   const notify = (content: string) => {
@@ -16,10 +16,10 @@ const GetStarted = (): JSX.Element => {
 
   const router = useRouter();
   const routeTobuilder = () => {
-    //  check wether the user is logged in or not 
-    if(User.userId===""){
-      notify("Login Required")
-    }else{
+    //  check wether the user is logged in or not
+    if (User.userId === "") {
+      notify("Login Required");
+    } else {
       router.push("/builder");
     }
   };

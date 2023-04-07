@@ -28,15 +28,12 @@ import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 
-
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../../../../FirebaseConfig/FirebaseConfig";
 import { UserData } from "../../../../../../store/SignIn_SignOut";
 
 import Loading from "../../../../../Loading_Button";
 import { toast } from "react-toastify";
-
-
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -82,11 +79,10 @@ const SkillsLayout = (): JSX.Element => {
       setExpanded(newExpanded ? panel : false);
     };
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const notify = (content: string) => {
     toast(content);
   };
-
 
   const [lang, setLang] = useState("");
   const [frame, setFrame] = useState("");
@@ -94,23 +90,22 @@ const SkillsLayout = (): JSX.Element => {
   const [tool, setTool] = useState("");
 
   const saveSkillsdetail = async () => {
-    setLoading(true)
+    setLoading(true);
     let value = localStorage.getItem("userInfo");
     if (typeof value === "string") {
       let userInfo: UserData = JSON.parse(value);
       console.log(userInfo.userId);
-      const ref = doc(db, "resumedata", userInfo.userId)
+      const ref = doc(db, "resumedata", userInfo.userId);
       await updateDoc(ref, {
-        skills:{
-          databases:databases,
-          frameworks:frameworks,
-          tools:tools,
-          languages:languages
-        }
-      })
-      setLoading(false)
-      notify("data saved successfully")
-
+        skills: {
+          databases: databases,
+          frameworks: frameworks,
+          tools: tools,
+          languages: languages,
+        },
+      });
+      setLoading(false);
+      notify("data saved successfully");
     }
   };
 
@@ -294,21 +289,19 @@ const SkillsLayout = (): JSX.Element => {
             className="bg-gradient-to-r  from-[#2491f7] to-[#67c5fc] text-white rounded-md px-[20px] py-[4px] flex flex-row justify-center items-center "
             onClick={saveSkillsdetail}
           >
-            {
-              loading ? (
-                <>
-                  <Loading  />
-                </>
-              ) : (
-                <>
-                  <Image
-                    src={save}
-                    alt="saveIcon"
-                    className="h-[30px] w-[30px] mr-[10px]"
-                  />
-                </>
-              )
-            }
+            {loading ? (
+              <>
+                <Loading />
+              </>
+            ) : (
+              <>
+                <Image
+                  src={save}
+                  alt="saveIcon"
+                  className="h-[30px] w-[30px] mr-[10px]"
+                />
+              </>
+            )}
             <span className="text-lg">Save</span>
           </button>
         </div>

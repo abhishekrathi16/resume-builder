@@ -10,7 +10,6 @@ import { useEffect } from "react";
 import { useAuthStore } from "../store/SignIn_SignOut";
 import { UserData } from "../store/SignIn_SignOut";
 
-
 const MyApp = ({ Component, pageProps }: any): JSX.Element => {
   const { setUser } = useAuthStore((state) => ({
     setUser: state.setUser,

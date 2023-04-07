@@ -45,6 +45,17 @@ export const AVAILABLE_TEMPLATES: ITemplate = {
       }
     ),
   },
+  stylish: {
+    id: "stylish",
+    name: "Stylish Resume",
+    thumbnail: "/templates/stylish.png",
+    component: dynamic(
+      () => import("../../templates/stylish/StylishTemplate"),
+      {
+        ssr: false,
+      }
+    ),
+  },
 };
 
 export const CUSTOM_THEME_COLOR: IThemeColor = {

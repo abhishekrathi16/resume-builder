@@ -1,10 +1,10 @@
 import React from "react";
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 import { LinearProgress } from "@mui/material";
 
-interface width{
-  width:number
+interface width {
+  width: number;
 }
 
 const Loading = () => {
@@ -24,20 +24,25 @@ const Loading = () => {
   );
 };
 
-
-const BuilderPageLoading = ()=>{
+const BuilderPageLoading = () => {
   return (
     <>
-      <Box sx={{ display: 'flex', height: "100vh", widht: "100wh",flexDirection:"column" ,justifyContent: "center", alignItems: "center" }}>
-          <CircularProgress thickness={2} size={60} />
-        <div className="mt-4 text-[#3b82f6]" >
-            Loading...
-          </div>
+      <Box
+        sx={{
+          display: "flex",
+          height: "100vh",
+          widht: "100wh",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <CircularProgress thickness={2} size={60} />
+        <div className="mt-4 text-[#3b82f6]">Loading...</div>
       </Box>
-      
     </>
-  )
-}
+  );
+};
 
 export default Loading;
-export {BuilderPageLoading}
+export { BuilderPageLoading };
