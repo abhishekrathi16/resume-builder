@@ -47,78 +47,77 @@ const StylishTemplate = () => {
   return (
     <>
       <div
-        className=""
-        style={{ fontFamily: "Space Mono, monospace", height: "285mm" }}
+        className="flex "
+        style={{
+          height: "297mm",
+          fontFamily: "Space Mono, monospace",
+          maxWidth: "210mm",
+        }}
       >
         <div
-          className="flex flex-row justify-between items-center"
-          style={{ height: "285mm" }}
+          className=" flex-wrap"
+          style={{
+            width: "50%",
+            textAlign: "center",
+            height: "100%",
+            // display: "flex",
+            // flexDirection: "column",
+            // justifyContent:"center",
+            padding: "25px",
+            color: "#373737",
+            fontFamily: "inherit",
+          }}
         >
-          <div
-            className=""
-            style={{
-              width: "50%",
-              textAlign: "center",
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              // justifyContent:"center",
-              padding: "25px",
-              color: "#373737",
-              fontFamily: "inherit",
-            }}
-          >
-            <Basics />
+          <Basics />
 
-            <SectionValidator value={academics}>
-              <Education />
-            </SectionValidator>
+          <SectionValidator value={academics}>
+            <Education />
+          </SectionValidator>
 
-            <SectionValidator value={experiences}>
-              <Experience />
-            </SectionValidator>
-          </div>
-          <div
-            className=""
-            style={{
-              width: "50%",
-              textAlign: "center",
-              backgroundColor: "#373737",
-              height: "100%",
-              color: "white",
-              display: "flex",
-              flexDirection: "column",
-              // justifyContent: "center",
-              padding: "25px",
-              fontFamily: "inherit",
-            }}
-          >
-            <SectionHeading title="Skills" color="white" />
+          <SectionValidator value={experiences}>
+            <Experience />
+          </SectionValidator>
+        </div>
+        <div
+          className=""
+          style={{
+            width: "50%",
+            textAlign: "center",
+            backgroundColor: "#373737",
+            height: "100%",
+            color: "white",
+            // display: "flex",
+            // flexDirection: "column",
+            // justifyContent: "center",
+            padding: "25px",
+            fontFamily: "inherit",
+          }}
+        >
+          <SectionHeading title="Skills" color="white" />
 
-            <SectionValidator value={languages}>
-              <Skills title="Languages" list={languages} />
-            </SectionValidator>
+          <SectionValidator value={languages}>
+            <Skills title="Languages" list={languages} />
+          </SectionValidator>
 
-            <SectionValidator value={databases}>
-              <Skills title="Databases" list={databases} />
-            </SectionValidator>
+          <SectionValidator value={databases}>
+            <Skills title="Databases" list={databases} />
+          </SectionValidator>
 
-            <SectionValidator value={frameworks}>
-              <Skills title="Frameworks" list={frameworks} />
-            </SectionValidator>
+          <SectionValidator value={frameworks}>
+            <Skills title="Frameworks" list={frameworks} />
+          </SectionValidator>
 
-            <SectionValidator value={tools}>
-              <Skills title="Tools" list={tools} />
-            </SectionValidator>
+          <SectionValidator value={tools}>
+            <Skills title="Tools" list={tools} />
+          </SectionValidator>
 
-            <SectionValidator value={projects}>
-              <Projects />
-            </SectionValidator>
+          <SectionValidator value={projects}>
+            <Projects />
+          </SectionValidator>
 
-            <SectionValidator value={awards}>
-              <Awards />
-            </SectionValidator>
-          </div>
+          <SectionValidator value={awards}>
+            <Awards />
+          </SectionValidator>
         </div>
       </div>
     </>

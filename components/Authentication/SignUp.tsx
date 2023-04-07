@@ -25,13 +25,14 @@ export default function SignUp(): JSX.Element {
   };
 
   const handleSignUp = async () => {
-    createUser(name, email, password).then(() => {
-      setEmail("");
-      setPassword("");
-      setName("");
-      notify("successfully registered")
-    }).catch((err)=>{
-    });
+    createUser(name, email, password)
+      .then(() => {
+        setEmail("");
+        setPassword("");
+        setName("");
+        notify("successfully registered");
+      })
+      .catch((err) => {});
   };
   return (
     <Transition.Root show={state.open} as={Fragment}>
@@ -79,7 +80,7 @@ export default function SignUp(): JSX.Element {
                             <p
                               onClick={() => state.setOpen(state.open)}
                               ref={cancelButtonRef}
-                              style={{ cursor:"pointer"}}
+                              style={{ cursor: "pointer" }}
                             >
                               <MdCancel
                                 className="invert"
@@ -146,7 +147,9 @@ export default function SignUp(): JSX.Element {
                                   <label className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">
                                     Password
                                   </label>
-                                  <sub className="text-sky-400	">minimum 8 characters</sub>
+                                  <sub className="text-sky-400	">
+                                    minimum 8 characters
+                                  </sub>
                                 </div>
 
                                 <div className="relative top-4">

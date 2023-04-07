@@ -15,11 +15,7 @@ import demoDetails from "../helpers/constants/resume-data.json";
 import { toast } from "react-toastify";
 import { collection, getDocs } from "firebase/firestore";
 
-
-
-
 const useAuth = () => {
-  
   const notify = (content: string) => {
     toast(content);
   };
@@ -44,21 +40,21 @@ const useAuth = () => {
     setLoading();
 
     // check email is in valid format or not
-    
-    if (!/\S+@\S+\.\S+/.test(email)){
-      notify("Provide valid email format")
-      setLoading()
-      throw Error("Provide valid email format") 
+
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      notify("Provide valid email format");
+      setLoading();
+      throw Error("Provide valid email format");
     }
 
     // check email already exists or not
 
     const collectionSnapshot = await getDocs(collection(db, "resumedata"));
     collectionSnapshot.forEach((doc) => {
-      if (email == doc.data().email){
-        notify("Email Already in Use")
-        setLoading()
-        throw Error("Email Already in Use") 
+      if (email == doc.data().email) {
+        notify("Email Already in Use");
+        setLoading();
+        throw Error("Email Already in Use");
       }
     });
 
@@ -79,15 +75,15 @@ const useAuth = () => {
           localStorage.setItem("userInfo", JSON.stringify(User));
           setLoading();
           setOpen(open);
-          
-          const getData = async()=>{
+
+          const getData = async () => {
             const ref = doc(db, "resumedata", User.userId); // getting refrence of collection
             demoDetails.name = User.name;
-            demoDetails.email = email
-            await setDoc(ref, demoDetails)
-          }
+            demoDetails.email = email;
+            await setDoc(ref, demoDetails);
+          };
 
-          getData()
+          getData();
         }
       })
       .catch((err) => {
@@ -97,18 +93,17 @@ const useAuth = () => {
         notify("Wrong Credential");
         return;
       });
-    
   };
 
-  const signIn = async ( email: string, password: string) => {
+  const signIn = async (email: string, password: string) => {
     setLoading();
     await signInWithEmailAndPassword(auth, email, password)
       .then((res) => {
-        const getData = async()=>{
+        const getData = async () => {
           const docRef = doc(db, "resumedata", res.user.uid);
           const docSnap = await getDoc(docRef);
           if (docSnap.exists()) {
-            console.log(docSnap.data().name)
+            console.log(docSnap.data().name);
             setUser(
               {
                 name: docSnap.data().name,
@@ -123,19 +118,15 @@ const useAuth = () => {
           localStorage.setItem("userInfo", JSON.stringify(User)); // adding user info to localstorage
           notify("Welcome My Friend, I wish i were a bird");
           router.push("/builder");
-        }
-        getData()
-        
-        
+        };
+        getData();
       })
       .catch((err) => {
         console.log(err);
         setLoading();
         setOpenSignIn(openSignIn);
         notify("Wrong Credential ");
-        
       });
-
   };
 
   const logout = async () => {
