@@ -120,6 +120,7 @@ const AwardsLayout = () => {
     };
     awards.push(newAward);
     setAwards(awards);
+    setExpanded(`panel${newAward.id}`)
     console.log(awards);
   };
   const removeAward = (id: number) => {
