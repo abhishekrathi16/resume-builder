@@ -117,6 +117,7 @@ const EducationLayout = () => {
     let newArray: IEducationItem[] = academics;
     newArray.push(newEducation);
     setEducation(newArray);
+    setExpanded(`panel${newEducation.id}`)
     console.log(academics);
   };
 

@@ -116,6 +116,7 @@ const ProjectsLayout = () => {
     };
     projects.push(newProject);
     setProjects(projects);
+    setExpanded(`panel${newProject.id}`)
     console.log(projects);
   };
   const removeProjects = (id: number) => {

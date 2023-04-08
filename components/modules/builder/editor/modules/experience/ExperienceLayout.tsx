@@ -124,6 +124,7 @@ const ExperienceLayout = () => {
     };
     experiences.push(newExperience);
     setExperience(experiences);
+    setExpanded(`panel${newExperience.id}`)
     console.log(experiences);
   };
 
