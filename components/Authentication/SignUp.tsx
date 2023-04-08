@@ -5,6 +5,7 @@ import { useAuthStore, useSignUpStore } from "../../store/SignIn_SignOut";
 import useAuth from "../../FirebaseConfig/firebase_helper";
 import Loading from "../Loading_Button";
 import { toast } from "react-toastify";
+import { CircularIntegration } from "../Loading_Button";
 
 export default function SignUp(): JSX.Element {
   const state = useSignUpStore();
@@ -153,18 +154,7 @@ export default function SignUp(): JSX.Element {
                                 </div>
 
                                 <div className="relative top-4">
-                                  <button
-                                    className="bg-gradient-to-r  from-[#2491f7] to-[#67c5fc] text-white rounded-md px-2 py-1  "
-                                    onClick={handleSignUp}
-                                  >
-                                    {loading ? (
-                                      <>
-                                        <Loading />
-                                      </>
-                                    ) : (
-                                      <>Submit</>
-                                    )}
-                                  </button>
+                                  <CircularIntegration name="Sign Up" handleFunction={handleSignUp} isLoading={loading} />
                                 </div>
                               </div>
                             </div>

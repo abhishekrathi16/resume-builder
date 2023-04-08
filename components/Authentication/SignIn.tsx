@@ -6,11 +6,12 @@ import useAuth from "../../FirebaseConfig/firebase_helper";
 import Loading from "../Loading_Button";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
+import { CircularIntegration } from "../Loading_Button";
 
 export default function SignUp(): JSX.Element {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { loading } = useAuthStore();
+  const [loading, setLoading] = useState(false); 
   const state = useSignInStore();
   const { signIn } = useAuth();
   const cancelButtonRef = useRef(null);
@@ -21,10 +22,11 @@ export default function SignUp(): JSX.Element {
   const handleSignIn = async () => {
     console.log(email);
     console.log(password);
-
+    setLoading(true);
     signIn(email, password).then(() => {
       setEmail("");
       setPassword("");
+      setLoading(false);
     });
   };
 
@@ -122,18 +124,7 @@ export default function SignUp(): JSX.Element {
                               </div>
 
                               <div className="relative top-6">
-                                <button
-                                  className="bg-gradient-to-r  from-[#2491f7] to-[#67c5fc] text-white rounded-md px-2 py-1 "
-                                  onClick={handleSignIn}
-                                >
-                                  {loading ? (
-                                    <>
-                                      <Loading />
-                                    </>
-                                  ) : (
-                                    <>Submit</>
-                                  )}
-                                </button>
+                                  <CircularIntegration name="Sign In" handleFunction={handleSignIn} isLoading={loading} />
                               </div>
                             </div>
                           </div>

@@ -21,6 +21,7 @@
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.15",
     "@mui/styled-engine-sc": "^5.11.11",
+    "@mui/styles": "^5.11.16",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
     "@types/node": "18.15.3",
