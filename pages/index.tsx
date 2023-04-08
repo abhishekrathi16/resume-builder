@@ -1,3 +1,4 @@
+// import SignIn from "../components/Authentication/SignIn";
 import HomePage from "../components/HomePageComponent/HomePage";
 
 export const metadata = {
@@ -10,8 +11,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div >
-    <HomePage />
-    {children}
-    </div>;
+  return (
+    <div>
+      <HomePage />
+      {}
+
+      {children}
+    </div>
+  );
 }

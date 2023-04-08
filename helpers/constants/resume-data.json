@@ -1,0 +1,148 @@
+{
+  "name": "name",
+  "email": "email",
+  "basics": {
+    "name": "Jane Doe",
+    "label": "Frontend Developer",
+    "image": "https://randomuser.me/api/portraits/men/18.jpg",
+    "email": "janedoe@email.com",
+    "phone": "+91 9876543210",
+    "profiles": [
+      {
+        "profile_name": "linkedin",
+        "profile_url": "https://www.linkedin.com/in/janeDoe/"
+      },
+      {
+        "profile_name": "twitter",
+        "profile_url": "https://www.twitter.com/janeDoe/"
+      },
+      {
+        "profile_name": "github",
+        "profile_url": "https://github.com/janeDoe/"
+      },
+      {
+        "profile_name": "hackerrank",
+        "profile_url": "https://www.hackerrank.com/paicube/"
+      },
+      {
+        "profile_name": "hackerearth",
+        "profile_url": "https://www.hackerearth.com/janeDoe/"
+      },
+      {
+        "profile_name": "codechef",
+        "profile_url": "https://www.codechef.com/janeDoe/"
+      },
+      {
+        "profile_name": "leetcode",
+        "profile_url": "https://leetcode.com/paicube/"
+      }
+    ]
+  },
+
+  "skills": {
+    "languages": [
+      {
+        "id": 0,
+        "name": "C++"
+      },
+      {
+        "id": 1,
+        "name": "Python"
+      }
+    ],
+    "frameworks": [
+      {
+        "id": 0,
+        "name": "ReactJS"
+      },
+      {
+        "id": 1,
+        "name": "Django"
+      }
+    ],
+    "databases": [
+      {
+        "id": 0,
+        "name": "Firebase"
+      },
+      {
+        "id": 1,
+        "name": "MongoDB"
+      }
+    ],
+    "tools": [
+      {
+        "id": 0,
+        "name": "Git"
+      },
+      {
+        "id": 1,
+        "name": "Heroku"
+      }
+    ]
+  },
+
+  "work": [
+    {
+      "id": 0,
+      "company_name": "Company 1",
+      "position": "Senior Software Developer",
+      "url": "",
+      "startDate": "Apr 2021",
+      "endDate": "",
+      "summary": "<ul><li> Use my extensive experience with front end development to define the structure and components for the project, making sure they are reusable</li><li>Keep the code quality high reviewing code from other developers and suggesting improvements</li><li> Interact with the designer to suggest changes and to make sure the view he has about the design is translated into actual functionality</li><li> E-commerce maintenance <strong>with Fastcommerce</strong>, a Brazilian e-commerce platform</li></ul>",
+      "isWorkingHere": false
+    }
+  ],
+
+  "education": [
+    {
+      "id": 0,
+      "institution": "MIT, University",
+      "degree": "MS",
+      "course": "Cloud technology",
+      "startDate": "2014",
+      "endDate": "2016",
+      "score": "68%"
+    }
+  ],
+
+  "projects": [
+    {
+      "id": 0,
+      "project_name": "Kanban",
+      "url": "https://hgresources.netlify.app/",
+      "startDate": "1-1-2023",
+      "endDate": "7-1-2023",
+      "summary": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.      ",
+      "in_progress": false,
+      "frameworks": [
+        {
+          "id": 0,
+          "name": "Heroku"
+        },
+        {
+          "id": 1,
+          "name": "Django"
+        }
+      ]
+    }
+  ],
+
+  "awards": [
+    {
+      "id": 0,
+      "title": "Certificate of exceptional bug finder",
+      "date": "2014-11-01",
+      "organisation": "XYZ client",
+      "summary": "* Recognition zero defect delivery"
+    },
+    {
+      "id": 1,
+      "title": "Certificate of best frontend developer",
+      "date": "2016-11-01",
+      "organisation": "XYZ client",
+      "summary": "Awarded for exceptional improvements made to improve user experience"
+    }
+  ]
+}
