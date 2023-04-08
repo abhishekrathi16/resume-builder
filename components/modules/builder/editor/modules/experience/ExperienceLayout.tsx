@@ -3,8 +3,6 @@ import { IExperienceItem } from "../../../../../../store/experience.interface";
 import { ExperienceDetailStore } from "../../../../../../store/experience_store";
 import TextField from "@mui/material/TextField";
 import { Box, Tooltip, Typography } from "@mui/material";
-import Image from "next/image";
-import save from "../../../../../../assets/icons/save-svgrepo-com.svg";
 
 // icons for moveUp, down , delete
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
@@ -24,9 +22,8 @@ import Paticular_Experience from "./Paticular_Experience";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../../../../FirebaseConfig/FirebaseConfig";
 import { UserData } from "../../../../../../store/SignIn_SignOut";
-
-import Loading from "../../../../../Loading_Button";
 import { toast } from "react-toastify";
+import { CircularIntegration } from "../SaveButton";
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -166,32 +163,14 @@ const ExperienceLayout = () => {
 
   return (
     <div>
-      <div className="flex justify-between">
+      <div className="flex justify-between items-center">
         <div>
           <Typography variant="h5" gutterBottom sx={{ fontWeight: 800 }}>
             Experience Detail
           </Typography>
         </div>
         <div>
-          <button
-            className="bg-gradient-to-r  from-[#2491f7] to-[#67c5fc] text-white rounded-md px-[20px] py-[4px] flex flex-row justify-center items-center "
-            onClick={saveExperienceDetail}
-          >
-            {loading ? (
-              <>
-                <Loading />
-              </>
-            ) : (
-              <>
-                <Image
-                  src={save}
-                  alt="saveIcon"
-                  className="h-[30px] w-[30px] mr-[10px]"
-                />
-              </>
-            )}
-            <span className="text-lg">Save</span>
-          </button>
+          <CircularIntegration save={saveExperienceDetail}/>
         </div>
       </div>
 
