@@ -121,7 +121,7 @@ const ExperienceLayout = () => {
     };
     experiences.push(newExperience);
     setExperience(experiences);
-    setExpanded(`panel${newExperience.id}`)
+    setExpanded(`panel${newExperience.id}`);
     console.log(experiences);
   };
 
@@ -170,7 +170,7 @@ const ExperienceLayout = () => {
           </Typography>
         </div>
         <div>
-          <CircularIntegration save={saveExperienceDetail}/>
+          <CircularIntegration save={saveExperienceDetail} />
         </div>
       </div>
 

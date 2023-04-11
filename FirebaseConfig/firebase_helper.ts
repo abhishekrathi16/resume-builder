@@ -39,6 +39,14 @@ const useAuth = () => {
   const createUser = async (name: string, email: string, password: string) => {
     setLoading();
 
+    //  check password length
+    if(password.length <8)
+    {
+      notify("Please provide valid password");
+      setLoading();
+      throw Error("Please provide valid password");
+    }
+
     // check email is in valid format or not
 
     if (!/\S+@\S+\.\S+/.test(email)) {
@@ -91,7 +99,7 @@ const useAuth = () => {
         setLoading();
         setOpen(open);
         notify("Wrong Credential");
-        return;
+        throw Error("Wrong Credential");
       });
   };
 

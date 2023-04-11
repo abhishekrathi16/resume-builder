@@ -117,7 +117,7 @@ const ProjectsLayout = () => {
     };
     projects.push(newProject);
     setProjects(projects);
-    setExpanded(`panel${newProject.id}`)
+    setExpanded(`panel${newProject.id}`);
     console.log(projects);
   };
   const removeProjects = (id: number) => {
@@ -188,7 +188,7 @@ const ProjectsLayout = () => {
           </Typography>
         </div>
         <div>
-          <CircularIntegration save={saveProjectDetail}/>
+          <CircularIntegration save={saveProjectDetail} />
         </div>
       </div>
 

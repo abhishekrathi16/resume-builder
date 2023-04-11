@@ -11,7 +11,7 @@ import { CircularIntegration } from "../Loading_Button";
 export default function SignUp(): JSX.Element {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
   const state = useSignInStore();
   const { signIn } = useAuth();
   const cancelButtonRef = useRef(null);
@@ -124,7 +124,11 @@ export default function SignUp(): JSX.Element {
                               </div>
 
                               <div className="relative top-6">
-                                  <CircularIntegration name="Sign In" handleFunction={handleSignIn} isLoading={loading} />
+                                <CircularIntegration
+                                  name="Sign In"
+                                  handleFunction={handleSignIn}
+                                  isLoading={loading}
+                                />
                               </div>
                             </div>
                           </div>
