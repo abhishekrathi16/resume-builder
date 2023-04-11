@@ -100,7 +100,7 @@ const EducationLayout = () => {
         education: academics,
       });
       setLoading(false);
-      notify("data saved successfully");
+      // notify("data saved successfully");
     }
   };
 

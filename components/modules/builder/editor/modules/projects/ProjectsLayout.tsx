@@ -92,7 +92,7 @@ const ProjectsLayout = () => {
         projects: projects,
       });
       setLoading(false);
-      notify("data saved successfully");
+      // notify("data saved successfully");
     }
   };
 
