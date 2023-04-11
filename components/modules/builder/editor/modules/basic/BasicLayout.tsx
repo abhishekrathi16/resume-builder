@@ -81,7 +81,7 @@ const BasicLayout = () => {
         basics: values,
       });
       setLoading(false);
-      notify("data saved successfully");
+      // notify("data saved successfully");
     }
   };
 
