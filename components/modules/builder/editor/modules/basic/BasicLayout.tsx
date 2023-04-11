@@ -131,7 +131,7 @@ const BasicLayout = () => {
           </Typography>
         </div>
         <div>
-          <CircularIntegration save={saveBasicDetail}/>
+          <CircularIntegration save={saveBasicDetail} />
         </div>
       </div>
       <div>

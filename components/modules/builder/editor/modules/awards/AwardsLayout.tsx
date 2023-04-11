@@ -28,7 +28,7 @@ import { UserData } from "../../../../../../store/SignIn_SignOut";
 import Loading from "../../../../../Loading_Button";
 import { toast } from "react-toastify";
 
-import { CircularIntegration } from '../SaveButton'
+import { CircularIntegration } from "../SaveButton";
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -122,7 +122,7 @@ const AwardsLayout = () => {
     };
     awards.push(newAward);
     setAwards(awards);
-    setExpanded(`panel${newAward.id}`)
+    setExpanded(`panel${newAward.id}`);
     console.log(awards);
   };
   const removeAward = (id: number) => {

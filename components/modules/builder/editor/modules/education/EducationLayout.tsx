@@ -118,7 +118,7 @@ const EducationLayout = () => {
     let newArray: IEducationItem[] = academics;
     newArray.push(newEducation);
     setEducation(newArray);
-    setExpanded(`panel${newEducation.id}`)
+    setExpanded(`panel${newEducation.id}`);
     console.log(academics);
   };
 
@@ -164,7 +164,7 @@ const EducationLayout = () => {
           </Typography>
         </div>
         <div>
-          <CircularIntegration save={saveEducationalDetail}/>
+          <CircularIntegration save={saveEducationalDetail} />
         </div>
       </div>
 

@@ -154,7 +154,11 @@ export default function SignUp(): JSX.Element {
                                 </div>
 
                                 <div className="relative top-4">
-                                  <CircularIntegration name="Sign Up" handleFunction={handleSignUp} isLoading={loading} />
+                                  <CircularIntegration
+                                    name="Sign Up"
+                                    handleFunction={handleSignUp}
+                                    isLoading={loading}
+                                  />
                                 </div>
                               </div>
                             </div>

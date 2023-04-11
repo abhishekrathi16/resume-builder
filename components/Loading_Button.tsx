@@ -2,21 +2,20 @@ import React from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import { LinearProgress } from "@mui/material";
-import { green, blue } from '@mui/material/colors';
-import Button from '@mui/material/Button';
-import Fab from '@mui/material/Fab';
-import CheckIcon from '@mui/icons-material/Check';
-import SaveIcon from '@mui/icons-material/Save';
+import { green, blue } from "@mui/material/colors";
+import Button from "@mui/material/Button";
+import Fab from "@mui/material/Fab";
+import CheckIcon from "@mui/icons-material/Check";
+import SaveIcon from "@mui/icons-material/Save";
 interface width {
   width: number;
 }
 
-interface Props{
+interface Props {
   name: string;
-  handleFunction: ()=>void;
+  handleFunction: () => void;
   isLoading: boolean;
 }
-
 
 const Loading = () => {
   return (
@@ -58,7 +57,6 @@ const BuilderPageLoading = () => {
 export default Loading;
 export { BuilderPageLoading };
 
-
 export function CircularIntegration(props: Props) {
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
@@ -67,7 +65,7 @@ export function CircularIntegration(props: Props) {
   const buttonSx = {
     ...(success && {
       bgcolor: blue[500],
-      '&:hover': {
+      "&:hover": {
         bgcolor: blue[700],
       },
     }),
@@ -80,7 +78,7 @@ export function CircularIntegration(props: Props) {
   }, []);
 
   const handleButtonClick = () => {
-    props.handleFunction()
+    props.handleFunction();
     if (!loading) {
       setSuccess(false);
       setLoading(true);
@@ -92,11 +90,11 @@ export function CircularIntegration(props: Props) {
   };
 
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-      <Box sx={{ m: 1, position: 'relative' }}>
+    <Box sx={{ display: "flex", alignItems: "center" }}>
+      <Box sx={{ m: 1, position: "relative" }}>
         <Button
           variant="contained"
-          sx={{ background: 'linear-gradient(to right, #2491f7, #67c5fc)'}}
+          style={{ background: "linear-gradient(to right, #2491f7, #67c5fc)" }}
           disabled={loading}
           onClick={handleButtonClick}
         >
@@ -106,12 +104,12 @@ export function CircularIntegration(props: Props) {
           <CircularProgress
             size={24}
             sx={{
-              color: 'white',
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              marginTop: '-12px',
-              marginLeft: '-12px',
+              color: "white",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              marginTop: "-12px",
+              marginLeft: "-12px",
             }}
           />
         )}
