@@ -96,7 +96,7 @@ const ExperienceLayout = () => {
         work: experiences,
       });
       setLoading(false);
-      notify("data saved successfully");
+      // notify("data saved successfully");
     }
   };
 
