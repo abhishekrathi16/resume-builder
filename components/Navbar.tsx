@@ -44,6 +44,10 @@ export default function Example() {
     router.push("/");
   };
 
+  const redirect_to_Home_page = ()=>{
+    router.push("/")
+  }
+
   return (
     <Disclosure
       as="nav"
@@ -55,7 +59,7 @@ export default function Example() {
             <div className="relative flex h-16 items-center justify-between">
               {/* Icon of website */}
               <div className="flex  `justify-center` items-center ml-0  ">
-                <div className="p-3 ">
+                <div className="p-3 cursor-pointer " onClick={redirect_to_Home_page}>
                   <img
                     className="hidden h-10 w-auto rounded-xl lg:block"
                     src={Logo.src}

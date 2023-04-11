@@ -106,7 +106,7 @@ const SkillsLayout = (): JSX.Element => {
         },
       });
       setLoading(false);
-      notify("data saved successfully");
+      // notify("data saved successfully");
     }
   };
 

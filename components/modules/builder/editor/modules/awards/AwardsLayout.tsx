@@ -100,7 +100,7 @@ const AwardsLayout = () => {
         awards: awards,
       });
       setLoading(false);
-      notify("data saved successfully");
+      // notify("data saved successfully");
     }
   };
 
