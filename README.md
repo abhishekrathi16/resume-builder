@@ -1,4 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# [Resumize](https://resumizer-create.vercel.app/)
+Resumize empowers individuals to create stunning, professional resumes effortlessly. The project offers a vast collection of meticulously designed templates. With an emphasis on security and data privacy, Resumize integrates Firebase Authentication to ensure the safeguarding of personal information throughout the resume creation process.
+
+## Quick look at the final project
+### Landing Pages
+![[photo1]](assets/image/landingpage.png)
+
+![[photo2]](assets/image/landingpage1.png)
+
+![[photo3]](assets/image/landing2.png)
+
+### Dashboard
+![[photo4]](assets/image/resumeproject.png)
+
+### Various Templates
+![[photo5]](assets/image/resumetemplate.png)
 
 ## Getting Started
 
