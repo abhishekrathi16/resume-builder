@@ -7,10 +7,7 @@ Resumize empowers individuals to create stunning, professional resumes effortles
 <img src="https://github.com/abhishekrathi16/resume-builder/assets/82316009/46fb7476-eac8-4ffb-8d75-cf42ed866a3c" width=80% height=50% >
 <img src = "https://github.com/abhishekrathi16/resume-builder/assets/82316009/0890aec1-36d3-40c7-9156-8813564a9592" width=80% height = 50% >
 
-
-
 ### Dashboard
-![[photo4]](assets/image/resumeproject.png)
 <img src = "https://github.com/abhishekrathi16/resume-builder/assets/82316009/99e59e1c-9a93-405b-9878-1ff0bf1d1143"  width=80% height = 50% >
 
 ### Various Templates
